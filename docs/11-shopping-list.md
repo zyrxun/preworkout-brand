@@ -8,7 +8,7 @@
 | 2 | LorAnn Super-Strength 6-flavor variety (green apple + watermelon inside) | https://www.amazon.com/LorAnn-Oils-Strength-Strawberry-Watermelon/dp/B0C91H852D | ~$13 |
 | 3 | Glycerin — NOW 16oz is **food grade despite skin-care marketing** (USP grade; NOW's own listing: "the vegetable glycerine contained in this product is considered food grade"). Zero-doubt alternative: **LorAnn Vegetable Glycerine** (~$10, 4oz = exactly the ~100ml needed, from a candy-supply company) | https://www.amazon.com/clp/B0019LWU2K · LorAnn alt: https://www.amazon.com/dp/B0008DI8PI | ~$8–10 |
 | 4 | Silicone mini molds, 50-cavity (get 2) | https://www.amazon.com/Square-Terrace-Silicone-Chocolate-Molds-Cavities/dp/B0C28H9BHT | ~$10 |
-| 5 | Plastic syringes no-needle, 20-pack (1/3/5/10ml) | https://www.amazon.com/20Pack-10ml-Syringe-Without-Needle/dp/B08QFGYYPH | ~$8 |
+| 5 | Core deposit tool: plastic syringes (best control) **or** 100-pk 3ml plastic transfer pipettes (disposable, dropper-style) — either works | syringes: https://www.amazon.com/20Pack-10ml-Syringe-Without-Needle/dp/B08QFGYYPH · pipettes: amazon search "plastic transfer pipettes 3ml" | ~$6–8 |
 | 6 | Candy/deep-fry thermometer with pot clip | https://www.amazon.com/Stainless-Steel-Candy-Thermometer-Handle/dp/B0FNC43K18 | ~$9 |
 | 7 | Milligram scale 50g × 0.001g (Weigh Gram, incl. calibration) | https://www.amazon.com/dp/B0D22VZTNY | $15.99 |
 | 8 | Pocket scale 200g × 0.01g (core deposit weighing) | https://www.amazon.com/Weigh-Gram-Digital-Jewelry-Kitchen/dp/B06Y61YW7S | $9.98 |

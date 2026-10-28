@@ -15,7 +15,8 @@ Per serving (4 pieces): **200mg caffeine / 200mg theanine / ~1g beta-alanine.**
 ### Equipment
 
 - 0.001g milligram scale (for theanine/beta-alanine weighs) + 0.01g kitchen scale (deposits)
-- 2× 50-cavity silicone mini molds, syringes/pipettes, candy thermometer, small pots
+- 2× 50-cavity silicone mini molds, syringes **or** plastic transfer pipettes/droppers (pipettes are disposable — easier than washing sugar syrup out of glass droppers), candy thermometer, small pots
+- Deposit-precision trick: weigh the mold before and after filling all cores — total ÷ 24 should be ~1.5g (±10% is fine)
 
 ### Core master syrup (makes 24 cores, 36g total)
 
