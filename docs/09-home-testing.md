@@ -50,7 +50,7 @@ Melt isomalt (~150°C, burns are serious — gloves, no kids/pets around), cast 
 
 ## Self-test protocol (caffeine safety rules)
 
-- **Tablets only, never bulk caffeine powder** (FDA explicitly warns consumers off it).
+- **Pills/tablets only, never bulk caffeine powder** (FDA explicitly warns consumers off it).
 - Count ALL caffeine sources that day (coffee, energy drinks). **Cap: 400mg/day total.**
 - Day 1: 1 piece (~50mg). Note onset at 15/30/60 min, jitters vs smooth, heart rate.
 - Day 3: 2 pieces (~100mg). Day 5+: 4 pieces (~200mg) ~20 min pre-workout.
@@ -61,6 +61,6 @@ Melt isomalt (~150°C, burns are serious — gloves, no kids/pets around), cast 
 ## What "success" looks like after ~4 weekends
 
 - 6-variant matrix scored; winning flavor + sour level identified
-- Deposit-mass log showing ±10% caffeine consistency (feasible with tablets + weigh-deposits)
+- Deposit-mass log showing ±10% caffeine consistency (feasible with pills + weigh-deposits)
 - Photo/video of the burst = landing page + ads material
 - A one-page spec sheet to hand co-mans: target piece weight, core composition, actives/serving, flavor/sour targets

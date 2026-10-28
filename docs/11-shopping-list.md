@@ -41,6 +41,39 @@ Prices are October 2026 search-time estimates — verify at checkout. Quantities
 
 **≈ $146–170** (call it **$160 budget**) → covers kit + ~100–150 pieces of iteration across the week 1–4 plan (docs/10). Refill top-ups later: beta-alanine/theanine last months; caffeine tabs and syrup staples are pennies.
 
-## Explicitly NOT on the list
+## Minimum first-cart (you already have caffeine pills)
+
+Exact quantities: one **batch = 24 pieces (6 servings)**; the 4-weekend R&D plan needs **~6 batches (~150 pieces)**.
+
+| Item | Per batch | Full plan (6 batches) | Smallest sensible buy |
+|---|---|---|---|
+| Caffeine pills | 6 | 36 | ✅ have |
+| Beta-alanine | 6g | 36g | 100g bag (~$10) |
+| L-theanine | 1.2g | ~8g | 100g bag (~$13) |
+| Glycerin | 16g (~15ml) | ~100ml | 16oz bottle (~$9) — smallest size sold |
+| Malic acid | ~12g (core + coat) | ~75g | 1 lb (~$13) |
+| Citric acid | ~7g (shell + coat) | ~45g | optional — malic can do both roles; if buying: small jar (~$8) |
+| Gelatin | 10g (2.5 packets) | 15 packets = 4 boxes | 2 boxes Knox 4-pk (~$12) |
+| Sugar + corn syrup | 100g + 50g | pantry amounts | ~$6 grocery |
+| LorAnn flavors | ~½ tsp (¾ of 1 dram) | ~4 drams total | 6-pack (~$13) or 3 single drams (~$12) |
+| Silicone molds | 24 cavities | — | 2× 50-cavity (~$10) |
+| Syringes/pipettes | — | — | 5ml food-safe (~$8) |
+| Thermometer | — | — | candy/oil (~$8) |
+| Mg scale 0.001g | — | — | ~$20 |
+| 0.01g pocket scale | — | — | ~$12 |
+| Isomalt (stage 2 only) | — | 1 lb covers 3–4 experiments | ~$14 — **can defer** |
+
+**Order-now total (no citric, no isomalt): ~$123–135.** Everything-is-optional-is-in total: ~$145–160.
+
+## Where to buy (US, Oct 2026)
+
+- **LorAnn flavors:** Amazon (6-pack variety: strawberry kiwi / orange cream / watermelon / green apple / coconut / cherry — the key two are green apple + watermelon); also **Walmart cake aisle, Michaels, Hobby Lobby, TJ Maxx** (single drams ~$3–5)
+- **Vegetable glycerin:** Amazon — NOW Solutions 16oz is the standard; also Walmart (pharmacy/skin-care aisle — check "food grade/USP" on label)
+- **Silicone molds:** Amazon — search "50 cavity silicone mini gummy mold" (2-pack)
+- **Malic/citric acid, isomalt, scales, syringes:** Amazon only, realistically (links in docs/07 shopping references)
+- **Gelatin (Knox), sugar, corn syrup:** any grocery store
+- **Beta-alanine / L-theanine:** Amazon — BulkSupplements 100g or 250g bags
+
+
 
 - **Pure/bulk caffeine anhydrous powder** — FDA consumer advisory says avoid entirely; lethal in teaspoon quantities and impossible to dose safely on kitchen scales. The 200mg tablet route gives identical dosing math with built-in safety rails.
