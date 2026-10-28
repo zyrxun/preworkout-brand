@@ -1,5 +1,26 @@
 # Shopping List — First Experimentation Kit (Amazon, est. ~$150–170)
 
+## Ready-to-click cart (Richard's version — already has caffeine pills, beta-alanine, L-theanine)
+
+| # | Item | Link | Est. price |
+|---|---|---|---|
+| 1 | Malic acid powder, food grade 1 lb | https://www.amazon.com/malic-acid-powder-food-grade/s?k=malic+acid+powder+food+grade | ~$13 |
+| 2 | LorAnn Super-Strength 6-flavor variety (green apple + watermelon inside) | https://www.amazon.com/LorAnn-Oils-Strength-Strawberry-Watermelon/dp/B0C91H852D | ~$13 |
+| 3 | NOW Solutions vegetable glycerin, food grade, 16 oz | https://www.amazon.com/clp/B0019LWU2K | ~$9 |
+| 4 | Silicone mini molds, 50-cavity (get 2) | https://www.amazon.com/Square-Terrace-Silicone-Chocolate-Molds-Cavities/dp/B0C28H9BHT | ~$10 |
+| 5 | Plastic syringes no-needle, 20-pack (1/3/5/10ml) | https://www.amazon.com/20Pack-10ml-Syringe-Without-Needle/dp/B08QFGYYPH | ~$8 |
+| 6 | Candy/deep-fry thermometer with pot clip | https://www.amazon.com/Stainless-Steel-Candy-Thermometer-Handle/dp/B0FNC43K18 | ~$9 |
+| 7 | Milligram scale 50g × 0.001g (Weigh Gram, incl. calibration) | https://www.amazon.com/dp/B0D22VZTNY | $15.99 |
+| 8 | Pocket scale 200g × 0.01g (core deposit weighing) | https://www.amazon.com/Weigh-Gram-Digital-Jewelry-Kitchen/dp/B06Y61YW7S | $9.98 |
+| 9 | Knox gelatin — **grocery store, 2 boxes of 4 packets** (Amazon only sells 12-packs, overkill) | grocery | ~$6 |
+| 10 | Sugar + Karo light corn syrup 16oz | https://www.amazon.com/clp/B07RCXQPQN | ~$7 |
+
+**Cart total ≈ $100** (± shipping; malic acid link is a search page — pick a 1 lb food-grade listing ~$13).
+
+Deferred (stage 2, week 4): isomalt 1 lb (~$14) → https://www.amazon.com/clp/B00PKR1ZZW — optional citric acid (~$8) — malic can do both jobs for v1.
+
+## Original full kit (for reference)
+
 Prices are October 2026 search-time estimates — verify at checkout. Quantities make ~150–200 test pieces.
 
 ## Actives (the exact-dose stuff)
