@@ -25,6 +25,7 @@ Business planning + validity repo for a **liquid-core burst candy** pre-workout 
 | [docs/04-unit-economics.md](docs/04-unit-economics.md) | COGS, pricing, margins, startup cost scenarios |
 | [docs/05-risks-compliance.md](docs/05-risks-compliance.md) | FDA/supplement compliance, safety, ops risks |
 | [docs/06-validation-plan.md](docs/06-validation-plan.md) | Step-by-step cheap validity test + launch gates |
+| [docs/12-brand-names.md](docs/12-brand-names.md) | Brand name candidates + trademark/domain/handle screening (draft) |
 | [docs/07-sources.md](docs/07-sources.md) | All sources cited |
 | [docs/08-formulation-rd.md](docs/08-formulation-rd.md) | Literature-based formulation: solubility/stability, construction methods, flavor & sour systems, safety + price/doability double-check |
 | [docs/09-home-testing.md](docs/09-home-testing.md) | Can you make it at home (yes-prototype/no-product), v1 recipe, self-test protocol |
@@ -35,8 +36,8 @@ Business planning + validity repo for a **liquid-core burst candy** pre-workout 
 
 - [x] Market validity research
 - [ ] Kitchen R&D: order kit (~$160) → burst-candy prototype in 4 weekends (docs/09–11)
-- [ ] Pick niche + name (trademark/domain check)
-- [ ] Landing page + waitlist
+- [ ] Pick niche + name — **candidates screened, pick pending** (docs/12; top rec: Puckershock)
+- [ ] Landing page + waitlist — **draft built** (site/index.html, BRANDNAME token pending swap)
 - [ ] Manufacturer quotes (3 low-MOQ candidates)
 - [ ] Ad spend validation test ($500–1k)
 - [ ] First production run decision

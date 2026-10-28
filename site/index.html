@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ============================================================
+       BRANDNAME PLACEHOLDER: the literal token "BRANDNAME" appears
+       everywhere the brand name should go. Find-replace it (it is
+       case-sensitive) once the name is decided.
+       ============================================================ -->
+  <title>BRANDNAME — Pre-workout that explodes</title>
+  <meta name="description" content="BRANDNAME is a burst-candy pre-workout: sour shell, liquid energy core, and a tingle that says it's working. 4 pieces = 200mg caffeine + 200mg L-theanine + ~1g beta-alanine. Sugar-free, coming soon. Join the waitlist.">
+  <meta property="og:title" content="BRANDNAME — Pre-workout that explodes">
+  <meta property="og:description" content="Sour shell, energy core, and a tingle that says it's working. Coming soon — join the waitlist.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b0a11">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%233dff6e'/%3E%3Ccircle cx='16' cy='16' r='6.5' fill='%23ff3d9a'/%3E%3C/svg%3E">
+  <!-- Single Google Fonts link (display face only; body text uses the system stack) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&display=swap">
+  <style>
+    :root{
+      --bg:#0b0a11;
+      --band:#0e0c19;
+      --panel:#151126;
+      --ink:#f6f3ff;
+      --muted:#a89fc6;
+      --faint:#7d7499;
+      --line:rgba(168,159,198,.22);
+      --green:#41ff70;
+      --purple:#a06bff;
+      --pink:#ff3d9a;
+      --radius:20px;
+      --font-display:"Unbounded","Avenir Next","Trebuchet MS",sans-serif;
+      --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--font-body);
+      font-size:1rem;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    ::selection{background:var(--pink);color:#0b0a11}
+    a{color:var(--green)}
+    :focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:4px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    .skip{position:absolute;left:-999px;top:8px;background:var(--green);color:#07130b;padding:10px 16px;border-radius:999px;font-weight:700;z-index:10}
+    .skip:focus{left:8px}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+    section{scroll-margin-top:24px}
+
+    /* ---------- header ---------- */
+    .top{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px}
+    .wordmark{font-family:var(--font-display);font-weight:900;font-size:.95rem;letter-spacing:.08em;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+    .dot{width:13px;height:13px;border-radius:50%;flex:none;background:radial-gradient(circle,var(--pink) 0 38%,var(--green) 42% 100%)}
+    .top nav{display:flex;align-items:center;gap:22px}
+    .top nav a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .top nav a:hover{color:var(--ink)}
+    .top nav .cta{color:#08130b;background:var(--green);padding:9px 16px;border-radius:999px;font-weight:800;font-size:.85rem}
+    .top nav .cta:hover{color:#08130b;filter:brightness(1.08)}
+    @media(max-width:639px){.top nav a:not(.cta){display:none}}
+
+    /* ---------- hero ---------- */
+    .hero{position:relative;overflow:hidden;text-align:center;padding:56px 0 88px}
+    .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.16;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+    .glow--green{width:420px;height:420px;background:var(--green);top:-150px;left:-140px}
+    .glow--purple{width:460px;height:460px;background:var(--purple);top:-90px;right:-170px;animation-delay:-5s}
+    .glow--pink{width:380px;height:380px;background:var(--pink);bottom:-190px;left:32%;animation-delay:-9s}
+    @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(26px,18px,0)}}
+    .hero > .wrap{position:relative}
+    .eyebrow{font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:0 0 24px}
+    .eyebrow b{color:var(--green);font-weight:700}
+    .hero h1{font-family:var(--font-display);font-weight:900;margin:0 auto 20px;max-width:860px;font-size:clamp(1.9rem,7.2vw,4.1rem);line-height:1.08;text-wrap:balance}
+    .hero h1 .l2{display:block;margin-top:16px;font-size:clamp(1rem,3.1vw,1.5rem);font-weight:500;line-height:1.4;text-wrap:pretty}
+    .w-green{color:var(--green)} .w-purple{color:var(--purple)} .w-pink{color:var(--pink)}
+    .hero .sub{max-width:620px;margin:0 auto 36px;color:var(--muted);font-size:1.05rem}
+
+    /* ---------- waitlist form ---------- */
+    .waitlist{max-width:500px;margin:0 auto;scroll-margin-top:32px}
+    .waitlist-label{font-size:.98rem;font-weight:700;margin:0 0 12px}
+    .waitlist-form{display:grid;gap:10px}
+    @media(min-width:600px){.waitlist-form{grid-template-columns:1fr 1.35fr auto}}
+    .waitlist-form input{
+      width:100%;min-height:50px;padding:0 18px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--ink);
+      font:inherit;font-size:.95rem;
+    }
+    .waitlist-form input::placeholder{color:var(--faint)}
+    .waitlist-form input:focus{border-color:var(--green);outline:none;box-shadow:0 0 0 3px rgba(65,255,112,.18)}
+    .btn{
+      min-height:50px;padding:0 26px;border:0;border-radius:999px;cursor:pointer;
+      background:var(--green);color:#07130b;font-family:var(--font-body);font-weight:800;font-size:.95rem;
+      white-space:nowrap;transition:transform .15s ease,box-shadow .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(65,255,112,.35)}
+    @media(max-width:599px){.btn{width:100%}}
+    .fineprint{font-size:.78rem;color:var(--faint);margin:14px 0 0}
+    .success{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      padding:18px 22px;border:1px solid rgba(65,255,112,.45);border-radius:var(--radius);
+      background:rgba(65,255,112,.08);font-weight:700;
+    }
+    .success[hidden]{display:none}
+
+    /* ---------- generic sections ---------- */
+    .sec{padding:76px 0}
+    .sec-head{margin-bottom:38px;max-width:640px}
+    .sec-head h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.5rem,4.5vw,2.25rem);margin:0 0 12px;letter-spacing:-.01em}
+    .sec-head p{color:var(--muted);margin:0}
+
+    /* ---------- how it works ---------- */
+    .steps{list-style:none;margin:0;padding:0;display:grid;gap:40px}
+    @media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr);gap:36px}}
+    .step{border-top:3px solid var(--accent,var(--green));padding-top:22px}
+    .step--shell{--accent:var(--green)} .step--core{--accent:var(--purple)} .step--tingle{--accent:var(--pink)}
+    .step .num{font-family:var(--font-display);font-size:.68rem;font-weight:700;letter-spacing:.32em;color:var(--accent,var(--green))}
+    .step h3{font-family:var(--font-display);font-weight:700;font-size:1.12rem;margin:12px 0 8px}
+    .step p{margin:0;color:var(--muted);font-size:.95rem}
+
+    /* ---------- formula strip ---------- */
+    .formula{background:var(--band);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .strip-label{font-family:var(--font-display);font-size:.68rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+    .facts{
+      list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);
+      gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    }
+    @media(min-width:700px){.facts{grid-template-columns:repeat(4,1fr)}}
+    .facts li{background:var(--panel);padding:26px 22px}
+    .facts .val{font-family:var(--font-display);font-weight:900;font-size:clamp(1.35rem,3.6vw,1.9rem);display:block;line-height:1.1}
+    .facts .lbl{display:block;margin-top:8px;color:var(--muted);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+    .val--green{color:var(--green)} .val--purple{color:var(--purple)} .val--pink{color:var(--pink)}
+    .footnote{font-size:.78rem;color:var(--faint);margin:16px 0 0;max-width:640px}
+
+    /* ---------- FAQ ---------- */
+    .faq details{border-bottom:1px solid var(--line)}
+    .faq details:first-of-type{border-top:1px solid var(--line)}
+    .faq summary{
+      list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+      cursor:pointer;padding:20px 4px;font-weight:600;font-size:1.02rem;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";font-family:var(--font-display);font-weight:700;color:var(--green);flex:none}
+    .faq details[open] summary::after{content:"\2013"}
+    .faq details p{margin:0;padding:0 4px 22px;color:var(--muted);max-width:660px}
+
+    /* ---------- footer ---------- */
+    footer{border-top:1px solid var(--line);padding:52px 0 60px;margin-top:28px}
+    .foot-grid{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+    .foot-tag{color:var(--muted);font-size:.9rem;margin:6px 0 0}
+    .socials{display:flex;gap:20px}
+    .socials a{color:var(--muted);text-decoration:none;font-size:.9rem}
+    .socials a:hover{color:var(--ink)}
+    .warning{
+      display:inline-block;margin:30px 0 14px;padding:8px 16px;border-radius:999px;
+      border:1px solid rgba(255,61,154,.55);color:var(--pink);
+      font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    }
+    .legal{font-size:.78rem;color:var(--muted);max-width:780px;line-height:1.7;margin:0}
+    .copyright{margin:20px 0 0;font-size:.78rem;color:var(--faint)}
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .glow{animation:none}
+      .btn{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#waitlist">Skip to waitlist</a>
+
+  <header class="wrap top">
+    <a class="wordmark" href="#top"><span class="dot" aria-hidden="true"></span>BRANDNAME</a>
+    <nav aria-label="Page">
+      <a href="#how">How it works</a>
+      <a href="#formula">Formula</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="#waitlist">Join waitlist</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero" aria-label="Intro">
+      <div class="glow glow--green" aria-hidden="true"></div>
+      <div class="glow glow--purple" aria-hidden="true"></div>
+      <div class="glow glow--pink" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="eyebrow"><b>Coming soon</b> &middot; not for sale yet</p>
+        <h1>Pre-workout that explodes. <span class="l2"><span class="w-green">Sour shell</span>, <span class="w-purple">energy core</span>, and a <span class="w-pink">tingle</span> that says it's working.</span></h1>
+        <p class="sub">A sugar-free burst candy wired like a pre-workout: sour outside, liquid energy core inside, four pieces per serving.</p>
+
+        <div class="waitlist" id="waitlist">
+          <div id="waitlist-live">
+            <p class="waitlist-label">Join the waitlist — be first when we drop.</p>
+            <!-- ============================================================
+                 WAITLIST FORM — placeholder action. Not connected yet (no
+                 signup is possible at this stage). To hook it up later:
+
+                 • Formspree: create a form, then set
+                     action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                   Field names below ("name", "email") work as-is, then delete
+                   the placeholder <script> at the bottom of this file.
+
+                 • Tally: build the form in Tally and either embed it here
+                   (iframe) or point this form's action at your Tally endpoint.
+
+                 • ConvertKit / Kit: use the form's public action URL from your
+                   ConvertKit form settings (api.convertkit.com/v3/forms/<ID>/subscribe)
+                   and map fields: email -> email, name -> first_name.
+
+                 The success state below is FAKE (client-side only) — replace it
+                 with the provider's real redirect/thank-you page.
+                 ============================================================ -->
+            <form id="waitlist-form" class="waitlist-form" action="#" method="POST">
+              <div>
+                <label class="sr-only" for="wl-name">First name (optional)</label>
+                <input id="wl-name" name="name" type="text" autocomplete="given-name" placeholder="First name (optional)">
+              </div>
+              <div>
+                <label class="sr-only" for="wl-email">Email</label>
+                <input id="wl-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
+              </div>
+              <button class="btn" type="submit">Get early access</button>
+            </form>
+            <p class="fineprint">18+ only. Keep out of reach of children. One launch email — no spam.</p>
+          </div>
+          <p class="success" id="waitlist-success" hidden role="status">You're on the list — watch your inbox for the drop.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. HOW IT WORKS ============ -->
+    <section class="sec" id="how">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>How it works</h2>
+          <p>Three seconds from sour to set.</p>
+        </div>
+        <ol class="steps">
+          <li class="step step--shell">
+            <span class="num">STEP 01</span>
+            <h3>Sour shell</h3>
+            <p>Bite in. It puckers — bright, loud, zero sugar. The shell cracks fast.</p>
+          </li>
+          <li class="step step--core">
+            <span class="num">STEP 02</span>
+            <h3>Burst core</h3>
+            <p>The liquid energy core bursts: 200mg caffeine + 200mg L-theanine. No shaker, no chalk, no half-mixed scoop.</p>
+          </li>
+          <li class="step step--tingle">
+            <span class="num">STEP 03</span>
+            <h3>Tingle kicks in</h3>
+            <p>Beta-alanine's pins-and-needles roll in a few minutes later. That tingle means it's working. Go take your set.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 3. FORMULA STRIP ============ -->
+    <section class="formula sec" id="formula">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>The formula</h2>
+          <p>Caffeine for drive, L-theanine to keep it clean, beta-alanine for the endurance burn.</p>
+        </div>
+        <p class="strip-label">Per serving &middot; 4 pieces</p>
+        <ul class="facts">
+          <li><span class="val val--green">200mg</span><span class="lbl">Caffeine</span></li>
+          <li><span class="val val--purple">200mg</span><span class="lbl">L-Theanine</span></li>
+          <li><span class="val val--pink">~1g</span><span class="lbl">Beta-Alanine</span></li>
+          <li><span class="val">0g*</span><span class="lbl">Sugar</span></li>
+        </ul>
+        <p class="footnote">*Sugar-free formula planned for launch — final supplement facts will be printed on the jar. Drops as a jar plus single-serve pouches you can toss in your gym bag.</p>
+      </div>
+    </section>
+
+    <!-- ============ 4. FAQ ============ -->
+    <section class="sec faq" id="faq">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Questions, answered.</h2>
+        </div>
+        <details>
+          <summary>So… what is it, exactly?</summary>
+          <p>Burst candy built like a pre-workout. The outside is an extremely sour shell; the inside is a liquid energy core. Four pieces = one serving: 200mg caffeine, 200mg L-theanine, ~1g beta-alanine. Take it about 15 minutes before training — no shaker bottle required.</p>
+        </details>
+        <details>
+          <summary>When does it launch?</summary>
+          <p>Soon — it's not for sale yet. The waitlist gets the drop date first and first access to launch batches. It'll come as a jar and single-serve pouches.</p>
+        </details>
+        <details>
+          <summary>Is it safe? Who's it for?</summary>
+          <p>It's made for healthy adults 18+. One serving has 200mg of caffeine — about a large cold brew — so skip it if you're under 18, caffeine-sensitive, or pregnant, and don't stack it with other caffeinated drinks or supplements. The beta-alanine tingle feels strange but is normal and harmless. As with any supplement, check with your doctor if you have a medical condition. Keep out of reach of children.</p>
+        </details>
+        <details>
+          <summary>How much will it cost?</summary>
+          <p>Pricing isn't locked yet. Join the waitlist and you'll get launch pricing — plus a heads-up before public sale — the moment it's set.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 5. FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <span class="wordmark"><span class="dot" aria-hidden="true"></span>BRANDNAME</span>
+          <p class="foot-tag">Pre-workout that explodes.</p>
+        </div>
+        <!-- TODO: replace href="#" with real profile URLs when accounts exist -->
+        <div class="socials" aria-label="Social media">
+          <a href="#" title="TikTok — coming soon">TikTok</a>
+          <a href="#" title="Instagram — coming soon">Instagram</a>
+          <a href="#" title="X — coming soon">X</a>
+        </div>
+      </div>
+      <p class="warning">18+ only &middot; Keep out of reach of children</p>
+      <p class="legal">BRANDNAME is a dietary supplement. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Coming soon — not for sale yet. Formula, flavors, and packaging are planned and may change before launch. Not for use by anyone under 18.</p>
+      <p class="copyright">&copy; 2026 BRANDNAME. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // PLACEHOLDER success state — fake, client-side only.
+    // Delete this entire <script> block when you connect a real backend
+    // (Formspree / Tally / ConvertKit) and let the provider handle success.
+    (function () {
+      var form = document.getElementById('waitlist-form');
+      var live = document.getElementById('waitlist-live');
+      var done = document.getElementById('waitlist-success');
+      if (!form || !live || !done) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        live.hidden = true;
+        done.hidden = false;
+      });
+    })();
+  </script>
+</body>
+</html>
