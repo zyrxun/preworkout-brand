@@ -11,7 +11,7 @@ Business planning + validity repo for a **liquid-core burst candy** pre-workout 
 | Can you charge a premium? | ✅ Candy-format servings sell at **$1–2.86** vs $0.50–1.00 for powder — customers pay for convenience + the experience |
 | Is the exact format open? | ✅ Gummy pre-workout has a dominant player (Jüced); **US burst-candy pre-workout has only tiny Amazon sellers** (Energy Rocks, 100mg caffeine) — whitespace |
 | Can you start small? | ⚠️ Harder than gummies: liquid-center manufacturing is specialized; first run **$10–25k** (vs $5–15k plain gummy) |
-| The catch | ⚠️ Burst core fixes the caffeine dose ceiling (100–200mg/serving is feasible via liquid-fill) but **pump actives (citrulline/beta-alanine) still physically don't fit** → position as an energy candy with pre-workout ritual branding, never a powder replacement. And a caffeine liquid core that behaves like candy makes **child-safety the #1 compliance issue**. |
+| The catch | ⚠️ Burst core fixes the caffeine dose ceiling (100–200mg/serving via liquid-fill) and **beta-alanine fits at ~1g/serving — enough to deliver the signature tingle**, but **citrulline/creatine (pump + volume actives) still physically don't fit** → position as an energy candy with pre-workout ritual branding, never a powder replacement. And a caffeine liquid core that behaves like candy makes **child-safety the #1 compliance issue**. |
 
 **Bottom line:** The niche is valid, growing, and has a proven price premium. Winning is a marketing/taste/positioning game (paid social CAC is the real cost), not a formulation game. Cheapest real validity test is a landing page + small ad spend **before** buying inventory — see [docs/06-validation-plan.md](docs/06-validation-plan.md).
 

@@ -11,16 +11,21 @@ Hard/shell candy pieces with a **liquid center that bursts on bite** (Warheads/G
 3. **The sensory hit IS the marketing.** A mouth-burst is a native TikTok reaction shot. Warheads-level sour doubles as the "this is working" ritual — same psychology as beta-alanine tingles, which gym bros actively love.
 4. **Perceived speed.** Bite → burst → immediate flavor/caffeine hit reads as "fast-acting" next to a gummy you chew for 10 seconds.
 
-## Hard limits (still true)
+## Dose reality for the must-haves (beta-alanine + L-theanine)
 
-- L-citrulline (6–8g), beta-alanine (3.2g), creatine (3–5g) **still don't fit** — a burst piece holds grams of liquid at best.
-- So this remains an **energy/focus product with pre-workout ritual branding**, never a powder replacement. Claim energy/focus/endurance only (see docs/05).
+Brief requirement: **beta-alanine + L-theanine minimum, plus caffeine.**
+
+- **L-theanine: fully fits.** 200mg/serving (1:1 with caffeine) dissolves cleanly in the liquid core, mild taste. ✅
+- **Beta-alanine: fits at a meaningful dose, not the clinical dose.** Carnosine loading is 3.2g/day — that never fits in candy (a burst piece's core holds hundreds of mg of actives max). But **~250mg/piece × 4 ≈ 1g/serving is feasible**, and doses ≥~800mg reliably trigger the tingle (paresthesia) gym users treat as proof-of-work. Market precedent: plenty of pre-workouts ship 0.8–1.6g servings. Label the real number and disclose "may cause temporary tingling."
+- **What still doesn't fit:** L-citrulline (6–8g), creatine (3–5g) — pump claims stay off the label.
+- So the product remains an **energy/focus candy with pre-workout ritual branding** — but with beta-alanine on board it now has the tingle story for real.
 
 ## Format spec (draft)
 
 | Attribute | Spec |
 |---|---|
-| Serving | 4 pieces × ~50mg caffeine = **200mg caffeine** + L-theanine 1:1 (smooths the edge) |
+| Serving | 4 pieces = **200mg caffeine** + **200mg L-theanine** (1:1) + **~1g beta-alanine** (tingle ritual) |
+| Beta-alanine | ~250mg/piece × 4 ≈ 1g/serving — enough to trigger the tingle (≥~800mg); the 3.2g clinical dose does NOT fit — label honestly + disclose tingling |
 | Per-piece cap | ~50mg keeps a single stray piece non-dangerous (still: child-resistant packaging, docs/05) |
 | Signature sensory | **Warheads-level sour shell** → sweet core. Brand mechanic idea: "sour levels" like heat levels (Level 1 → Nuclear) |
 | Shell | Pectin or gelatin; core: glycerin/water solution with caffeine + theanine + flavor |
@@ -41,5 +46,5 @@ Hard/shell candy pieces with a **liquid center that bursts on bite** (Warheads/G
 
 ## Positioning statement (draft)
 
-> Pre-workout that explodes. Sour shell, energy core.
+> Pre-workout that explodes. Sour shell, energy core, and a tingle that says it's working.
 > Bite through the sour, take the burst, walk in locked in.

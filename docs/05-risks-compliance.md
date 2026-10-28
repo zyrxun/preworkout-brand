@@ -5,6 +5,7 @@
 - **DSHEA framework:** sold as a dietary supplement. Requires a **Supplement Facts panel**, serving/servings-per-container, and a **structure/function claims only** policy ("supports energy/focus/endurance") — no disease claims, no "treats/cures" language. The standard FDA disclaimer goes on the label.
 - **Facility + GMP:** product must be made in an FDA-registered, cGMP-compliant (21 CFR 111) facility — this is what your contract manufacturer provides; verify their registration and get batch records.
 - **Label claims on caffeine:** state mg per serving clearly; FDA has warned the industry about pure/highly concentrated caffeine products — gummies at ≤25mg per gummy are on the safe side of that line.
+- **Beta-alanine disclosure:** tingling (paresthesia) is expected and harmless but must be explained on the label ("may cause a temporary tingling sensation") — standard practice on pre-workout labels; skipping it drives support tickets and 1-star reviews.
 - **FTC:** advertising + influencer posts need substantiation and #ad disclosure; keep claims in ads identical to label claims.
 
 ## Safety — the kid problem (real and getting attention)
