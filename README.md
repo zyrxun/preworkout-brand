@@ -1,6 +1,6 @@
-# Pre-Workout Gummy Brand (working name: TBD)
+# Pre-Workout Burst Candy Brand (working name: TBD)
 
-Business planning + validity repo for a gummy-format pre-workout supplement brand.
+Business planning + validity repo for a **liquid-core burst candy** pre-workout brand — Warheads-style shell that bursts with a liquid energy core (not chewy gummies).
 
 ## TL;DR — Validity Verdict: **GO, with one strategic catch**
 
@@ -8,9 +8,10 @@ Business planning + validity repo for a gummy-format pre-workout supplement bran
 |---|---|
 | Is the market real? | ✅ Pre-workout gummies ≈ **$0.9–1.7B (2025)**, projected to roughly **double/triple by 2033** (9–24% CAGR depending on research firm) |
 | Is demand proven? | ✅ Category leader **Jüced** has **100K+ reviews at 4.8★**; Bucked Up, Animal, SAVOR all play here |
-| Can you charge a premium? | ✅ Gummy servings sell at **$1–2.86** vs **$0.50–1.00** for powder — customers pay for convenience + taste |
-| Can you start small? | ✅ Low-MOQ manufacturers accept **500–2,500 unit** first runs; realistic launch budget **$5–15k** |
-| The catch | ⚠️ Gummy physics cap the dose. Every "pre-workout gummy" on the market is really an **energy gummy** (~75–150mg caffeine). You cannot fit a real pre-workout dose (200–350mg caffeine + 3.2g beta-alanine + 6–8g citrulline) into gummies. **Position as an energy gummy with pre-workout ritual branding — not a powder replacement.** |
+| Can you charge a premium? | ✅ Candy-format servings sell at **$1–2.86** vs $0.50–1.00 for powder — customers pay for convenience + the experience |
+| Is the exact format open? | ✅ Gummy pre-workout has a dominant player (Jüced); **US burst-candy pre-workout has only tiny Amazon sellers** (Energy Rocks, 100mg caffeine) — whitespace |
+| Can you start small? | ⚠️ Harder than gummies: liquid-center manufacturing is specialized; first run **$10–25k** (vs $5–15k plain gummy) |
+| The catch | ⚠️ Burst core fixes the caffeine dose ceiling (100–200mg/serving is feasible via liquid-fill) but **pump actives (citrulline/beta-alanine) still physically don't fit** → position as an energy candy with pre-workout ritual branding, never a powder replacement. And a caffeine liquid core that behaves like candy makes **child-safety the #1 compliance issue**. |
 
 **Bottom line:** The niche is valid, growing, and has a proven price premium. Winning is a marketing/taste/positioning game (paid social CAC is the real cost), not a formulation game. Cheapest real validity test is a landing page + small ad spend **before** buying inventory — see [docs/06-validation-plan.md](docs/06-validation-plan.md).
 

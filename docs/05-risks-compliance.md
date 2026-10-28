@@ -9,12 +9,14 @@
 
 ## Safety — the kid problem (real and getting attention)
 
-Caffeine gummies look like candy. Pediatric-exposure literature on energy products is growing (2025 review of poison-center data; AAP position: no safe level of energy drinks for kids). Regulators and marketplaces are watching this exact product shape.
+Caffeine candy looks and behaves like candy — and a **liquid core that bursts in the mouth is maximum kid appeal while holding concentrated caffeine**. Pediatric-exposure literature on energy products is growing (2025 review of poison-center data; AAP position: no safe level of energy drinks for kids). Regulators and marketplaces are watching this exact product shape.
 
-**Mitigations (table stakes):**
-- Child-resistant packaging option + "KEEP OUT OF REACH OF CHILDREN"
+**Mitigations (non-negotiable for this format):**
+- **Child-resistant packaging** (push-and-turn jar, not a candy bag) + "KEEP OUT OF REACH OF CHILDREN"
 - "Not for individuals under 18" on label and every ad
-- Never use candy-lookalike imagery targeting minors in creative
+- Cap caffeine per piece (~50mg) so a single accidental piece isn't dangerous
+- Never use candy-lookalike imagery or youth-coded creators in ads
+- Sour shell = acid: expect enamel-erosion chatter; sugar-free + "rinse after" guidance reduces it
 
 ## Marketplace requirements
 

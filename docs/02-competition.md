@@ -8,7 +8,17 @@
 | **SAVOR** | Gummies | — | ~$1.00 | Best-tasting per Garage Gym Reviews; budget-friendly |
 | **Animal Energy** | Chew tabs | — | ~$0.93 | Budget; no-frills gym brand halo |
 | **Bucked Up** | Chocolate-covered gummies | — | — | Incumbent powder brand extending into format |
-| Powder incumbents (C4, Gorilla Mode, Transparent Labs, Ghost) | Powder | 150–350mg | $0.50–1.00 | Full clinical doses; what gummies *cannot* compete with on performance |
+| Powder incumbents (C4, Gorilla Mode, Transparent Labs, Ghost) | Powder | 150–350mg | $0.50–1.00 | Full clinical doses; what chewables *cannot* compete with on performance |
+
+## Burst-format (liquid-center) players — the actual lane
+
+| Brand | Format | Notes |
+|---|---|---|
+| **Energy Rocks** | Popping caffeine candy (Amazon) | 100mg caffeine + L-theanine/serving, "fast acting," grab-and-go — small seller, proves demand |
+| **Icy Burst** (Asia) | Liquid-filled soft candy | Coffee energy candy, liquid center, sugar-free — format precedent from overseas |
+| **Trolli Sour Bursting Crawlers / Gusher-style / Gupperz** | Confection | Mainstream candy proof that liquid-fill + sour burst is a beloved format |
+
+**Key takeaway:** the liquid-center *candy* tech is mainstream, and caffeine *candy* exists — but **no one has combined them at Jüced scale in the US supplement market**. That's the whitespace.
 
 ## Key takeaway from the benchmark
 

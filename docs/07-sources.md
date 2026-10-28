@@ -30,3 +30,11 @@ Compliance & safety:
 
 - FDA — Pure and Highly Concentrated Caffeine warning: https://www.fda.gov/food/information-select-dietary-supplement-ingredients-and-other-substances/fda-warns-consumers-about-pure-and-highly-concentrated-caffeine
 - PMC — Pediatric Exposures Associated with Caffeine Energy Products (2025): https://pmc.ncbi.nlm.nih.gov/articles/PMC11933505/
+
+Burst / liquid-center format:
+
+- Nutraceuticals World — Next-Gen Gummies (Rousselot SiMoGel liquid-center tech): https://www.nutraceuticalsworld.com/next-gen-gummies-addressing-manufacturing-challenges-to-deliver-best-in-class-formulations/
+- Energy Rocks — Popping Caffeine Candy (100mg caffeine + L-theanine, Amazon): https://www.amazon.com/Energy-Rocks-Popping-Candy-Crystals/dp/B0DS3ZM7DV
+- Icy Burst — liquid-filled coffee energy candy (Asia): https://m.yami.com/us/en/p/icy-burst-coffee-soft-candy-liquid-filled-center-rich-mellow-coffee-flavor-sugar-free-strong-refreshing-energy-candy-herbal-throat-soothing-candy-party-daily-leisure-candy-68g/3018227161
+- Bailin Food — Top liquid-center gummy exporters: https://bailinfood.wixsite.com/bailin-food/post/top-10-liquid-center-gummies-exporters-in-the-world
+- Candy Funhouse — liquid-filled candy category (Trolli Sour Bursting Crawlers etc.): https://candyfunhouse.com/collections/liquid-filled-candy

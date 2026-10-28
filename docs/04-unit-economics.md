@@ -36,6 +36,7 @@ Supplement DTC lives and dies on paid social. Blended CAC for new supplement bra
 |---|---|---|
 | **Validation (do this first)** | Landing page + waitlist + $500–1k TikTok/Meta creative test + manufacturer samples | **$1–2k** |
 | First run, low-MOQ | 500–2,500 bottles/bags from a low-MOQ manufacturer (Nutrikal ~500 bottles; Matsun ~2,500 gummies; Handian ~1,000 gummies; Your Gummy Vitamins ~500 units) + labels/design/CoA | $5–15k |
+| First run, **liquid-center burst format** | Fewer specialists (co-extrusion / SiMoGel-type lines, several Asia-based); higher MOQs and longer lead times | **$10–25k** |
 | Traditional MOQ | 100k–200k gummies/run (Nutracap and most established players) | $30k+ — **don't start here** |
 
 ## Break-even sketch

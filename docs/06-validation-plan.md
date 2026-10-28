@@ -22,13 +22,14 @@ Goal: replace the assumptions in docs/04 with real data for **<$2k**, then gate 
 | Cost per waitlist signup | < $5 |
 | Qualitative | Comments show purchase intent ("where do I buy") |
 
-## Phase 2 — Supply validation (parallel, weeks 1–4)
+## Phase 2 — Supply validation (parallel, weeks 1–4) — **the long pole for burst format**
 
-- [ ] Request samples + quotes from 3 low-MOQ manufacturers (Nutrikal, Matsun, Handian, Your Gummy Vitamins class) — ask: MOQ, per-bottle cost at 1k units, lead time, melt-point options, CoA + Prop 65 docs, child-resistant packaging option
-- [ ] Order competitor samples (Jüced, SAVOR, Animal chews) → taste/dose teardown
+- [ ] Request samples + quotes from **liquid-center/filled-gummy specialists** (co-extrusion lines, SiMoGel-type tech; several Asia-based exporters, US co-packers emerging) — ask: MOQ, per-piece cost, lead time, caffeine-in-core feasibility, melt/shell stability, CoA + Prop 65 docs, child-resistant packaging options
+- [ ] Plain-gummy and softgel quotes as fallback comparison (softgels = fast MVP, loses candy magic)
+- [ ] Order competitor samples (Energy Rocks, Jüced, SAVOR) → taste/dose teardown
 - [ ] Get 1 regulatory consultant quote for label review
 
-**Gate:** landed COGS ≤ $8/bottle at low MOQ with acceptable CoAs.
+**Gate:** landed COGS ≤ $9/bottle equivalent at low MOQ with acceptable CoAs (burst format runs costlier than plain gummy — kill if way above).
 
 ## Phase 3 — Decision gate (week 5)
 
