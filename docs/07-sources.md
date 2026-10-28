@@ -38,3 +38,27 @@ Burst / liquid-center format:
 - Icy Burst — liquid-filled coffee energy candy (Asia): https://m.yami.com/us/en/p/icy-burst-coffee-soft-candy-liquid-filled-center-rich-mellow-coffee-flavor-sugar-free-strong-refreshing-energy-candy-herbal-throat-soothing-candy-party-daily-leisure-candy-68g/3018227161
 - Bailin Food — Top liquid-center gummy exporters: https://bailinfood.wixsite.com/bailin-food/post/top-10-liquid-center-gummies-exporters-in-the-world
 - Candy Funhouse — liquid-filled candy category (Trolli Sour Bursting Crawlers etc.): https://candyfunhouse.com/collections/liquid-filled-candy
+
+Formulation / home R&D:
+
+- Wikipedia — β-Alanine (solubility 54.5 g/100 mL water): https://en.wikipedia.org/wiki/%CE%92-Alanine
+- US5626896A — Method for making liquid-centered jelly candies (patent): https://patents.google.com/patent/US5626896A/en
+- Dhiman Group — liquid-filled candy machine process: https://www.dhimangroup.com/production-plan-made-simple-with-liquid-filled-candy-machine/
+- Amazing Food — candy with liquid core (silicone mold + syringe injection): https://www.amazing-food.com/candy-with-liquid-core/
+- r/CandyMakers — liquid centre gummy advice (two home methods): https://www.reddit.com/r/CandyMakers/comments/158ltnd/liquid_centre_gummy_advice/
+- r/CandyMakers — sour coating ratios (citric/malic/fumaric): https://www.reddit.com/r/CandyMakers/comments/memhm6/does_anyone_have_a_recipe_for_sour_coating_for/
+- Modernist Pantry — sugar-free isomalt hard candies: https://blog.modernistpantry.com/recipes/flavortastic-hard-candies/
+- Alsiano — isomalt for sugar-free hard candy: https://www.alsiano.com/solutions/sugar-free-hard-candy-natural-sugar-replacement/
+- FDA — pure & highly concentrated caffeine consumer advisory (basis for tablets-only rule): https://www.fda.gov/food/information-select-dietary-supplement-ingredients-and-other-substances/fda-warns-consumers-about-pure-and-highly-concentrated-caffeine
+
+Shopping list references:
+
+- Vitalitown caffeine 200mg (60ct, $5.99 class): https://www.amazon.com/dp/B0FLPY9S8Z
+- BulkSupplements Beta Alanine 250g: https://www.amazon.com/clp/B00EIO4I3O
+- BulkSupplements L-Theanine 250g: https://www.amazon.com/clp/B00E7GESKG
+- LorAnn SS 6-flavor variety pack: https://www.amazon.com/LorAnn-Oils-Strength-Strawberry-Watermelon/dp/B0C91H852D
+- LorAnn Isomalt 1 lb: https://www.amazon.com/clp/B00PKR1ZZW
+- Malic acid 1 lb: https://www.amazon.com/malic-acid-powder-food-grade/s?k=malic+acid+powder+food+grade
+- NOW vegetable glycerin 16 oz: https://www.amazon.com/clp/B0019LWU2K
+- Milligram scale 0.001g: https://www.amazon.com/digital-pocket-scale-0-001g/s?k=digital+pocket+scale+0.001g
+- 50-cavity silicone mini molds: https://www.amazon.com/Square-Terrace-Silicone-Chocolate-Molds-Cavities/dp/B0C28H9BHT
