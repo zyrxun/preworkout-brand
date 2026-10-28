@@ -6,7 +6,7 @@
 |---|---|---|---|
 | 1 | Malic acid powder, food grade 1 lb — **Nutricost 1LB is a good pick** (pure single ingredient, GMP + 3rd-party tested) | https://www.amazon.com/Nutricost-Malic-Acid-Powder-16oz/dp/B08L5P55GR | ~$13 |
 | 2 | LorAnn Super-Strength 6-flavor variety (green apple + watermelon inside) | https://www.amazon.com/LorAnn-Oils-Strength-Strawberry-Watermelon/dp/B0C91H852D | ~$13 |
-| 3 | NOW Solutions vegetable glycerin, food grade, 16 oz | https://www.amazon.com/clp/B0019LWU2K | ~$9 |
+| 3 | Glycerin — NOW 16oz is **food grade despite skin-care marketing** (USP grade; NOW's own listing: "the vegetable glycerine contained in this product is considered food grade"). Zero-doubt alternative: **LorAnn Vegetable Glycerine** (~$10, 4oz = exactly the ~100ml needed, from a candy-supply company) | https://www.amazon.com/clp/B0019LWU2K · LorAnn alt: https://www.amazon.com/dp/B0008DI8PI | ~$8–10 |
 | 4 | Silicone mini molds, 50-cavity (get 2) | https://www.amazon.com/Square-Terrace-Silicone-Chocolate-Molds-Cavities/dp/B0C28H9BHT | ~$10 |
 | 5 | Plastic syringes no-needle, 20-pack (1/3/5/10ml) | https://www.amazon.com/20Pack-10ml-Syringe-Without-Needle/dp/B08QFGYYPH | ~$8 |
 | 6 | Candy/deep-fry thermometer with pot clip | https://www.amazon.com/Stainless-Steel-Candy-Thermometer-Handle/dp/B0FNC43K18 | ~$9 |
