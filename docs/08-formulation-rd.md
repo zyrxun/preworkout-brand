@@ -27,6 +27,18 @@ How a caffeine + L-theanine + beta-alanine burst candy could actually work, grou
 | Pectin gummy | Chewier, vegan | Medium (needs acid/calcium set, trickier texture) | Later optimization; also solves vegan + melt-point |
 | Spherification (popping boba) | Membrane burst | Easy but useless for dosing/shelf | Demo/content only, not a product path |
 
+## Bitterness control (why caffeine never gets tasted)
+
+Caffeine is brutally bitter raw — that's a property of the molecule, not a formulation mistake. The fix is architectural, not heroic:
+
+1. **Bury it in the core.** Caffeine only exists dissolved in the burst liquid, which the shell hides until you bite. You never taste pure caffeine; you taste a 40ms flood of sour+sweet that masks it.
+2. **Sour is the strongest bitterness masker.** Malic/citric acid in the core (1.5g/batch) suppresses bitter perception directly.
+3. **Theanine helps** — it's the classic caffeine smoothener in RTD energy drinks, and its mild umami rounds the edge.
+4. **Pinch of salt** (~0.3g per core batch) — sodium suppresses bitterness perceptibly.
+5. **Serve cold.** Bitter perception rises with temperature; fridge-cold pieces taste milder.
+6. **Flavor at full candy concentration** — ¼–½ tsp LorAnn per pound is the floor; the core can take a little extra.
+7. If a variant still reads bitter: add 1–2g allulose to the core, bump malic slightly, re-test. **v2/commercial option: β-cyclodextrin** (food-grade, e.g. Modernist Pantry) — it inclusion-complexes caffeine and is the industry bitterness-masking trick.
+
 ## Flavor & sour system (how flavors go in)
 
 - **Flavors:** LorAnn Super-Strength oils — concentrated for candy work, heat-stable in hot syrup (that's what hard-candy makers use). Base flavors to test: **green apple, watermelon, blue raspberry** (~1/4–1/2 tsp per pound of candy; scale to taste). Flavor goes into BOTH layers: most in the core, a little in the shell.

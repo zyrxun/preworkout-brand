@@ -19,7 +19,7 @@ Per serving (4 pieces): **200mg caffeine / 200mg theanine / ~1g beta-alanine.**
 
 ### Core master syrup (makes 24 cores, 36g total)
 
-1. Dissolve **6 × 200mg caffeine tablets** (1200mg) in **20g hot water**.
+1. Dissolve **6 × 200mg caffeine tablets** (1200mg) in **20g hot water**. Stir until fully dissolved; a tablet binder may leave sediment — **strain through a coffee filter** and keep the clear liquid. Never dry the extract back into powder (that recreates the bitterness problem and the dosing hazard) — the caffeine lives in the liquid core, where it's masked.
 2. Stir in **1200mg L-theanine** and **6000mg beta-alanine** until dissolved (warm helps; slight haze OK).
 3. Add **16g vegetable glycerin**, **1.5g malic acid**, **~½ tsp LorAnn flavor** (green apple first).
 4. Total ≈ 36g. Keep warm (~50°C) — beta-alanine can recrystallize as it cools.
