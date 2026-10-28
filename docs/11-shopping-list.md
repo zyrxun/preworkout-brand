@@ -4,7 +4,7 @@
 
 | # | Item | Link | Est. price |
 |---|---|---|---|
-| 1 | Malic acid powder, food grade 1 lb | https://www.amazon.com/malic-acid-powder-food-grade/s?k=malic+acid+powder+food+grade | ~$13 |
+| 1 | Malic acid powder, food grade 1 lb — **Nutricost 1LB is a good pick** (pure single ingredient, GMP + 3rd-party tested) | https://www.amazon.com/Nutricost-Malic-Acid-Powder-16oz/dp/B08L5P55GR | ~$13 |
 | 2 | LorAnn Super-Strength 6-flavor variety (green apple + watermelon inside) | https://www.amazon.com/LorAnn-Oils-Strength-Strawberry-Watermelon/dp/B0C91H852D | ~$13 |
 | 3 | NOW Solutions vegetable glycerin, food grade, 16 oz | https://www.amazon.com/clp/B0019LWU2K | ~$9 |
 | 4 | Silicone mini molds, 50-cavity (get 2) | https://www.amazon.com/Square-Terrace-Silicone-Chocolate-Molds-Cavities/dp/B0C28H9BHT | ~$10 |
