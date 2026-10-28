@@ -6,7 +6,7 @@ Prices are October 2026 search-time estimates — verify at checkout. Quantities
 
 | Item | Size | Est. price | Notes / listing to search |
 |---|---|---|---|
-| Caffeine tablets, 200mg | 60 ct (Vitalitown) or Vivarin | $6–12 | **Tablets ONLY — never bulk caffeine powder (FDA warning).** 6 tabs per core batch |
+| Caffeine pills (capsules) or tablets, 200mg | 60 ct (Vitalitown) or Vivarin | $6–12 | **Encapsulated/tablet ONLY — never bulk caffeine powder (FDA warning).** 6 pills per core batch; you already have these |
 | Beta-alanine powder | 250g (BulkSupplements) | ~$16 | 6g per core batch → 250mg/piece |
 | L-theanine powder | 250g (BulkSupplements) | ~$19 | 1.2g per core batch → 50mg/piece |
 
