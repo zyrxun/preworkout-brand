@@ -26,6 +26,8 @@ Business planning + validity repo for a **liquid-core burst candy** pre-workout 
 | [docs/05-risks-compliance.md](docs/05-risks-compliance.md) | FDA/supplement compliance, safety, ops risks |
 | [docs/06-validation-plan.md](docs/06-validation-plan.md) | Step-by-step cheap validity test + launch gates |
 | [docs/12-brand-names.md](docs/12-brand-names.md) | Brand name candidates + trademark/domain/handle screening (draft) |
+| [docs/13-shelf-life-stability.md](docs/13-shelf-life-stability.md) | Do the actives survive 2 weeks/2 months/6 months? Verdict + formulation tweaks |
+| [docs/14-competitor-demand-intel.md](docs/14-competitor-demand-intel.md) | Competitor teardown, complaint mining, demand signals, whitespace + pricing ladder |
 | [docs/07-sources.md](docs/07-sources.md) | All sources cited |
 | [docs/08-formulation-rd.md](docs/08-formulation-rd.md) | Literature-based formulation: solubility/stability, construction methods, flavor & sour systems, safety + price/doability double-check |
 | [docs/09-home-testing.md](docs/09-home-testing.md) | Can you make it at home (yes-prototype/no-product), v1 recipe, self-test protocol |

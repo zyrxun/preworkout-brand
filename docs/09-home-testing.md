@@ -22,7 +22,7 @@ Per serving (4 pieces): **200mg caffeine / 200mg theanine / ~1g beta-alanine.**
 
 1. Caffeine source: **6 × 200mg pills** — capsules: open them and dump the powder into **20g hot water** (tablets work too, just drop in). Stir until fully dissolved; binders/flow agents may leave sediment — **strain through a coffee filter** and keep the clear liquid. Dosing is accounted by capsule count, so no powder weighing needed. Never dose loose powder directly or dry the extract back into powder (bitterness + hazard) — the caffeine lives in the liquid core, where it's masked. Open capsules over the pot and wipe spills immediately (keep powder away from kids/pets).
 2. Stir in **1200mg L-theanine** and **6000mg beta-alanine** until dissolved (warm helps; slight haze OK).
-3. Add **16g vegetable glycerin**, **1.5g malic acid**, **~½ tsp LorAnn flavor** (green apple first).
+3. Add **16g vegetable glycerin**, **0.6g malic acid** (v1.1 — was 1.5g: keep core pH ≥3.0, theanine hydrolyzes ~2x faster below pH 3; the sour punch lives in the coating), **~½ tsp LorAnn flavor** (green apple first).
 4. Total ≈ 36g. Keep warm (~50°C) — beta-alanine can recrystallize as it cools.
 5. **Dose check:** 36g ÷ 24 pieces = 1.5g/piece → 1.5g × (1200mg/36g) = 50mg caffeine ✓. Weigh every deposit on the 0.01g scale; log it.
 

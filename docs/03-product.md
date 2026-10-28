@@ -29,7 +29,7 @@ Brief requirement: **beta-alanine + L-theanine minimum, plus caffeine.**
 | Per-piece cap | ~50mg keeps a single stray piece non-dangerous (still: child-resistant packaging, docs/05) |
 | Signature sensory | **Warheads-level sour shell** → sweet core. Brand mechanic idea: "sour levels" like heat levels (Level 1 → Nuclear) |
 | Shell | Pectin or gelatin; core: glycerin/water solution with caffeine + theanine + flavor |
-| Sugar | Sugar-free (allulose/stevia) — sugar + acid doubles enamel erosion, and gym buyers expect no-sugar |
+| Sugar | **v1.1: isomalt/maltitol + stevia (not allulose** — allulose is a reducing sugar and browns faster than glucose near amino acids; see docs/13). Shell v1 practice batches can still use sugar + corn syrup — actives sit in the core, separated |
 | Packaging | 30-serving child-resistant jar + 12-count single-serve pouch packs (gym bag, sampling, creator seeding) |
 
 ## Manufacturing reality (the hard part)
