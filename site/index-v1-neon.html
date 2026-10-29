@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ============================================================
+       BRANDNAME PLACEHOLDER: the literal token "BRANDNAME" appears
+       everywhere the brand name should go (title, meta, header,
+       footer, legal, copyright). Find-replace it (case-sensitive)
+       once the name is decided.
+       ============================================================ -->
+  <title>BRANDNAME — Pre-workout that explodes</title>
+  <meta name="description" content="BRANDNAME is a burst-candy pre-workout: sour shell, liquid energy core, and a tingle that says it's working. 4 pieces = 200mg caffeine + 200mg L-theanine + ~1g beta-alanine. Sugar-free, coming soon. Join the waitlist.">
+  <meta property="og:title" content="BRANDNAME — Pre-workout that explodes">
+  <meta property="og:description" content="Sour shell, energy core, and a tingle that says it's working. Coming soon — join the waitlist.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BRANDNAME">
+  <meta name="theme-color" content="#050507">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050507'/%3E%3Cpath d='M16 3 L20 16 L16 29 L12 16 Z' fill='none' stroke='%2339ff14' stroke-width='1.6'/%3E%3Cpath d='M16 12 L17.6 16 L16 20 L14.4 16 Z' fill='%23a44fff'/%3E%3C/svg%3E">
+  <!-- 2 Google Fonts max: Pirata One (gothic blackletter display) + Share Tech Mono (cyber labels/data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Share+Tech+Mono&display=swap">
+  <style>
+    :root{
+      --void:#050507;
+      --panel:#0a0a0e;
+      --bone:#e9e5d8;
+      --ash:#98948a;
+      --faint:#6d6a62;
+      --line:rgba(233,229,216,.14);
+      --acid:#39ff14;
+      --violet:#a44fff;
+      --blood:#e5383b;
+      --font-display:"Pirata One","Old English Text MT",serif;
+      --font-mono:"Share Tech Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color-scheme:dark;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--void)}
+    body{
+      margin:0;
+      color:var(--bone);
+      font-family:var(--font-body);
+      font-size:1rem;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      background:
+        radial-gradient(1100px 520px at 50% -140px, rgba(164,79,255,.10), transparent 65%),
+        radial-gradient(900px 480px at 88% 112%, rgba(57,255,20,.06), transparent 65%),
+        linear-gradient(rgba(233,229,216,.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(233,229,216,.026) 1px, transparent 1px),
+        var(--void);
+      background-size:auto,auto,44px 44px,44px 44px,auto;
+    }
+    /* scanline texture — sits over everything, imperceptible per pixel */
+    body::after{
+      content:"";position:fixed;inset:0;z-index:90;pointer-events:none;
+      background:repeating-linear-gradient(0deg, rgba(57,255,20,.035) 0 1px, transparent 1px 3px);
+    }
+    ::selection{background:var(--acid);color:var(--void)}
+    a{color:var(--acid)}
+    :focus-visible{outline:2px solid var(--acid);outline-offset:3px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    .skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--acid);color:var(--void);padding:10px 16px;font-family:var(--font-mono);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    .skip:focus{left:8px}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+    section{scroll-margin-top:24px}
+    .w-acid{color:var(--acid)} .w-violet{color:var(--violet)} .w-blood{color:var(--blood)}
+
+    /* ---------- sigil ornaments (hand-drawn, referenced via <use>) ---------- */
+    .sigil{display:block;color:rgba(164,79,255,.55)}
+    .sigil .sg-core{fill:var(--acid);stroke:var(--acid);stroke-width:1}
+    .divider{display:flex;justify-content:center;padding:6px 0}
+    .divider .sigil{width:min(340px,72vw);height:auto}
+
+    /* ---------- header ---------- */
+    .top{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+    .wordmark{font-family:var(--font-display);font-weight:400;font-size:1.4rem;letter-spacing:.05em;color:var(--bone);text-decoration:none;display:inline-flex;align-items:center;gap:11px;line-height:1}
+    .mark{width:11px;height:11px;flex:none;background:var(--acid);transform:rotate(45deg);box-shadow:0 0 12px rgba(57,255,20,.6)}
+    .top nav{display:flex;align-items:center;gap:24px}
+    .top nav a:not(.cta){color:var(--ash);text-decoration:none;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;transition:color .15s ease,text-shadow .15s ease}
+    .top nav a:not(.cta):hover{color:var(--bone);text-shadow:0 0 12px rgba(57,255,20,.55)}
+    .cta{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--void);background:var(--acid);padding:10px 16px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);transition:filter .15s ease}
+    .cta:hover{filter:drop-shadow(0 0 12px rgba(57,255,20,.55))}
+    @media(max-width:639px){.top nav a:not(.cta){display:none}}
+
+    /* ---------- hero ---------- */
+    .hero{position:relative;overflow:hidden;text-align:center;padding:34px 0 72px}
+    .glow{position:absolute;border-radius:50%;filter:blur(110px);opacity:.14;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .glow--acid{width:420px;height:420px;background:var(--acid);top:-160px;left:-150px}
+    .glow--violet{width:480px;height:480px;background:var(--violet);top:-110px;right:-190px;animation-delay:-6s}
+    @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(14px,12px,0)}}
+    .hero > .wrap{position:relative}
+    .sigil--blade{width:clamp(64px,14vw,92px);height:auto;margin:0 auto 18px;color:rgba(233,229,216,.5)}
+    .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);margin:0 0 22px}
+    .eyebrow b{color:var(--acid);font-weight:400;text-shadow:0 0 14px rgba(57,255,20,.5)}
+    .hero h1{
+      font-family:var(--font-display);font-weight:400;margin:0 auto 18px;max-width:900px;
+      font-size:clamp(2.7rem,11vw,5.2rem);line-height:1.08;text-wrap:balance;
+    }
+    .hero h1 .l2{display:block;margin-top:14px;font-size:clamp(1.3rem,5.2vw,2.1rem);line-height:1.35;text-wrap:pretty}
+    /* single restrained glitch: brief RGB-split flicker on an otherwise still title */
+    .glitch{animation:rgbsplit 6s infinite steps(1,end);text-shadow:0 0 26px rgba(57,255,20,.10)}
+    @keyframes rgbsplit{
+      0%,88%{text-shadow:0 0 26px rgba(57,255,20,.10)}
+      89%{text-shadow:-3px 0 rgba(57,255,20,.65),3px 0 rgba(164,79,255,.65)}
+      91%{text-shadow:2px 0 rgba(57,255,20,.5),-2px 0 rgba(229,56,59,.5)}
+      93%{text-shadow:-1px 0 rgba(164,79,255,.6),1px 0 rgba(229,56,59,.4)}
+      95%,100%{text-shadow:0 0 26px rgba(57,255,20,.10)}
+    }
+    .hero .sub{max-width:600px;margin:0 auto 34px;color:var(--ash);font-size:1.02rem}
+    /* thorned spines framing the hero edges (desktop only) */
+    .sigil--spine{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:auto;opacity:.55}
+    .sigil--spine-l{left:3.5vw}
+    .sigil--spine-r{right:3.5vw}
+    @media(max-width:959px){.sigil--spine{display:none}}
+
+    /* ---------- waitlist form ---------- */
+    .waitlist{max-width:520px;margin:0 auto;scroll-margin-top:32px}
+    .waitlist-label{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin:0 0 12px}
+    .waitlist-form{display:grid;gap:10px}
+    @media(min-width:600px){.waitlist-form{grid-template-columns:1fr 1.35fr auto}}
+    .waitlist-form input{
+      width:100%;min-height:50px;padding:0 16px;
+      border:1px solid var(--line);background:rgba(233,229,216,.035);color:var(--bone);
+      font-family:var(--font-mono);font-size:.9rem;
+    }
+    .waitlist-form input::placeholder{color:var(--faint)}
+    .waitlist-form input:focus{border-color:var(--acid);outline:none;box-shadow:0 0 0 3px rgba(57,255,20,.15)}
+    .btn{
+      min-height:50px;padding:0 24px;border:0;cursor:pointer;
+      background:var(--acid);color:var(--void);
+      font-family:var(--font-mono);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+      white-space:nowrap;
+      clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);
+      transition:transform .15s ease,filter .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px);filter:drop-shadow(0 0 16px rgba(57,255,20,.5))}
+    @media(max-width:599px){.btn{width:100%}}
+    .fineprint{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:14px 0 0}
+    /* success state: `hidden` attribute is the single source of truth.
+       display:flex only applies when NOT hidden — so a leftover
+       display rule can never override the hidden attribute again. */
+    .success{
+      margin:0;padding:16px 18px;
+      border:1px solid rgba(57,255,20,.5);background:rgba(57,255,20,.06);color:var(--acid);
+      font-family:var(--font-mono);font-size:.9rem;letter-spacing:.04em;
+    }
+    .success:not([hidden]){display:flex;align-items:center;justify-content:center;gap:10px}
+
+    /* ---------- generic sections ---------- */
+    .sec{padding:64px 0}
+    @media(min-width:820px){.sec{padding:84px 0}}
+    .sec-head{margin-bottom:34px;max-width:640px}
+    .sec-head h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,7vw,2.9rem);margin:0 0 10px;line-height:1.15}
+    .sec-head p{color:var(--ash);margin:0}
+
+    /* ---------- how it works ---------- */
+    .steps{list-style:none;margin:0;padding:0;display:grid;gap:34px}
+    @media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr);gap:32px}}
+    .step{border-top:1px solid var(--line);padding-top:18px}
+    .step .num{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.3em;color:var(--step,var(--acid))}
+    .step--shell{--step:var(--acid)} .step--core{--step:var(--violet)} .step--tingle{--step:var(--blood)}
+    .step .num{text-shadow:0 0 12px color-mix(in srgb,var(--step,var(--acid)) 45%,transparent)}
+    .step h3{font-family:var(--font-display);font-weight:400;font-size:1.55rem;margin:10px 0 8px;line-height:1.2}
+    .step p{margin:0;color:var(--ash);font-size:.95rem}
+
+    /* ---------- formula strip ---------- */
+    .formula{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .strip-label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);margin:0 0 16px}
+    .facts{
+      list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);
+      gap:1px;background:var(--line);border:1px solid var(--line);overflow:hidden;
+    }
+    @media(min-width:700px){.facts{grid-template-columns:repeat(4,1fr)}}
+    .facts li{background:var(--panel);padding:26px 20px}
+    .facts .val{font-family:var(--font-mono);font-size:clamp(1.5rem,4.5vw,2rem);display:block;line-height:1.1}
+    .facts .lbl{display:block;margin-top:8px;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
+    .val--acid{color:var(--acid);text-shadow:0 0 18px rgba(57,255,20,.35)}
+    .val--violet{color:var(--violet);text-shadow:0 0 18px rgba(164,79,255,.35)}
+    .val--blood{color:var(--blood);text-shadow:0 0 18px rgba(229,56,59,.3)}
+    .footnote{font-size:.78rem;color:var(--faint);margin:16px 0 0;max-width:640px}
+
+    /* ---------- FAQ ---------- */
+    .faq{counter-reset:q}
+    .faq details{border-bottom:1px solid var(--line);counter-increment:q}
+    .faq details:first-of-type{border-top:1px solid var(--line)}
+    .faq summary{
+      list-style:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:14px;
+      cursor:pointer;padding:19px 2px;font-weight:600;font-size:1.02rem;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::before{content:"Q." counter(q,decimal-leading-zero);font-family:var(--font-mono);font-weight:400;font-size:.74rem;letter-spacing:.1em;color:var(--faint)}
+    .faq summary::after{content:"+";font-family:var(--font-mono);font-weight:400;color:var(--acid);text-shadow:0 0 10px rgba(57,255,20,.5)}
+    .faq details[open] summary::after{content:"\2212"}
+    .faq details p{margin:0;padding:0 2px 21px;color:var(--ash);max-width:660px;font-size:.95rem}
+
+    /* ---------- footer ---------- */
+    footer{border-top:1px solid var(--line);padding:48px 0 56px;margin-top:24px}
+    .foot-grid{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
+    .foot-tag{color:var(--ash);font-size:.9rem;margin:6px 0 0}
+    .socials{display:flex;gap:20px}
+    .socials a{color:var(--ash);text-decoration:none;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;transition:color .15s ease,text-shadow .15s ease}
+    .socials a:hover{color:var(--bone);text-shadow:0 0 12px rgba(57,255,20,.55)}
+    .warning{
+      display:inline-block;margin:28px 0 14px;padding:8px 16px;
+      border:1px solid rgba(229,56,59,.6);color:var(--blood);
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+      box-shadow:inset 0 0 18px rgba(229,56,59,.08);
+    }
+    .legal{font-size:.78rem;color:var(--ash);max-width:780px;line-height:1.7;margin:0}
+    .copyright{margin:20px 0 0;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em;color:var(--faint)}
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .glitch{animation:none}
+      .glow{animation:none}
+      .btn,.cta{transition:none}
+      .top nav a:not(.cta):hover,.socials a:hover{text-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#waitlist">Skip to waitlist</a>
+
+  <!-- hand-drawn cyber-sigilism ornaments: thin thorn/spike line-work, drawn once, reused via <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- horizontal thorned flourish — left half, mirrored by the caller -->
+      <g id="sg-flourish">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M180 4 L185 16 L180 28 L175 16 Z"/>
+          <path d="M171 16 L66 16"/>
+          <path d="M161 16 L153 10.5 M161 16 L153 21.5"/>
+          <path d="M143 16 L136 11.5 M143 16 L136 20.5"/>
+          <path d="M126 16 L120 12.5 M126 16 L120 19.5"/>
+          <path d="M110 16 L105 13.5 M110 16 L105 18.5"/>
+          <path d="M95 16 L91 14.5 M95 16 L91 17.5"/>
+          <path d="M66 16 L60 16"/>
+          <path d="M60 16 L64.5 12.6 M60 16 L64.5 19.4"/>
+        </g>
+        <path class="sg-core" d="M180 12.4 L182.1 16 L180 19.6 L177.9 16 Z"/>
+      </g>
+      <!-- vertical blade sigil — hero crown -->
+      <g id="sg-blade">
+        <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 3 C57 21 52 33 44 42 L60 91 L76 42 C68 33 63 21 60 3 Z"/>
+          <path d="M50 31 C43 28 38 22 36 14"/>
+          <path d="M41.5 21 C37.5 23 33 23 29 21"/>
+          <path d="M70 31 C77 28 82 22 84 14"/>
+          <path d="M78.5 21 C82.5 23 87 23 91 21"/>
+          <path d="M47 50 C40 54 33 54 26 50"/>
+          <path d="M73 50 C80 54 87 54 94 50"/>
+          <path d="M44 64 L76 64"/>
+          <path d="M44 64 L38 61.5 M44 64 L38 66.5"/>
+          <path d="M76 64 L82 61.5 M76 64 L82 66.5"/>
+        </g>
+        <circle class="sg-core" cx="60" cy="64" r="2.3"/>
+      </g>
+      <!-- vertical thorned spine — hero edge framing -->
+      <g id="sg-spine">
+        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 14 L20 308"/>
+          <path d="M20 2 L23.5 8 L20 14 L16.5 8 Z"/>
+          <path d="M20 308 L23.5 314 L20 320 L16.5 314 Z"/>
+          <path d="M20 58 L11 50 M20 58 L29 50"/>
+          <path d="M20 96 L13 90 M20 96 L27 90"/>
+          <path d="M20 134 L10 126 M20 134 L30 126"/>
+          <path d="M20 172 L13 166 M20 172 L27 166"/>
+          <path d="M20 210 L11 202 M20 210 L29 202"/>
+          <path d="M20 248 L14 243 M20 248 L26 243"/>
+          <path d="M20 286 L12 280 M20 286 L28 280"/>
+        </g>
+      </g>
+    </defs>
+  </svg>
+
+  <header class="wrap top">
+    <a class="wordmark" href="#top"><span class="mark" aria-hidden="true"></span>BRANDNAME</a>
+    <nav aria-label="Page">
+      <a href="#how">How it works</a>
+      <a href="#formula">Formula</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="#waitlist">Join waitlist</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero" aria-label="Intro">
+      <div class="glow glow--acid" aria-hidden="true"></div>
+      <div class="glow glow--violet" aria-hidden="true"></div>
+      <svg class="sigil sigil--spine sigil--spine-l" viewBox="0 0 40 322" aria-hidden="true" focusable="false"><use href="#sg-spine"/></svg>
+      <svg class="sigil sigil--spine sigil--spine-r" viewBox="0 0 40 322" aria-hidden="true" focusable="false"><use href="#sg-spine"/></svg>
+      <div class="wrap">
+        <svg class="sigil sigil--blade" viewBox="0 0 120 96" aria-hidden="true" focusable="false"><use href="#sg-blade"/></svg>
+        <p class="eyebrow"><b>[ Coming soon ]</b> // not for sale yet</p>
+        <h1 class="glitch">Pre-workout that explodes. <span class="l2"><span class="w-acid">Sour shell</span>, <span class="w-violet">energy core</span>, and a <span class="w-blood">tingle</span> that says it's working.</span></h1>
+        <p class="sub">A sugar-free burst candy wired like a pre-workout: sour outside, liquid energy core inside, four pieces per serving.</p>
+
+        <div class="waitlist" id="waitlist">
+          <div id="waitlist-live">
+            <p class="waitlist-label">Join the waitlist — be first when we drop.</p>
+            <!-- ============================================================
+                 WAITLIST FORM — placeholder action. Not connected yet (no
+                 signup is possible at this stage). To hook it up later:
+
+                 • Formspree: create a form, then set
+                     action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                   Field names below ("name", "email") work as-is, then delete
+                   the placeholder <script> at the bottom of this file.
+
+                 • Tally: build the form in Tally and either embed it here
+                   (iframe) or point this form's action at your Tally endpoint.
+
+                 The success state below is FAKE (client-side only) — replace it
+                 with the provider's real redirect/thank-you page.
+                 ============================================================ -->
+            <form id="waitlist-form" class="waitlist-form" action="#" method="POST">
+              <div>
+                <label class="sr-only" for="wl-name">First name (optional)</label>
+                <input id="wl-name" name="name" type="text" autocomplete="given-name" placeholder="First name">
+              </div>
+              <div>
+                <label class="sr-only" for="wl-email">Email</label>
+                <input id="wl-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
+              </div>
+              <button class="btn" type="submit">Get early access</button>
+            </form>
+            <p class="fineprint">18+ only. Keep out of reach of children. One launch email — no spam.</p>
+          </div>
+          <p class="success" id="waitlist-success" hidden role="status">You're on the list — watch your inbox for the drop.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg class="sigil" viewBox="0 0 360 32" focusable="false"><use href="#sg-flourish"/><use href="#sg-flourish" transform="translate(360 0) scale(-1 1)"/></svg>
+    </div>
+
+    <!-- ============ 2. HOW IT WORKS ============ -->
+    <section class="sec" id="how">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>How it works</h2>
+          <p>Three seconds from sour to set.</p>
+        </div>
+        <ol class="steps">
+          <li class="step step--shell">
+            <span class="num">STEP 01</span>
+            <h3>Sour shell</h3>
+            <p>Bite in. It puckers — bright, loud, zero sugar. The shell cracks fast.</p>
+          </li>
+          <li class="step step--core">
+            <span class="num">STEP 02</span>
+            <h3>Burst core</h3>
+            <p>The liquid energy core bursts: 200mg caffeine + 200mg L-theanine. No shaker, no chalk, no half-mixed scoop.</p>
+          </li>
+          <li class="step step--tingle">
+            <span class="num">STEP 03</span>
+            <h3>Tingle kicks in</h3>
+            <p>Beta-alanine's pins-and-needles roll in a few minutes later. That tingle means it's working. Go take your set.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg class="sigil" viewBox="0 0 360 32" focusable="false"><use href="#sg-flourish"/><use href="#sg-flourish" transform="translate(360 0) scale(-1 1)"/></svg>
+    </div>
+
+    <!-- ============ 3. FORMULA STRIP ============ -->
+    <section class="formula sec" id="formula">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>The formula</h2>
+          <p>Caffeine for drive, L-theanine to keep it clean, beta-alanine for the endurance burn.</p>
+        </div>
+        <p class="strip-label">Per serving &middot; 4 pieces</p>
+        <ul class="facts">
+          <li><span class="val val--acid">200mg</span><span class="lbl">Caffeine</span></li>
+          <li><span class="val val--violet">200mg</span><span class="lbl">L-Theanine</span></li>
+          <li><span class="val val--blood">~1g</span><span class="lbl">Beta-Alanine</span></li>
+          <li><span class="val">0g*</span><span class="lbl">Sugar</span></li>
+        </ul>
+        <p class="footnote">*Sugar-free formula planned for launch — final supplement facts will be printed on the jar. Drops as a jar plus single-serve pouches you can toss in your gym bag.</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg class="sigil" viewBox="0 0 360 32" focusable="false"><use href="#sg-flourish"/><use href="#sg-flourish" transform="translate(360 0) scale(-1 1)"/></svg>
+    </div>
+
+    <!-- ============ 4. FAQ ============ -->
+    <section class="sec faq" id="faq">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Questions, answered.</h2>
+        </div>
+        <details>
+          <summary><span>So… what is it, exactly?</span></summary>
+          <p>Burst candy built like a pre-workout. The outside is an extremely sour shell; the inside is a liquid energy core. Four pieces = one serving: 200mg caffeine, 200mg L-theanine, ~1g beta-alanine. Take it about 15 minutes before training — no shaker bottle required.</p>
+        </details>
+        <details>
+          <summary><span>When does it launch?</span></summary>
+          <p>Soon — it's not for sale yet. The waitlist gets the drop date first and first access to launch batches. It'll come as a jar and single-serve pouches.</p>
+        </details>
+        <details>
+          <summary><span>Is it safe? Who's it for?</span></summary>
+          <p>It's made for healthy adults 18+. One serving has 200mg of caffeine — about a large cold brew — so skip it if you're under 18, caffeine-sensitive, or pregnant, and don't stack it with other caffeinated drinks or supplements. The beta-alanine tingle feels strange but is normal and harmless. As with any supplement, check with your doctor if you have a medical condition. Keep out of reach of children.</p>
+        </details>
+        <details>
+          <summary><span>How much will it cost?</span></summary>
+          <p>Pricing isn't locked yet. Join the waitlist and you'll get launch pricing — plus a heads-up before public sale — the moment it's set.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 5. FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <span class="wordmark"><span class="mark" aria-hidden="true"></span>BRANDNAME</span>
+          <p class="foot-tag">Pre-workout that explodes.</p>
+        </div>
+        <!-- TODO: replace href="#" with real profile URLs when accounts exist -->
+        <div class="socials" aria-label="Social media">
+          <a href="#" title="TikTok — coming soon">TikTok</a>
+          <a href="#" title="Instagram — coming soon">Instagram</a>
+          <a href="#" title="X — coming soon">X</a>
+        </div>
+      </div>
+      <p class="warning">18+ only &middot; Keep out of reach of children</p>
+      <p class="legal">BRANDNAME is a dietary supplement. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Coming soon — not for sale yet. Formula, flavors, and packaging are planned and may change before launch. Not for use by anyone under 18.</p>
+      <p class="copyright">&copy; 2026 BRANDNAME. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // PLACEHOLDER success state — fake, client-side only.
+    // Delete this entire <script> block when you connect a real backend
+    // (Formspree / Tally) and let the provider handle success.
+    (function () {
+      var form = document.getElementById('waitlist-form');
+      var live = document.getElementById('waitlist-live');
+      var done = document.getElementById('waitlist-success');
+      if (!form || !live || !done) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        live.hidden = true;
+        done.hidden = false;
+      });
+    })();
+  </script>
+</body>
+</html>
