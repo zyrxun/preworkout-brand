@@ -1,5 +1,7 @@
 # Shopping List — First Experimentation Kit (Amazon, est. ~$150–170)
 
+**Split shopping (Oct 2026):** grocery-tier items at **Meijer** (Knox, sugar, Karo, thermometer, citric; LorAnn is Michigan-based — check Meijer's baking aisle before ordering the 6-pack online), specialty/precision items **Amazon-only** (malic acid, molds, scales, pipettes, isomalt). Already owned: caffeine pills, beta-alanine, L-theanine. Meijer run ≈ $15–20 · Amazon ≈ $80–85.
+
 ## Ready-to-click cart (Richard's version — already has caffeine pills, beta-alanine, L-theanine)
 
 | # | Item | Link | Est. price |
