@@ -165,7 +165,7 @@
     }
     .hero h1 .l2{display:block;margin-top:14px;font-size:clamp(1.3rem,5vw,2rem);line-height:1.35;text-wrap:pretty}
     /* single restrained glitch: brief bone/blood split flicker on an otherwise still title */
-    .glitch{animation:rgbsplit 7s infinite steps(1,end)}
+    .glitch{animation:rgbsplit 5s infinite steps(1,end)}
     @keyframes rgbsplit{
       0%,90%{text-shadow:none}
       91%{text-shadow:-3px 0 rgba(229,56,59,.7),3px 0 rgba(232,228,216,.4)}
@@ -306,8 +306,8 @@
       .h-anim--3{animation-delay:.52s}
       .h-anim--4{animation-delay:.66s}
       @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-      /* headline: one hard glitch burst at entrance, then the slow 7s flicker */
-      .gburst{animation:glitchburst .45s steps(2,end) .75s 1, rgbsplit 7s infinite steps(1,end) 3.2s}
+      /* headline: one hard glitch burst at entrance, then recurring flicker every 5s */
+      .gburst{animation:glitchburst .45s steps(2,end) .75s 1, rgbsplit 5s infinite steps(1,end) 2.2s}
       @keyframes glitchburst{
         0%{text-shadow:none;transform:translate(0)}
         25%{text-shadow:-4px 0 rgba(229,56,59,.85),4px 0 rgba(232,228,216,.5);transform:translate(2px,-1px)}
@@ -392,6 +392,19 @@
       .gburst{animation:none}
       .btn,.cta{transition:none}
     }
+
+    /* ==== LIGHTNING FX — remove this whole block to disable ==== */
+    .lightning-hit{position:absolute;top:0;height:100%;width:130px;pointer-events:none;opacity:0;animation:lb-in .38s steps(1,end) forwards}
+    .lightning-bolt{position:absolute;top:-4vh;width:110px;height:62vh;overflow:visible}
+    .lb-glow{fill:none;stroke:rgba(217,4,41,.55);stroke-width:7;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(217,4,41,.8))}
+    .lb-core{fill:none;stroke:var(--bone);stroke-width:2.5;stroke-linecap:round}
+    .lb-branch{fill:none;stroke:var(--bone);stroke-width:1.5;opacity:.8}
+    .lightning-flash{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0,rgba(232,228,216,.13),transparent 65%);animation:lb-flash .38s ease-out forwards}
+    @keyframes lb-in{0%{opacity:0}6%{opacity:1}38%{opacity:.2}50%{opacity:.9}72%{opacity:.15}100%{opacity:0}}
+    @keyframes lb-flash{0%{opacity:0}18%{opacity:1}100%{opacity:0}}
+    body.thunder main{animation:thunder .26s steps(2,end)}
+    @keyframes thunder{0%{transform:translate(0)}30%{transform:translate(1px,2px)}60%{transform:translate(-1px,-1px)}100%{transform:translate(0)}}
+    @media (prefers-reduced-motion: reduce){.lightning-hit,.lightning-flash{display:none!important}}
   </style>
 </head>
 <body>
@@ -800,6 +813,42 @@
         });
       });
     })();
-  </script>
+    /* ==== LIGHTNING FX (sandboxed) — set LIGHTNING_FX=false or delete this block to remove ==== */
+  (function(){
+    var LIGHTNING_FX = true;
+    if (!LIGHTNING_FX) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var layer = document.getElementById('fx-layer');
+    if (!layer) return;
+    var BOLT = '<svg class="lightning-bolt" viewBox="0 0 100 300" preserveAspectRatio="none" aria-hidden="true" focusable="false">' +
+      '<path class="lb-glow" d="M52 -6 L40 84 L54 92 L32 178 L48 184 L24 296"/>' +
+      '<path class="lb-core" d="M52 -6 L40 84 L54 92 L32 178 L48 184 L24 296"/>' +
+      '<path class="lb-branch" d="M54 92 L74 130 L68 150"/></svg>';
+    var lastY = window.scrollY || 0, acc = 0, lastFire = 0, raf = false;
+    function fire(){
+      var now = Date.now();
+      if (now - lastFire < 2200) return;
+      lastFire = now;
+      var hit = document.createElement('div');
+      hit.className = 'lightning-hit';
+      hit.style.left = (12 + Math.random() * 70) + 'vw';
+      hit.innerHTML = BOLT;
+      var fl = document.createElement('div');
+      fl.className = 'lightning-flash';
+      layer.appendChild(hit); layer.appendChild(fl);
+      document.body.classList.add('thunder');
+      setTimeout(function(){ hit.remove(); fl.remove(); }, 430);
+      setTimeout(function(){ document.body.classList.remove('thunder'); }, 270);
+    }
+    window.addEventListener('scroll', function(){
+      if (raf) return; raf = true;
+      requestAnimationFrame(function(){
+        var y = window.scrollY || 0, dy = y - lastY;
+        if (dy > 0) { acc += dy; if (acc >= 240) { fire(); acc = 0; } } else { acc = 0; }
+        lastY = y; raf = false;
+      });
+    }, {passive:true});
+  })();
+</script>
 </body>
 </html>
