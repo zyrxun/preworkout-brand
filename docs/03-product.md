@@ -24,9 +24,9 @@ Brief requirement: **beta-alanine + L-theanine minimum, plus caffeine.**
 
 | Attribute | Spec |
 |---|---|
-| Serving | 4 pieces = **200mg caffeine** + **200mg L-theanine** (1:1) + **~1g beta-alanine** (tingle ritual) |
-| Beta-alanine | ~250mg/piece × 4 ≈ 1g/serving — enough to trigger the tingle (≥~800mg); the 3.2g clinical dose does NOT fit — label honestly + disclose tingling |
-| Per-piece cap | ~50mg keeps a single stray piece non-dangerous (still: child-resistant packaging, docs/05) |
+| Serving | 3 pieces = **200mg caffeine** + **200mg L-theanine** (1:1) + **~1.05g beta-alanine** (tingle ritual) |
+| Beta-alanine | ~350mg/piece × 3 ≈ 1.05g/serving — well past the ~800mg tingle trigger; the 3.2g clinical dose still does NOT fit — label honestly + disclose tingling |
+| Per-piece cap | ~67mg caffeine keeps a single stray piece low-risk (still: child-resistant packaging, docs/05) |
 | Signature sensory | **Warheads-level sour shell** → sweet core. Brand mechanic idea: "sour levels" like heat levels (Level 1 → Nuclear) |
 | Shell | Pectin or gelatin; core: glycerin/water solution with caffeine + theanine + flavor |
 | Sugar | **v1.1: isomalt/maltitol + stevia (not allulose** — allulose is a reducing sugar and browns faster than glucose near amino acids; see docs/13). Shell v1 practice batches can still use sugar + corn syrup — actives sit in the core, separated |

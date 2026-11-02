@@ -1,7 +1,7 @@
-# 15 — Recipe Card v1.1 + Flavor Lab (follow-along)
+# 15 — Recipe Card v1.2 + Flavor Lab (follow-along)
 
-One batch = **24 pieces = 6 servings**. Per piece: 50mg caffeine / 50mg L-theanine / 250mg beta-alanine. Per serving (4 pieces): 200mg / 200mg / ~1g.
-Version notes: v1.1 — core malic acid cut to 0.6g (keep core pH ≥3.0; theanine hydrolyzes ~2x faster below pH 3). Allulose banned from the commercial spec (reducing sugar, Maillard trap — docs/13).
+One batch = **24 pieces = 8 servings** (3 pieces per serving). Per piece: ~67mg caffeine / ~67mg L-theanine / 350mg beta-alanine. Per serving (3 pieces): 200mg / 200mg / ~1.05g.
+Version notes: v1.2 — serving changed 4→3 pieces; beta-alanine raised to 350mg/piece (1.05g/serving, well past the ~800mg tingle trigger). v1.1 — core malic acid cut to 0.6g (pH ≥3.0; theanine stability). Allulose banned from the commercial spec (reducing sugar, Maillard trap — docs/13).
 
 ## Mise en place (10 min, do first)
 
@@ -14,10 +14,10 @@ Version notes: v1.1 — core malic acid cut to 0.6g (keep core pH ≥3.0; theani
 
 | Ingredient | Amount | Where it goes |
 |---|---|---|
-| Caffeine pills 200mg | 6 (1200mg) | core |
-| Water (hot) | 20g | core |
-| L-theanine | 1.2g | core |
-| Beta-alanine | 6g | core |
+| Caffeine pills 200mg | 8 (1600mg) | core |
+| Water (hot) | 17.8g | core |
+| L-theanine | 1.6g | core |
+| Beta-alanine | 8.4g | core |
 | Vegetable glycerin | 16g | core |
 | Malic acid | 0.6g | core (sour base) |
 | LorAnn flavor | ~½ tsp total (50 drops), split ⅔ core / ⅓ shell | both |
@@ -32,12 +32,12 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 24.
 
 ## Part A — Core master syrup (~15 min)
 
-1. Open **6 caffeine pills** over the pot, dump powder into **20g hot water**. Stir till clear; strain through the coffee filter (catches binders). Wipe spills immediately.
-2. Off heat, stir in **1.2g theanine** + **6g beta-alanine** until dissolved (warm helps; slight haze OK).
+1. Open **8 caffeine pills** over the pot, dump powder into **17.8g hot water**. Stir till clear; strain through the coffee filter (catches binders). Wipe spills immediately.
+2. Off heat, stir in **1.6g theanine** + **8.4g beta-alanine** until dissolved (warm helps; slight haze OK — dissolve fully before the glycerin goes in).
 3. Stir in **16g glycerin**, **0.6g malic acid**, and **~30 drops** of your flavor (split flavors AFTER step 5 in the Flavor Lab variant).
 4. Total should read **≈36g** on the pocket scale — top up with water if short.
 5. Keep warm (~50°C, not hot). **Do not boil** (theanine + flavor degrade). Beta-alanine may haze as it cools — re-warm gently.
-6. **Dose check:** 36g ÷ 24 = 1.5g/piece → 1.5 × (1200/36) = **50mg caffeine ✓**
+6. **Dose check:** 36g ÷ 24 = 1.5g/piece → 1.5 × (1600/36) = **66.7mg caffeine ✓** (BA: 8400/36 × 1.5 = **350mg ✓**)
 
 ## Part B — Shell base (~20 min)
 

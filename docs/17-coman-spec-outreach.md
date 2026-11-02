@@ -8,12 +8,12 @@ Phase B4/C3 deliverables — hand docs/17 to liquid-center manufacturers as-is. 
 
 **Format:** two-component candy piece. Firm gummy or hard shell (sour-coated) + sealed liquid center (~35–40% of piece weight) that releases on bite.
 
-**Target piece weight:** 4.0 g (shell ~2.5 g + liquid core ~1.5 g) · **Serving:** 4 pieces (16 g)
+**Target piece weight:** 4.0 g (shell ~2.5 g + liquid core ~1.5 g) · **Serving:** 3 pieces (12 g)
 
-**Label claims per serving (4 pieces):**
-- Caffeine anhydrous 200 mg (50 mg/piece)
+**Label claims per serving (3 pieces):**
+- Caffeine anhydrous 200 mg (~67 mg/piece)
 - L-theanine 200 mg (1:1 with caffeine)
-- Beta-alanine ~1,000 mg (250 mg/piece)
+- Beta-alanine ~1,050 mg (350 mg/piece)
 - Sugar 0 g* (sugar-free target)
 
 **Core (liquid fill):** glycerin/water system, target water activity **aw < 0.65**, pH **3.0–3.5** (do not go below 3.0 — theanine stability), caffeine + theanine + beta-alanine dissolved, natural flavor. Preservative: potassium sorbate 0.05–0.1%.

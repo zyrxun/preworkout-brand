@@ -30,7 +30,7 @@
          fully disables every non-essential animation.
        ============================================================ -->
   <title>BRANDNAME — Pre-workout that explodes</title>
-  <meta name="description" content="BRANDNAME is a burst-candy pre-workout: sour shell, liquid energy core, and a tingle that says it's working. 4 pieces = 200mg caffeine + 200mg L-theanine + ~1g beta-alanine. Sugar-free, coming soon. Join the waitlist.">
+  <meta name="description" content="BRANDNAME is a burst-candy pre-workout: sour shell, liquid energy core, and a tingle that says it's working. 3 pieces = 200mg caffeine + 200mg L-theanine + ~1.05g beta-alanine. Sugar-free, coming soon. Join the waitlist.">
   <meta property="og:title" content="BRANDNAME — Pre-workout that explodes">
   <meta property="og:description" content="Sour shell, energy core, and a tingle that says it's working. Coming soon — join the waitlist.">
   <meta property="og:type" content="website">
@@ -336,10 +336,10 @@
 
       /* 6. marquee ticker */
       .ticker{border-top:1px solid rgba(217,4,41,.4);border-bottom:1px solid rgba(217,4,41,.4);background:#080809;overflow:hidden}
-      .ticker-track{display:inline-flex;white-space:nowrap;animation:tick 26s linear infinite;will-change:transform}
+      .ticker-track{display:flex;width:max-content;animation:tick 24s linear infinite;will-change:transform}
       .ticker:hover .ticker-track{animation-play-state:paused}
-      .ticker .tk{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ash);padding:12px 0}
-      .ticker .tk b{color:var(--blood-hi);font-weight:400;padding:0 1.2em;display:inline-flex;align-items:center}
+      .ticker .tk{display:flex;align-items:center;gap:1.2em;padding-right:1.2em;white-space:nowrap;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ash);padding-top:12px;padding-bottom:12px}
+      .ticker .tk b{color:var(--blood-hi);font-weight:400;display:flex;align-items:center}
       .ticker .tk-b{width:.6em;height:1em;fill:currentColor;flex:none}
       @keyframes tick{to{transform:translateX(-50%)}}
 
@@ -394,16 +394,16 @@
     }
 
     /* ==== LIGHTNING FX — remove this whole block to disable ==== */
-    .lightning-hit{position:absolute;top:0;height:100%;width:130px;pointer-events:none;opacity:0;animation:lb-in .38s steps(1,end) forwards}
-    .lightning-bolt{position:absolute;top:-4vh;width:110px;height:62vh;overflow:visible}
-    .lb-glow{fill:none;stroke:rgba(217,4,41,.55);stroke-width:7;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(217,4,41,.8))}
-    .lb-core{fill:none;stroke:var(--bone);stroke-width:2.5;stroke-linecap:round}
-    .lb-branch{fill:none;stroke:var(--bone);stroke-width:1.5;opacity:.8}
-    .lightning-flash{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0,rgba(232,228,216,.13),transparent 65%);animation:lb-flash .38s ease-out forwards}
-    @keyframes lb-in{0%{opacity:0}6%{opacity:1}38%{opacity:.2}50%{opacity:.9}72%{opacity:.15}100%{opacity:0}}
-    @keyframes lb-flash{0%{opacity:0}18%{opacity:1}100%{opacity:0}}
+    .lightning-hit{position:fixed;inset:0;pointer-events:none;z-index:97;opacity:0;animation:lb-in .34s steps(1,end) forwards}
+    .lightning-bolt{position:absolute;top:-3vh;left:-4vw;width:108vw;height:106vh;overflow:visible}
+    .lb-glow{fill:none;stroke:rgba(217,4,41,.5);stroke-width:9;stroke-linecap:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 10px rgba(217,4,41,.75))}
+    .lb-core{fill:none;stroke:var(--bone);stroke-width:2.75;stroke-linecap:round;vector-effect:non-scaling-stroke}
+    .lb-branch{fill:none;stroke:var(--bone);stroke-width:1.5;opacity:.85;vector-effect:non-scaling-stroke}
+    .lightning-flash{position:fixed;inset:0;z-index:96;background:#fff;animation:lb-flash .3s ease-out forwards}
+    @keyframes lb-in{0%{opacity:0}5%{opacity:1}40%{opacity:.25}52%{opacity:.95}74%{opacity:.12}100%{opacity:0}}
+    @keyframes lb-flash{0%{opacity:0}10%{opacity:.8}55%{opacity:.25}100%{opacity:0}}
     body.thunder main{animation:thunder .26s steps(2,end)}
-    @keyframes thunder{0%{transform:translate(0)}30%{transform:translate(1px,2px)}60%{transform:translate(-1px,-1px)}100%{transform:translate(0)}}
+    @keyframes thunder{0%{transform:translate(0)}30%{transform:translate(2px,3px)}60%{transform:translate(-2px,-1px)}100%{transform:translate(0)}}
     @media (prefers-reduced-motion: reduce){.lightning-hit,.lightning-flash{display:none!important}}
   </style>
 </head>
@@ -555,7 +555,7 @@
           <svg class="sigil sigil--blade draw" viewBox="0 0 120 96" aria-hidden="true" focusable="false"><use href="#sg-blade"/></svg>
           <p class="eyebrow h-anim h-anim--1"><b>[ Coming soon ]</b> // not for sale yet</p>
           <h1 class="h-anim h-anim--2"><span class="gburst">Pre-workout that explodes. <span class="l2"><span class="w-blood">Sour shell</span>, <span class="w-blood">energy core</span>, and a <span class="w-blood">tingle</span> that says it's working.</span></span></h1>
-          <p class="sub h-anim h-anim--3">A sugar-free burst candy wired like a pre-workout: sour outside, liquid energy core inside, four pieces per serving.</p>
+          <p class="sub h-anim h-anim--3">A sugar-free burst candy wired like a pre-workout: sour outside, liquid energy core inside, three pieces per serving.</p>
 
           <div class="scroll-cue" aria-hidden="true"><svg viewBox="0 0 26 14" focusable="false"><path d="M2 2 L13 11 L24 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="waitlist h-anim h-anim--4" id="waitlist">
@@ -597,9 +597,7 @@
 
     <!-- ============ marquee ticker ============ -->
     <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span class="tk">Sour shell <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> Burst core <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> Tingle <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> 200mg caffeine <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> 200mg L-theanine <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> 0g sugar <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>&nbsp;</span><span class="tk">Sour shell <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> Burst core <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> Tingle <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> 200mg caffeine <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> 200mg L-theanine <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b> 0g sugar <b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>&nbsp;</span>
-      </div>
+      <div class="ticker-track"><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.05g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.05g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span></div>
     </div>
 
     <div class="divider" aria-hidden="true">
@@ -650,11 +648,11 @@
           <h2>The formula</h2>
           <p>Caffeine for drive, L-theanine to keep it clean, beta-alanine for the endurance burn.</p>
         </div>
-        <p class="strip-label reveal">Per serving &middot; 4 pieces</p>
+        <p class="strip-label reveal">Per serving &middot; 3 pieces</p>
         <ul class="facts" data-stagger>
           <li class="reveal"><span class="val">200mg</span><span class="lbl">Caffeine</span></li>
           <li class="reveal"><span class="val">200mg</span><span class="lbl">L-Theanine</span></li>
-          <li class="reveal"><span class="val">~1g</span><span class="lbl">Beta-Alanine</span></li>
+          <li class="reveal"><span class="val">1.05g</span><span class="lbl">Beta-Alanine</span></li>
           <li class="reveal"><span class="val">0g*</span><span class="lbl">Sugar</span></li>
         </ul>
         <p class="footnote reveal">*Sugar-free formula planned for launch — final supplement facts will be printed on the jar. Drops as a jar plus single-serve pouches you can toss in your gym bag.</p>
@@ -820,18 +818,19 @@
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var layer = document.getElementById('fx-layer');
     if (!layer) return;
-    var BOLT = '<svg class="lightning-bolt" viewBox="0 0 100 300" preserveAspectRatio="none" aria-hidden="true" focusable="false">' +
-      '<path class="lb-glow" d="M52 -6 L40 84 L54 92 L32 178 L48 184 L24 296"/>' +
-      '<path class="lb-core" d="M52 -6 L40 84 L54 92 L32 178 L48 184 L24 296"/>' +
-      '<path class="lb-branch" d="M54 92 L74 130 L68 150"/></svg>';
+    var BOLT = '<svg class="lightning-bolt" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">' +
+      '<path class="lb-glow" d="M86 -4 L64 16 L76 24 L48 42 L60 50 L34 72 L44 78 L14 104"/>' +
+      '<path class="lb-core" d="M86 -4 L64 16 L76 24 L48 42 L60 50 L34 72 L44 78 L14 104"/>' +
+      '<path class="lb-branch" d="M60 50 L72 58 L66 66"/></svg>';
     var lastY = window.scrollY || 0, acc = 0, lastFire = 0, raf = false;
     function fire(){
       var now = Date.now();
-      if (now - lastFire < 2200) return;
+      if (now - lastFire < 3500) return;
       lastFire = now;
       var hit = document.createElement('div');
       hit.className = 'lightning-hit';
-      hit.style.left = (12 + Math.random() * 70) + 'vw';
+      var skew = (Math.random() * 8 - 4).toFixed(1);
+      hit.style.transform = 'rotate(' + skew + 'deg)';
       hit.innerHTML = BOLT;
       var fl = document.createElement('div');
       fl.className = 'lightning-flash';
@@ -844,7 +843,7 @@
       if (raf) return; raf = true;
       requestAnimationFrame(function(){
         var y = window.scrollY || 0, dy = y - lastY;
-        if (dy > 0) { acc += dy; if (acc >= 240) { fire(); acc = 0; } } else { acc = 0; }
+        if (dy > 0) { acc += dy; if (acc >= 350) { fire(); acc = 0; } } else { acc = 0; }
         lastY = y; raf = false;
       });
     }, {passive:true});

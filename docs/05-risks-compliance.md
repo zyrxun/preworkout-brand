@@ -15,7 +15,7 @@ Caffeine candy looks and behaves like candy — and a **liquid core that bursts 
 **Mitigations (non-negotiable for this format):**
 - **Child-resistant packaging** (push-and-turn jar, not a candy bag) + "KEEP OUT OF REACH OF CHILDREN"
 - "Not for individuals under 18" on label and every ad
-- Cap caffeine per piece (~50mg) so a single accidental piece isn't dangerous
+- Cap caffeine per piece (~67mg) so a single accidental piece isn't dangerous
 - Never use candy-lookalike imagery or youth-coded creators in ads
 - Sour shell = acid: expect enamel-erosion chatter; sugar-free + "rinse after" guidance reduces it
 
