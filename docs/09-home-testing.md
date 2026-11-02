@@ -7,10 +7,10 @@
 - ✅ At home you can validate: shell texture, burst mechanics, flavor system, sour level, tingle feel, dose feel, and film all the TikTok content.
 - ❌ At home you can never get: shelf-stable leak-proof seals, guaranteed dose uniformity, GMP/compliance, or legal sellability (cottage-food laws don't cover caffeinated supplements). Home batches are R&D + content, never product.
 
-## V1 recipe — "sour shell, energy core" gummy (24 pieces = 6 servings)
+## V1 recipe — "sour shell, energy core" gummy (24 pieces = 8 servings)
 
-Per piece: ~2.5g shell + ~1.5g liquid core = **50mg caffeine / 50mg L-theanine / 250mg beta-alanine**.
-Per serving (4 pieces): **200mg caffeine / 200mg theanine / ~1g beta-alanine.**
+Per piece: ~2.5g shell + ~1.5g liquid core = **~67mg caffeine / ~67mg L-theanine / 500mg beta-alanine** (350mg core + 150mg shell-loaded).
+Per serving (3 pieces): **200mg caffeine / 200mg theanine / 1.5g beta-alanine.** *(v1.3 — serving 4→3 pieces; BA shell-loading; texture target = soft-ooze shell.)*
 
 ### Equipment
 
@@ -31,7 +31,7 @@ Per serving (4 pieces): **200mg caffeine / 200mg theanine / ~1g beta-alanine.**
 1. Bloom **10g gelatin** (2.5 Knox packets) in **30g cold water**, 5 min.
 2. Cook **50g sugar + 50g corn syrup** to ~115–120°C, remove heat.
 3. Stir in bloomed gelatin until melted; skim foam. Cool to ~80°C.
-4. Stir in **2g citric acid** + a few drops of flavor/color.
+4. Stir in **2g citric acid** + **3.6g beta-alanine** (v1.3 shell-load — stir ~60s until fully dispersed) + a few drops of flavor/color.
 
 ### Assembly (two-pour)
 

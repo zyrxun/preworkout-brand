@@ -1,7 +1,8 @@
-# 15 — Recipe Card v1.2 + Flavor Lab (follow-along)
+# 15 — Recipe Card v1.3 + Flavor Lab (follow-along)
 
-One batch = **24 pieces = 8 servings** (3 pieces per serving). Per piece: ~67mg caffeine / ~67mg L-theanine / 350mg beta-alanine. Per serving (3 pieces): 200mg / 200mg / ~1.05g.
-Version notes: v1.2 — serving changed 4→3 pieces; beta-alanine raised to 350mg/piece (1.05g/serving, well past the ~800mg tingle trigger). v1.1 — core malic acid cut to 0.6g (pH ≥3.0; theanine stability). Allulose banned from the commercial spec (reducing sugar, Maillard trap — docs/13).
+One batch = **24 pieces = 8 servings** (3 pieces per serving). Per piece: ~67mg caffeine / ~67mg L-theanine / **500mg beta-alanine (350mg core + 150mg shell-loaded)**.
+Per serving (3 pieces): **200mg caffeine / 200mg L-theanine / 1.5g beta-alanine.**
+Version notes: v1.3 — beta-alanine shell-loading (150mg/piece stirred into the shell syrup — shells suspend powder easily, no solubility limit) → 500mg/piece, 1.5g/serving. v1.2 — serving 4→3 pieces. v1.1 — core malic 0.6g (pH ≥3.0, theanine stability); allulose banned (Maillard trap — docs/13).
 
 ## Mise en place (10 min, do first)
 
@@ -18,6 +19,7 @@ Version notes: v1.2 — serving changed 4→3 pieces; beta-alanine raised to 350
 | Water (hot) | 17.8g | core |
 | L-theanine | 1.6g | core |
 | Beta-alanine | 8.4g | core |
+| Beta-alanine (shell-load) | 3.6g | shell (v1.3) |
 | Vegetable glycerin | 16g | core |
 | Malic acid | 0.6g | core (sour base) |
 | LorAnn flavor | ~½ tsp total (50 drops), split ⅔ core / ⅓ shell | both |
@@ -44,7 +46,7 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 24.
 1. Bloom **10g gelatin** in **30g cold water**, 5 min. It becomes solid — that's correct.
 2. In the second pot: **50g sugar + 50g corn syrup**, cook to **115–120°C (240–248°F)**. No stirring once boiling; swirl only. *(Hot sugar = bad burns. No kids/pets in the kitchen.)*
 3. Off heat → cool to **~90°C** (2–3 min), stir in bloomed gelatin until fully melted. Skim foam.
-4. Cool to **~80°C**, stir in **2g citric acid** + **~15–20 drops** flavor + color. Keep pot in a warm water bath so it stays pourable ~20 min.
+4. Cool to **~80°C**, stir in **2g citric acid** + **3.6g beta-alanine** (v1.3 shell-load — stir ~60s until fully dispersed) + **~15–20 drops** flavor + color. Keep pot in a warm water bath so it stays pourable ~20 min.
 
 ## Part C — Assembly, two-pour (~30 min)
 
@@ -58,6 +60,12 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 24.
 
 - Toss pieces in: **2 tbsp sugar + 1 tbsp malic + ½ tsp citric**.
 - The coat dissolves into the gummy over days — coat only what you eat this session.
+
+### Texture & citrulline (v1.3)
+
+- **Texture target: SOFT-ish shell** — gives under your teeth, core **oozes** out (Gusher-soft, not hard-crack). Knob: less gelatin = softer shell (8g/batch = softer, 10g = medium). Hard isomalt shell is an optional variant, not the target.
+- Total per piece: 350mg BA (core) + 150mg BA (shell) = **500mg → 1.5g/serving**. Shell suspension has no solubility limit — texture is the only cap (6% w/w here, easy).
+- **Citrulline decision (open):** technically suspendable in the shell (~300–400mg/piece ≈ ~1g/serving max), but that's fairy-dose vs the 6–8g clinical pump dose — recommend keeping citrulline OFF the label to dodge underdosing criticism. Your call.
 
 ## Flavor Lab (week 3) — 3 flavors × 2 sour levels in ONE batch
 

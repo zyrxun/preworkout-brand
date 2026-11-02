@@ -24,11 +24,13 @@ Brief requirement: **beta-alanine + L-theanine minimum, plus caffeine.**
 
 | Attribute | Spec |
 |---|---|
-| Serving | 3 pieces = **200mg caffeine** + **200mg L-theanine** (1:1) + **~1.05g beta-alanine** (tingle ritual) |
-| Beta-alanine | ~350mg/piece × 3 ≈ 1.05g/serving — well past the ~800mg tingle trigger; the 3.2g clinical dose still does NOT fit — label honestly + disclose tingling |
+| Serving | 3 pieces = **200mg caffeine** + **200mg L-theanine** (1:1) + **1.5g beta-alanine** (tingle ritual) |
+| Beta-alanine | 500mg/piece (350 core + 150 shell-loaded) × 3 = **1.5g/serving** — nearly half the 3.2g powder standard, well past the ~800mg tingle trigger; the full clinical dose still does NOT fit — label honestly + disclose tingling |
+| Texture | **Soft-ish shell (Gusher-soft)** — gives under teeth, core oozes out; NOT hard-crack (isomalt hard shell = optional variant only) |
+| Citrulline | OFF the label for v1 (open decision): max candy-realistic suspension ≈ 1g/serving vs 6–8g clinical pump dose — sub-clinical = fairy-dusting risk |
 | Per-piece cap | ~67mg caffeine keeps a single stray piece low-risk (still: child-resistant packaging, docs/05) |
 | Signature sensory | **Warheads-level sour shell** → sweet core. Brand mechanic idea: "sour levels" like heat levels (Level 1 → Nuclear) |
-| Shell | Pectin or gelatin; core: glycerin/water solution with caffeine + theanine + flavor |
+| Shell | Soft-ish gelatin/pectin gummy engineered to **ooze** (target: Gusher-soft); core: glycerin/water solution with caffeine + theanine + flavor |
 | Sugar | **v1.1: isomalt/maltitol + stevia (not allulose** — allulose is a reducing sugar and browns faster than glucose near amino acids; see docs/13). Shell v1 practice batches can still use sugar + corn syrup — actives sit in the core, separated |
 | Packaging | 30-serving child-resistant jar + 12-count single-serve pouch packs (gym bag, sampling, creator seeding) |
 
