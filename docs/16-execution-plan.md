@@ -23,8 +23,8 @@ Elaborates docs/10 into concrete sub-steps. Owners: **H** = Hermes (autonomous),
 | B2 | Isomalt hard-shell batch (stage 2 crack) + leak comparison | R | ⬜ |
 | B3 | Content shoot: burst reaction clips, sour-face clips, tingle explainer (phone is fine) | R | ⬜ |
 | B4 | One-page manufacturer spec sheet | **H** | ✅ docs/17 |
-| B5 | Landing page to launch quality (animations/motion) | **H** | 🔄 in progress (4-iteration build) |
-| B6 | Landing page deployed live (GitHub Pages) | **H** | 🔄 queued after B5 |
+| B5 | Landing page to launch quality (animations/motion) | **H** | ✅ 4-iteration motion build (sigil draw-ons, ticker, reveals, parallax) |
+| B6 | Landing page deployed live (GitHub Pages) | **H** | ✅ https://zyrxun.github.io/preworkout-brand/ (BRANDNAME placeholder until name pick) |
 | B7 | Waitlist capture wired to a real inbox/form service | H+R | ⬜ needs R's email/choice (Formspree/Tally) |
 
 ## Phase C — Demand + supply in parallel (weeks 6–10, ~$1–2k)
