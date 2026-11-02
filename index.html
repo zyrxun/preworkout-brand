@@ -217,15 +217,23 @@
     .sec-head h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,7vw,2.9rem);margin:0 0 10px;line-height:1.12}
     .sec-head p{color:var(--ash);margin:0}
 
-    /* ================= how it works — thorned timeline ================= */
-    .steps{list-style:none;margin:0;padding:0;max-width:660px;position:relative}
-    .steps::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;border-left:1px solid var(--line)}
-    .step{position:relative;padding:0 0 38px 56px}
-    .step:last-child{padding-bottom:0}
-    .sigil--node{position:absolute;left:2px;top:2px;width:24px;height:24px;color:rgba(232,228,216,.6);background:var(--void)}
-    .step .num{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.3em;color:var(--blood-hi)}
-    .step h3{font-family:var(--font-display);font-weight:400;font-size:1.65rem;margin:10px 0 8px;line-height:1.15}
-    .step p{margin:0;color:var(--ash);font-size:.95rem}
+    /* ================= exhume — candies rise from the dirt ================= */
+    .graveyard{position:relative;height:440px;overflow:hidden}
+    .ground{position:absolute;left:0;right:0;bottom:0;height:62px;background:linear-gradient(180deg,rgba(217,4,41,.16),rgba(5,5,5,.92) 45%,#000);border-top:1px solid rgba(217,4,41,.45)}
+    .ground::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:16px;background:#050505;clip-path:polygon(0 100%,3% 20%,6% 100%,9% 45%,12% 100%,15% 10%,18% 100%,21% 40%,24% 100%,27% 0,30% 100%,33% 35%,36% 100%,39% 15%,42% 100%,45% 50%,48% 100%,51% 5%,54% 100%,57% 30%,60% 100%,63% 55%,66% 100%,69% 12%,72% 100%,75% 42%,78% 100%,81% 22%,84% 100%,87% 60%,90% 100%,93% 35%,96% 100%,100% 80%,100% 100%)}
+    .hand{position:absolute;bottom:-8px;width:180px;mix-blend-mode:lighten;opacity:0;transform:translateY(85%)}
+    .hand--l{left:5%;transform:translateY(85%) rotate(-8deg)}
+    .hand--r{right:7%;transform:translateY(92%) rotate(6deg)}
+    .hand.seen, .graveyard.seen .hand{opacity:.95;transform:translateY(8%);transition:opacity .9s ease,transform 1.4s cubic-bezier(.22,1,.36,1);animation:handsway 6s ease-in-out 2.2s infinite}
+    .graveyard.seen .hand--l{transform:translateY(8%) rotate(-8deg)}
+    .graveyard.seen .hand--r{transform:translateY(12%) rotate(6deg)}
+    @keyframes handsway{0%,100%{transform:translateY(8%) rotate(0deg)}50%{transform:translateY(11%) rotate(1.5deg)}}
+    .candy-pop{position:absolute;bottom:52px;width:160px;margin-left:-80px;text-align:center;opacity:0;transform:translateY(170px) scale(.85)}
+    .candy-pop .c-img{width:112px;height:112px;mix-blend-mode:lighten;filter:drop-shadow(0 0 14px rgba(217,4,41,.45))}
+    .candy-pop .c-lbl{display:block;margin-top:4px;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blood-hi)}
+    .c1{left:24%}.c2{left:50%}.c3{left:76%}
+    .graveyard.seen .candy-pop{opacity:1;transform:translateY(0) scale(1);transition:transform .85s cubic-bezier(.34,1.56,.64,1),opacity .5s ease}
+    .graveyard.seen .c1{transition-delay:.15s}.graveyard.seen .c2{transition-delay:.45s}.graveyard.seen .c3{transition-delay:.75s}
 
     /* ================= formula strip ================= */
     .formula{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
@@ -324,15 +332,8 @@
       /* 3. scroll reveal — staggered by JS-set transition-delay */
       .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
       .reveal.seen{opacity:1;transform:translateY(0)}
-      .step{opacity:0}
-      .step.seen{opacity:1;animation:rise .65s cubic-bezier(.22,1,.36,1)}
 
-      /* 7. timeline node pulse once its step is in view */
-      .step.seen .sigil--node{animation:nodepulse 2.6s ease-in-out .6s infinite}
-      @keyframes nodepulse{
-        0%,100%{transform:scale(1);color:rgba(232,228,216,.6)}
-        50%{transform:scale(1.22) rotate(45deg);color:var(--blood-hi)}
-      }
+      /* graveyard pops + hands (see exhume block) */
 
       /* 6. marquee ticker */
       .ticker{border-top:1px solid rgba(217,4,41,.4);border-bottom:1px solid rgba(217,4,41,.4);background:#080809;overflow:hidden}
@@ -344,17 +345,6 @@
       @keyframes tick{to{transform:translateX(-50%)}}
 
       /* 8. hover physics */
-      .steps::before{transform:scaleY(0);transform-origin:top;transition:transform 1.3s cubic-bezier(.45,0,.2,1) .15s}
-      .steps.seen::before{transform:scaleY(1)}
-      .step .sigil--node{transition:transform .45s cubic-bezier(.34,1.56,.64,1),color .3s ease}
-      .step.seen:hover{transform:translateX(8px)}
-      .step.seen{transition:transform .25s ease}
-      .step.seen:hover .sigil--node{animation-play-state:paused;transform:rotate(135deg) scale(1.15);color:var(--blood-hi)}
-      .step .num{transition:color .25s ease}
-      .step.seen:hover .num{color:#fff}
-      .step .step-icon{width:84px;height:84px;mix-blend-mode:lighten;transition:transform .3s ease,filter .3s ease}
-      .step.seen .step-icon{filter:drop-shadow(0 0 10px rgba(217,4,41,.3))}
-      .step.seen:hover .step-icon{transform:scale(1.06);filter:drop-shadow(0 0 16px rgba(217,4,41,.6))}
       .formula::after{animation:sweep 7s linear 1.5s infinite}
       @keyframes sweep{to{transform:translateX(1530%)}}
       .facts li{transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
@@ -394,6 +384,9 @@
       .wipe,.fx-layer,.progress{display:none}
       .gburst{animation:none}
       .btn,.cta{transition:none}
+      .candy-pop,.hand{opacity:1!important;transform:none!important}
+      .hand--l{transform:rotate(-8deg)!important}
+      .hand--r{transform:rotate(6deg)!important}
     }
 
     /* ==== FLASH FX (scroll-down white flash) — remove this whole block to disable ==== */
@@ -529,8 +522,8 @@
   <header class="wrap top">
     <a class="wordmark" href="#top"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>BRANDNAME</a>
     <nav aria-label="Page">
-      <a href="#how">How it works</a>
       <a href="#formula">Formula</a>
+      <a href="#drop">The drop</a>
       <a class="cta" href="#waitlist">Join waitlist</a>
     </nav>
   </header>
@@ -600,36 +593,22 @@
     </div>
 
     <!-- ============ 2. HOW IT WORKS ============ -->
-    <section class="sec" id="how">
-      <div class="wrap" data-stagger>
+    <!-- ============ 2. EXHUMATION — candies rise from the dirt ============ -->
+    <section class="sec exhume" id="drop">
+      <div class="wrap">
         <div class="sec-head reveal">
-          <p class="kicker">[ 01 // PROTOCOL ]</p>
-          <h2>How it works</h2>
-          <p>Three seconds from sour to set.</p>
+          <p class="kicker">[ 01 // EXHUMATION ]</p>
+          <h2>Summoned from the dirt.</h2>
+          <p>Three pieces crawl out of the dark. Chew all three. Go lift something heavy.</p>
         </div>
-        <ol class="steps">
-          <li class="step">
-            <svg class="sigil sigil--node" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>
-            <img class="step-icon" src="assets/icon-shell.png" alt="" aria-hidden="true" loading="lazy">
-            <span class="num">STEP 01</span>
-            <h3>Sour shell</h3>
-            <p>Bite in. It puckers — bright, loud, zero sugar. The shell cracks fast.</p>
-          </li>
-          <li class="step">
-            <svg class="sigil sigil--node" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>
-            <img class="step-icon" src="assets/icon-burst.png" alt="" aria-hidden="true" loading="lazy">
-            <span class="num">STEP 02</span>
-            <h3>Burst core</h3>
-            <p>The liquid energy core bursts: 200mg caffeine + 200mg L-theanine. No shaker, no chalk, no half-mixed scoop.</p>
-          </li>
-          <li class="step">
-            <svg class="sigil sigil--node" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>
-            <img class="step-icon" src="assets/icon-tingle.png" alt="" aria-hidden="true" loading="lazy">
-            <span class="num">STEP 03</span>
-            <h3>Tingle kicks in</h3>
-            <p>Beta-alanine's pins-and-needles roll in a few minutes later. That tingle means it's working. Go take your set.</p>
-          </li>
-        </ol>
+      </div>
+      <div class="graveyard">
+        <img class="hand hand--l" src="assets/hand-1.png" alt="" aria-hidden="true" loading="lazy">
+        <img class="hand hand--r" src="assets/hand-2.png" alt="" aria-hidden="true" loading="lazy">
+        <div class="candy-pop c1"><img class="c-img" src="assets/icon-shell.png" alt="" loading="lazy"><span class="c-lbl">Sour shell</span></div>
+        <div class="candy-pop c2"><img class="c-img" src="assets/icon-burst.png" alt="" loading="lazy"><span class="c-lbl">Burst core</span></div>
+        <div class="candy-pop c3"><img class="c-img" src="assets/icon-tingle.png" alt="" loading="lazy"><span class="c-lbl">Tingle</span></div>
+        <div class="ground" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -728,7 +707,7 @@
           io.unobserve(en.target);
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-      document.querySelectorAll('.reveal, .draw, .step, .steps').forEach(function (el) {
+      document.querySelectorAll('.reveal, .draw, .graveyard').forEach(function (el) {
         io.observe(el);
       });
 
@@ -834,6 +813,30 @@
         lastY = y; raf = false;
       });
     }, {passive:true});
+  })();
+  /* Motion springs (motion.dev via CDN — no build step). Candy pop uses real spring physics; falls back to the CSS transition if CDN/reduced-motion blocks it. */
+</script>
+<script type="module">
+  (async () => {
+    try {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const { animate } = await import('https://cdn.jsdelivr.net/npm/motion@14.9.0/+esm');
+      const pops = document.querySelectorAll('.candy-pop');
+      const delays = [150, 450, 750];
+      const gy = document.querySelector('.graveyard');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          io.unobserve(en.target);
+          en.target.classList.add('seen');
+          pops.forEach((p, i) => {
+            p.classList.add('seen', 'm-anim');
+            animate(p, { transform: ['translateY(175px) scale(0.85)', 'translateY(0px) scale(1)'] }, { type: 'spring', stiffness: 300, damping: 13, delay: delays[i] || 0 });
+          });
+        });
+      }, { threshold: 0.3 });
+      if (gy) io.observe(gy);
+    } catch (err) { /* CDN unavailable — the main script's CSS .seen transition carries the pop */ }
   })();
 </script>
 </body>
