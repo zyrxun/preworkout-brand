@@ -30,7 +30,7 @@
          fully disables every non-essential animation.
        ============================================================ -->
   <title>BRANDNAME — Pre-workout that explodes</title>
-  <meta name="description" content="BRANDNAME is a burst-candy pre-workout: sour shell, liquid energy core, and a tingle that says it's working. 3 pieces = 200mg caffeine + 200mg L-theanine + ~1.05g beta-alanine. Sugar-free, coming soon. Join the waitlist.">
+  <meta name="description" content="BRANDNAME is a burst-candy pre-workout: sour shell, liquid energy core, and a tingle that says it's working. 3 pieces = 200mg caffeine + 200mg L-theanine + ~1.5g beta-alanine. Sugar-free, coming soon. Join the waitlist.">
   <meta property="og:title" content="BRANDNAME — Pre-workout that explodes">
   <meta property="og:description" content="Sour shell, energy core, and a tingle that says it's working. Coming soon — join the waitlist.">
   <meta property="og:type" content="website">
@@ -352,6 +352,9 @@
       .step.seen:hover .sigil--node{animation-play-state:paused;transform:rotate(135deg) scale(1.15);color:var(--blood-hi)}
       .step .num{transition:color .25s ease}
       .step.seen:hover .num{color:#fff}
+      .step .step-icon{width:84px;height:84px;mix-blend-mode:lighten;transition:transform .3s ease,filter .3s ease}
+      .step.seen .step-icon{filter:drop-shadow(0 0 10px rgba(217,4,41,.3))}
+      .step.seen:hover .step-icon{transform:scale(1.06);filter:drop-shadow(0 0 16px rgba(217,4,41,.6))}
       .formula::after{animation:sweep 7s linear 1.5s infinite}
       @keyframes sweep{to{transform:translateX(1530%)}}
       .facts li{transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
@@ -589,7 +592,7 @@
 
     <!-- ============ marquee ticker ============ -->
     <div class="ticker" aria-hidden="true">
-      <div class="ticker-track"><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.05g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.05g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span></div>
+      <div class="ticker-track"><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.5g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.5g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span></div>
     </div>
 
     <div class="divider" aria-hidden="true">
@@ -607,18 +610,21 @@
         <ol class="steps">
           <li class="step">
             <svg class="sigil sigil--node" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>
+            <img class="step-icon" src="assets/icon-shell.png" alt="" aria-hidden="true" loading="lazy">
             <span class="num">STEP 01</span>
             <h3>Sour shell</h3>
             <p>Bite in. It puckers — bright, loud, zero sugar. The shell cracks fast.</p>
           </li>
           <li class="step">
             <svg class="sigil sigil--node" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>
+            <img class="step-icon" src="assets/icon-burst.png" alt="" aria-hidden="true" loading="lazy">
             <span class="num">STEP 02</span>
             <h3>Burst core</h3>
             <p>The liquid energy core bursts: 200mg caffeine + 200mg L-theanine. No shaker, no chalk, no half-mixed scoop.</p>
           </li>
           <li class="step">
             <svg class="sigil sigil--node" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>
+            <img class="step-icon" src="assets/icon-tingle.png" alt="" aria-hidden="true" loading="lazy">
             <span class="num">STEP 03</span>
             <h3>Tingle kicks in</h3>
             <p>Beta-alanine's pins-and-needles roll in a few minutes later. That tingle means it's working. Go take your set.</p>
@@ -644,7 +650,7 @@
         <ul class="facts" data-stagger>
           <li class="reveal"><span class="val">200mg</span><span class="lbl">Caffeine</span></li>
           <li class="reveal"><span class="val">200mg</span><span class="lbl">L-Theanine</span></li>
-          <li class="reveal"><span class="val">1.05g</span><span class="lbl">Beta-Alanine</span></li>
+          <li class="reveal"><span class="val">1.5g</span><span class="lbl">Beta-Alanine</span></li>
           <li class="reveal"><span class="val">0g*</span><span class="lbl">Sugar</span></li>
         </ul>
         <p class="footnote reveal">*Sugar-free formula planned for launch — final supplement facts will be printed on the jar. Drops as a jar plus single-serve pouches you can toss in your gym bag.</p>
