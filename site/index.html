@@ -232,8 +232,15 @@
     .candy-pop .c-img{width:112px;height:112px;mix-blend-mode:lighten;filter:drop-shadow(0 0 14px rgba(217,4,41,.45))}
     .candy-pop .c-lbl{display:block;margin-top:4px;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blood-hi)}
     .c1{left:24%}.c2{left:50%}.c3{left:76%}
-    .graveyard.seen .candy-pop{opacity:1;transform:translateY(0) scale(1);transition:transform .85s cubic-bezier(.34,1.56,.64,1),opacity .5s ease}
-    .graveyard.seen .c1{transition-delay:.15s}.graveyard.seen .c2{transition-delay:.45s}.graveyard.seen .c3{transition-delay:.75s}
+    @media (max-width: 640px){
+      .graveyard{height:340px}
+      .hand{width:120px;bottom:-4px}
+      .candy-pop{width:110px;margin-left:-55px}
+      .candy-pop .c-img{width:82px;height:82px}
+      .c1{left:16%}.c2{left:50%}.c3{left:82%}
+    }
+    .graveyard.seen .candy-pop.sprung{opacity:1;transform:translateY(0) scale(1);transition:transform .85s cubic-bezier(.34,1.56,.64,1),opacity .5s ease}
+    .graveyard.seen .c1.sprung{transition-delay:.15s}.graveyard.seen .c2.sprung{transition-delay:.45s}.graveyard.seen .c3.sprung{transition-delay:.75s}
 
     /* ================= formula strip ================= */
     .formula{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
@@ -705,6 +712,15 @@
           if (!en.isIntersecting) return;
           en.target.classList.add('seen');
           io.unobserve(en.target);
+          if (en.target.classList.contains('graveyard')) {
+            /* the Motion module owns the candy pop; this timer is the no-CDN fallback */
+            setTimeout(function () {
+              if (!en.target.classList.contains('sprung')) {
+                en.target.classList.add('sprung');
+                en.target.querySelectorAll('.candy-pop').forEach(function (p) { p.classList.add('sprung'); });
+              }
+            }, 1200);
+          }
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
       document.querySelectorAll('.reveal, .draw, .graveyard').forEach(function (el) {
@@ -828,9 +844,9 @@
         entries.forEach((en) => {
           if (!en.isIntersecting) return;
           io.unobserve(en.target);
-          en.target.classList.add('seen');
+          en.target.classList.add('seen', 'sprung');
           pops.forEach((p, i) => {
-            p.classList.add('seen', 'm-anim');
+            p.classList.add('sprung', 'm-anim');
             animate(p, { transform: ['translateY(175px) scale(0.85)', 'translateY(0px) scale(1)'] }, { type: 'spring', stiffness: 300, damping: 13, delay: delays[i] || 0 });
           });
         });
