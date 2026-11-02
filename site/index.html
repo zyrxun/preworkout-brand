@@ -253,22 +253,6 @@
     .facts .lbl{display:block;margin-top:8px;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
     .footnote{font-size:.78rem;color:var(--faint);margin:16px 0 0;max-width:640px}
 
-    /* ================= FAQ ================= */
-    .faq{counter-reset:q}
-    .faq details{border-bottom:1px solid var(--line);counter-increment:q}
-    .faq details:first-of-type{border-top:1px solid var(--line)}
-    .faq summary{
-      list-style:none;display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:14px;
-      cursor:pointer;padding:19px 2px;font-weight:600;font-size:1.02rem;min-height:44px;
-      transition:color .15s ease;
-    }
-    .faq summary:hover{color:#fff}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::before{content:"Q." counter(q,decimal-leading-zero);font-family:var(--font-mono);font-weight:400;font-size:.74rem;letter-spacing:.1em;color:var(--blood-hi)}
-    .faq summary::after{content:"+";font-family:var(--font-mono);font-weight:400;color:var(--blood-hi)}
-    .faq details[open] summary::after{content:"\2212"}
-    .faq details p{margin:0;padding:0 2px 21px;color:var(--ash);max-width:660px;font-size:.95rem}
-
     /* ================= footer ================= */
     footer{border-top:1px solid var(--line);padding:48px 0 56px;margin-top:24px}
     .foot-grid{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
@@ -368,13 +352,6 @@
       .step.seen:hover .sigil--node{animation-play-state:paused;transform:rotate(135deg) scale(1.15);color:var(--blood-hi)}
       .step .num{transition:color .25s ease}
       .step.seen:hover .num{color:#fff}
-      .faq summary{transition:color .15s ease,transform .3s ease}
-      .faq details:hover summary{transform:translateX(8px);color:#fff}
-      .faq summary::after{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
-      .faq details[open] summary::after{transform:rotate(180deg)}
-      .faq details p{transition:opacity .3s ease}
-      .faq details[open] p{animation:faqopen .35s ease}
-      @keyframes faqopen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
       .formula::after{animation:sweep 7s linear 1.5s infinite}
       @keyframes sweep{to{transform:translateX(1530%)}}
       .facts li{transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
@@ -414,7 +391,6 @@
       .wipe,.fx-layer,.progress{display:none}
       .gburst{animation:none}
       .btn,.cta{transition:none}
-      .faq summary{transition:none}
     }
   </style>
 </head>
@@ -547,7 +523,6 @@
     <nav aria-label="Page">
       <a href="#how">How it works</a>
       <a href="#formula">Formula</a>
-      <a href="#faq">FAQ</a>
       <a class="cta" href="#waitlist">Join waitlist</a>
     </nav>
   </header>
@@ -673,35 +648,6 @@
       </div>
     </section>
 
-    <div class="divider" aria-hidden="true">
-      <svg class="sigil draw" viewBox="0 0 360 36" focusable="false"><use href="#sg-flourish"/><use href="#sg-flourish" transform="translate(360 0) scale(-1 1)"/></svg>
-    </div>
-
-    <!-- ============ 4. FAQ ============ -->
-    <section class="sec faq" id="faq">
-      <div class="wrap" data-stagger>
-        <div class="sec-head reveal">
-          <p class="kicker">[ 03 // INTERROGATION ]</p>
-          <h2>Questions, answered.</h2>
-        </div>
-        <details class="reveal">
-          <summary><span>So… what is it, exactly?</span></summary>
-          <p>Burst candy built like a pre-workout. The outside is an extremely sour shell; the inside is a liquid energy core. Four pieces = one serving: 200mg caffeine, 200mg L-theanine, ~1g beta-alanine. Take it about 15 minutes before training — no shaker bottle required.</p>
-        </details>
-        <details class="reveal">
-          <summary><span>When does it launch?</span></summary>
-          <p>Soon — it's not for sale yet. The waitlist gets the drop date first and first access to launch batches. It'll come as a jar and single-serve pouches.</p>
-        </details>
-        <details class="reveal">
-          <summary><span>Is it safe? Who's it for?</span></summary>
-          <p>It's made for healthy adults 18+. One serving has 200mg of caffeine — about a large cold brew — so skip it if you're under 18, caffeine-sensitive, or pregnant, and don't stack it with other caffeinated drinks or supplements. The beta-alanine tingle feels strange but is normal and harmless. As with any supplement, check with your doctor if you have a medical condition. Keep out of reach of children.</p>
-        </details>
-        <details class="reveal">
-          <summary><span>How much will it cost?</span></summary>
-          <p>Pricing isn't locked yet. Join the waitlist and you'll get launch pricing — plus a heads-up before public sale — the moment it's set.</p>
-        </details>
-      </div>
-    </section>
   </main>
 
   <!-- ============ 5. FOOTER ============ -->
