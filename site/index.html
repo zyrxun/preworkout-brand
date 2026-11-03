@@ -16,10 +16,11 @@
          fills/large display, --blood-hi #e5383b for small text —
          measured 4.81:1 on void, WCAG AA) — the previous neon
          two-hue palette is fully removed
-       • cyber-sigilism is the dominant language: 6 hand-drawn inline
-         SVG sigils (thorned dividers between every section, spiked
-         corner frame, background watermark, blade crown, edge spines,
-         step nodes), spiky chamfered clip-paths
+       • cyber-sigilism is the dominant language: AI-generated sigil
+         imagery (Pollinations, dark-processed PNGs in assets/): crown,
+         dividers, corner frame, background watermarks, edge spines,
+         node marks — blended via mix-blend-mode:lighten, plus spiky
+         chamfered clip-paths
        • display type: Metal Mania (serrated sigil lettering)
        • v1 (previous neon palette) preserved at index-v1-neon.html
        • v2 (static red, pre-motion) preserved at index-v2-red.html
@@ -91,18 +92,17 @@
     section{scroll-margin-top:24px}
     .w-blood{color:var(--blood-hi)}
 
-    /* ================= sigil ornaments =================
-       hand-drawn thin thorn/spike line-work, drawn once in the
-       <defs> block below, instanced via <use>. color = currentColor. */
-    .sigil{display:block;color:rgba(232,228,216,.5)}
-    .sigil .sg-core{fill:var(--blood-hi);stroke:none}
+    /* ================= sigil imagery =================
+       AI-generated (Pollinations) ornaments: black-background images
+       blended into the page with mix-blend-mode:lighten. */
+    .sigil-img{display:block;mix-blend-mode:lighten}
     .divider{display:flex;justify-content:center;padding:4px 0}
-    .divider .sigil{width:min(340px,74vw);height:auto;color:rgba(232,228,216,.42)}
+    .divider .sigil-img{width:min(440px,82vw);height:auto;--op:.85}
 
     /* ================= header ================= */
     .top{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
     .wordmark{font-family:var(--font-display);font-weight:400;font-size:1.45rem;letter-spacing:.06em;color:var(--bone);text-decoration:none;display:inline-flex;align-items:center;gap:10px;line-height:1}
-    .mark{width:12px;height:12px;flex:none;color:var(--blood-hi)}
+    .mark{width:14px;height:14px;flex:none;--op:.95}
     .top nav{display:flex;align-items:center;gap:8px}
     .top nav a:not(.cta){
       color:var(--ash);text-decoration:none;font-family:var(--font-mono);font-size:.74rem;
@@ -137,26 +137,21 @@
       overflow:hidden;
     }
     /* spiked corner treatments overlap the frame border */
-    .sigil--corner{position:absolute;width:clamp(44px,8vw,76px);height:auto;color:rgba(232,228,216,.55)}
-    .sigil--corner .sg-core{opacity:.9}
+    .sigil--corner{position:absolute;width:clamp(44px,8vw,76px);height:auto;--op:.8}
     .corner--tl{top:-1px;left:-1px}
     .corner--tr{top:-1px;right:-1px;transform:scaleX(-1)}
     .corner--bl{bottom:-1px;left:-1px;transform:scaleY(-1)}
     .corner--br{bottom:-1px;right:-1px;transform:scale(-1,-1)}
-    /* large background watermark sigil — very low opacity */
-    .sigil--watermark{
-      position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-      width:min(620px,92vw);height:auto;pointer-events:none;
-      color:rgba(232,228,216,.055);
-    }
-    .sigil--watermark .sg-core{opacity:.5}
+    /* large background watermark imagery — very low opacity */
+    .wm-p{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(620px,92vw);pointer-events:none}
+    .wm-p img{display:block;width:100%;height:auto;mix-blend-mode:lighten;opacity:.08}
     .hero-inner{position:relative}
     /* vertical thorned spines flank the headline on wide screens */
-    .sigil--spine{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:auto;opacity:.5}
+    .sigil--spine{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:auto;--op:.5}
     .sigil--spine-l{left:1.5vw}
     .sigil--spine-r{right:1.5vw}
     @media(max-width:1099px){.sigil--spine{display:none}}
-    .sigil--blade{width:clamp(60px,13vw,86px);height:auto;margin:0 auto 16px;color:rgba(232,228,216,.55)}
+    .sigil--blade{width:clamp(60px,13vw,86px);height:auto;margin:0 auto 16px;--op:.6}
     .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);margin:0 0 20px}
     .eyebrow b{color:var(--blood-hi);font-weight:400}
     .hero h1{
@@ -250,12 +245,9 @@
       background:linear-gradient(90deg,transparent,rgba(217,4,41,.12),transparent);
       transform:translateX(-110%);
     }
-    .sigil--watermark-f{
-      position:absolute;right:-120px;top:50%;transform:translateY(-50%);
-      width:380px;height:auto;pointer-events:none;
-      color:rgba(232,228,216,.04);
-    }
-    @media(max-width:899px){.sigil--watermark-f{display:none}}
+    .wm-p--f{right:-120px;left:auto;top:50%;transform:translateY(-50%);width:380px}
+    .wm-p--f img{opacity:.05}
+    @media(max-width:899px){.wm-p--f{display:none}}
     .formula .wrap{position:relative}
     .strip-label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);margin:0 0 16px}
     .facts{
@@ -331,10 +323,10 @@
         100%{text-shadow:none;transform:translate(0)}
       }
 
-      /* 1. sigil draw-on — stroke-dash* inherit into <use> shadow trees */
-      .draw{stroke-dasharray:420 420;stroke-dashoffset:420;transition:stroke-dashoffset 1.4s cubic-bezier(.45,0,.2,1)}
-      .draw.seen{stroke-dashoffset:0}
-      .hero .draw{transition-duration:1.1s}
+      /* 1. sigil draw-on — imagery settles in (AI ornaments carry no strokes) */
+      .sigil-img.draw{--op:1;opacity:0;transition:opacity 1.4s cubic-bezier(.45,0,.2,1)}
+      .sigil-img.draw.seen{opacity:var(--op)}
+      .hero .sigil-img.draw{transition-duration:1.1s}
 
       /* 3. scroll reveal — staggered by JS-set transition-delay */
       .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
@@ -370,7 +362,7 @@
       @keyframes glint{to{transform:skewX(-20deg) translateX(620%)}}
 
       /* gothic mandala: near-imperceptible rotation drift on hero watermark */
-      .sigil--watermark use{animation:wm-spin 60s linear infinite;transform-origin:200px 200px}
+      .wm-p img{animation:wm-spin 60s linear infinite;transform-origin:center}
       @keyframes wm-spin{to{transform:rotate(360deg)}}
 
       /* hero scroll cue */
@@ -391,6 +383,7 @@
       .wipe,.fx-layer,.progress{display:none}
       .gburst{animation:none}
       .btn,.cta{transition:none}
+      .sigil-img{opacity:var(--op,1)!important}
       .candy-pop,.hand{opacity:1!important;transform:none!important}
       .hand--l{transform:rotate(-8deg)!important}
       .hand--r{transform:rotate(6deg)!important}
@@ -408,126 +401,10 @@
   <div class="wipe" id="wipe" aria-hidden="true"></div>
   <div class="fx-layer" id="fx-layer" aria-hidden="true"></div>
 
-  <!-- hand-drawn cyber-sigilism ornament set: thin thorn/spike line-work,
-       drawn once, reused via <use>. 6 sigils:
-       sg-flourish (section dividers) · sg-corner (hero frame corners) ·
-       sg-watermark (background sigil) · sg-blade (hero crown) ·
-       sg-spine (vertical edge spines) · sg-node (timeline nodes) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <defs>
-      <!-- 1. horizontal thorned flourish — right half drawn, mirrored by the caller -->
-      <g id="sg-flourish">
-        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M192 18 L244 18"/>
-          <path d="M204 18 L199 12.5 M204 18 L199 23.5"/>
-          <path d="M220 18 L216 13.8 M220 18 L216 22.2"/>
-          <path d="M236 18 L233 14.6 M236 18 L233 21.4"/>
-          <path d="M252 18 L256 18"/>
-          <path d="M262 18 L257 13 M262 18 L257 23"/>
-          <path d="M274 18 L271 14.9 M274 18 L271 21.1"/>
-          <path d="M284 18 L288 18"/>
-          <path d="M296 18 L292 14.2 M296 18 L292 21.8"/>
-          <path d="M306 18 L303 15.3 M306 18 L303 20.7"/>
-          <path d="M314 18 L336 12.5 M314 18 L336 23.5"/>
-        </g>
-        <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" d="M186 10.5 L193.5 18 L186 25.5 L178.5 18 Z"/>
-        <path class="sg-core" d="M186 14.6 L188.6 18 L186 21.4 L183.4 18 Z"/>
-        <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" d="M248 15.2 L250.8 18 L248 20.8 L245.2 18 Z"/>
-        <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" d="M280 15.6 L282.4 18 L280 20.4 L277.6 18 Z"/>
-        <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" d="M341 13.8 L346.5 18 L341 22.2 L335.5 18 Z"/>
-      </g>
-      <!-- 2. corner spike treatment — drawn for top-left, callers rotate/mirror -->
-      <g id="sg-corner">
-        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 3 L62 3"/>
-          <path d="M3 3 L3 62"/>
-          <path d="M18 3 L14.5 10 M18 3 L21.5 10"/>
-          <path d="M34 3 L31 9 M34 3 L37 9"/>
-          <path d="M48 3 L45.8 7.6 M48 3 L50.2 7.6"/>
-          <path d="M3 18 L10 14.5 M3 18 L10 21.5"/>
-          <path d="M3 34 L9 31 M3 34 L9 37"/>
-          <path d="M3 48 L7.6 45.8 M3 48 L7.6 50.2"/>
-          <path d="M12 12 L34 34"/>
-          <path d="M25 25 L21 26.5 M25 25 L26.5 21"/>
-          <path d="M31 31 L28.5 34.5 M31 31 L34.5 28.5"/>
-        </g>
-        <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" d="M62 0.8 L64.2 3 L62 5.2 L59.8 3 Z"/>
-        <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" d="M3 62 L5.2 64.2 L3 66.4 L0.8 64.2 Z"/>
-        <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" d="M38 31.5 L40.5 34 L38 36.5 L35.5 34 Z"/>
-        <path class="sg-core" d="M3 3 L5 5.4 L3 7.8 L1 5.4 Z" transform="rotate(45 3 5.4)"/>
-      </g>
-      <!-- 3. large watermark sigil — thorned mandala, symmetric about vertical axis -->
-      <g id="sg-watermark">
-        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M200 34 L200 96"/>
-          <path d="M200 304 L200 366"/>
-          <path d="M200 34 L193 52 M200 34 L207 52"/>
-          <path d="M200 366 L193 348 M200 366 L207 348"/>
-          <path d="M70 200 L128 200"/>
-          <path d="M272 200 L330 200"/>
-          <path d="M84 200 L92 193 M84 200 L92 207"/>
-          <path d="M316 200 L308 193 M316 200 L308 207"/>
-          <path d="M104 104 L146 146"/>
-          <path d="M296 104 L254 146"/>
-          <path d="M104 296 L146 254"/>
-          <path d="M296 296 L254 254"/>
-          <path d="M118 118 L126 110 M118 118 L110 126" />
-          <path d="M282 118 L274 110 M282 118 L290 126"/>
-          <path d="M118 282 L110 274 M118 282 L126 290"/>
-          <path d="M282 282 L274 290 M282 282 L290 274"/>
-        </g>
-        <path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" d="M200 76 L238 200 L200 324 L162 200 Z"/>
-        <path fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" d="M200 118 L218 200 L200 282 L182 200 Z"/>
-        <circle cx="200" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="1.1"/>
-        <path class="sg-core" d="M200 194.5 L204 200 L200 205.5 L196 200 Z"/>
-        <g fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round">
-          <path d="M330 200 L376 191 L398 200 L376 209 Z"/>
-          <path d="M70 200 L24 191 L2 200 L24 209 Z"/>
-          <path d="M200 70 L209 24 L200 2 L191 24 Z"/>
-          <path d="M200 330 L209 376 L200 398 L191 376 Z"/>
-        </g>
-      </g>
-      <!-- 4. vertical blade sigil — hero crown -->
-      <g id="sg-blade">
-        <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M60 3 C57 21 52 33 44 42 L60 91 L76 42 C68 33 63 21 60 3 Z"/>
-          <path d="M50 31 C43 28 38 22 36 14"/>
-          <path d="M41.5 21 C37.5 23 33 23 29 21"/>
-          <path d="M70 31 C77 28 82 22 84 14"/>
-          <path d="M78.5 21 C82.5 23 87 23 91 21"/>
-          <path d="M47 50 C40 54 33 54 26 50"/>
-          <path d="M73 50 C80 54 87 54 94 50"/>
-          <path d="M44 64 L76 64"/>
-          <path d="M44 64 L38 61.5 M44 64 L38 66.5"/>
-          <path d="M76 64 L82 61.5 M76 64 L82 66.5"/>
-        </g>
-        <circle class="sg-core" cx="60" cy="64" r="2.3"/>
-      </g>
-      <!-- 5. vertical thorned spine — hero edge framing (wide screens) -->
-      <g id="sg-spine">
-        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 14 L20 308"/>
-          <path d="M20 2 L24 8 L20 14 L16 8 Z"/>
-          <path d="M20 308 L24 314 L20 320 L16 314 Z"/>
-          <path d="M20 54 L8 44 M20 54 L32 44"/>
-          <path d="M20 92 L10 84 M20 92 L30 84"/>
-          <path d="M20 130 L11 123 M20 130 L29 123"/>
-          <path d="M20 168 L13 162 M20 168 L27 162"/>
-          <path d="M20 206 L11 199 M20 206 L29 199"/>
-          <path d="M20 244 L10 236 M20 244 L30 236"/>
-          <path d="M20 282 L8 272 M20 282 L32 272"/>
-        </g>
-      </g>
-      <!-- 6. thorned node — timeline markers -->
-      <g id="sg-node">
-        <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" d="M12 2 L15.2 8.8 L22 12 L15.2 15.2 L12 22 L8.8 15.2 L2 12 L8.8 8.8 Z"/>
-        <path class="sg-core" d="M12 9.6 L13.6 12 L12 14.4 L10.4 12 Z"/>
-      </g>
-    </defs>
-  </svg>
+  
 
   <header class="wrap top">
-    <a class="wordmark" href="#top"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>BRANDNAME</a>
+    <a class="wordmark" href="#top"><img class="mark sigil-img" src="assets/sigil-node.png" alt="" aria-hidden="true" loading="lazy">BRANDNAME</a>
     <nav aria-label="Page">
       <a href="#formula">Formula</a>
       <a href="#drop">The drop</a>
@@ -539,15 +416,15 @@
     <!-- ============ 1. HERO ============ -->
     <section class="hero" aria-label="Intro">
       <div class="hero-frame">
-        <svg class="sigil sigil--corner draw corner--tl" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
-        <svg class="sigil sigil--corner draw corner--tr" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
-        <svg class="sigil sigil--corner draw corner--bl" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
-        <svg class="sigil sigil--corner draw corner--br" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
-        <svg class="sigil sigil--watermark" viewBox="0 0 400 400" data-parallax="-0.06" data-base="translate(-50%,-50%)" aria-hidden="true" focusable="false"><use href="#sg-watermark"/></svg>
+        <img class="sigil-img sigil--corner draw corner--tl" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
+        <img class="sigil-img sigil--corner draw corner--tr" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
+        <img class="sigil-img sigil--corner draw corner--bl" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
+        <img class="sigil-img sigil--corner draw corner--br" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
+        <div class="wm-p" data-parallax="-0.06" data-base="translate(-50%,-50%)" aria-hidden="true"><img class="sigil-img" src="assets/sigil-mandala.png" alt="" loading="lazy"></div>
         <div class="hero-inner">
-          <svg class="sigil sigil--spine draw sigil--spine-l" viewBox="0 0 40 322" aria-hidden="true" focusable="false"><use href="#sg-spine"/></svg>
-          <svg class="sigil sigil--spine draw sigil--spine-r" viewBox="0 0 40 322" aria-hidden="true" focusable="false"><use href="#sg-spine"/></svg>
-          <svg class="sigil sigil--blade draw" viewBox="0 0 120 96" aria-hidden="true" focusable="false"><use href="#sg-blade"/></svg>
+          <img class="sigil-img sigil--spine draw sigil--spine-l" src="assets/sigil-spine.png" alt="" aria-hidden="true" loading="lazy">
+          <img class="sigil-img sigil--spine draw sigil--spine-r" src="assets/sigil-spine.png" alt="" aria-hidden="true" loading="lazy">
+          <img class="sigil-img sigil--blade draw" src="assets/sigil-crown.png" alt="" aria-hidden="true" loading="lazy">
           <p class="eyebrow h-anim h-anim--1"><b>[ Coming soon ]</b> // not for sale yet</p>
           <h1 class="h-anim h-anim--2"><span class="gburst">Pre-workout that explodes. <span class="l2"><span class="w-blood">Sour shell</span>, <span class="w-blood">energy core</span>, and a <span class="w-blood">tingle</span> that says it's working.</span></span></h1>
           <p class="sub h-anim h-anim--3">A sugar-free burst candy wired like a pre-workout: sour outside, liquid energy core inside, three pieces per serving.</p>
@@ -596,7 +473,7 @@
     </div>
 
     <div class="divider" aria-hidden="true">
-      <svg class="sigil draw" viewBox="0 0 360 36" focusable="false"><use href="#sg-flourish"/><use href="#sg-flourish" transform="translate(360 0) scale(-1 1)"/></svg>
+      <img class="sigil-img draw" src="assets/sigil-divider.png" alt="" aria-hidden="true" loading="lazy">
     </div>
 
     <!-- ============ 2. HOW IT WORKS ============ -->
@@ -620,12 +497,12 @@
     </section>
 
     <div class="divider" aria-hidden="true">
-      <svg class="sigil draw" viewBox="0 0 360 36" focusable="false"><use href="#sg-flourish"/><use href="#sg-flourish" transform="translate(360 0) scale(-1 1)"/></svg>
+      <img class="sigil-img draw" src="assets/sigil-divider.png" alt="" aria-hidden="true" loading="lazy">
     </div>
 
     <!-- ============ 3. FORMULA STRIP ============ -->
     <section class="formula sec" id="formula">
-      <svg class="sigil sigil--watermark-f" viewBox="0 0 400 400" data-parallax="0.05" data-base="translateY(-50%)" aria-hidden="true" focusable="false"><use href="#sg-watermark"/></svg>
+      <div class="wm-p wm-p--f" data-parallax="0.05" data-base="translateY(-50%)" aria-hidden="true"><img class="sigil-img" src="assets/sigil-mandala.png" alt="" loading="lazy"></div>
       <div class="wrap" data-stagger>
         <div class="sec-head reveal">
           <p class="kicker">[ 02 // SPEC SHEET ]</p>
@@ -647,13 +524,13 @@
 
   <!-- ============ 5. FOOTER ============ -->
   <div class="divider" aria-hidden="true">
-    <svg class="sigil draw" viewBox="0 0 360 36" focusable="false"><use href="#sg-flourish"/><use href="#sg-flourish" transform="translate(360 0) scale(-1 1)"/></svg>
+    <img class="sigil-img draw" src="assets/sigil-divider.png" alt="" aria-hidden="true" loading="lazy">
   </div>
   <footer>
     <div class="wrap">
       <div class="foot-grid">
         <div>
-          <span class="wordmark"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#sg-node"/></svg>BRANDNAME</span>
+          <span class="wordmark"><img class="mark sigil-img" src="assets/sigil-node.png" alt="" aria-hidden="true" loading="lazy">BRANDNAME</span>
           <p class="foot-tag">Pre-workout that explodes.</p>
         </div>
         <!-- TODO: replace href="#" with real profile URLs when accounts exist -->
