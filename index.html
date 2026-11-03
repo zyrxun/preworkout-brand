@@ -369,11 +369,12 @@
       .sigil-img{opacity:var(--op,1)!important}
     }
 
-    /* ==== FLASH FX (scroll-down white flash + skull eyelid imprint) — remove this whole block to disable ==== */
-    .lightning-flash{position:fixed;inset:0;z-index:96;background:#fff;pointer-events:none;animation:lb-flash 1.1s ease-out forwards}
-    .lightning-flash .imprint{position:absolute;left:50%;top:50%;width:min(32vh,290px);height:auto;transform:translate(-50%,-50%);mix-blend-mode:multiply;filter:blur(1.5px);opacity:0;animation:skull-imprint 1.1s ease-in-out forwards}
-    @keyframes lb-flash{0%{opacity:0}9%{opacity:.9}30%{opacity:.82}100%{opacity:0}}
-    @keyframes skull-imprint{0%,34%{opacity:0}52%{opacity:.5}88%,100%{opacity:0}}
+    /* ==== FLASH FX (scroll-down white flash + subliminal skull cut) — remove this whole block to disable ==== */
+    /* technique: film-standard subliminal frame — skull HARD-CUTS at full opacity against the white peak, then burns away */
+    .lightning-flash{position:fixed;inset:0;z-index:96;background:#fff;pointer-events:none;animation:lb-flash .65s ease-out forwards}
+    .lightning-flash .imprint{position:absolute;left:50%;top:50%;width:min(36vh,320px);height:auto;transform:translate(-50%,-50%);mix-blend-mode:multiply;filter:blur(1px);opacity:0;animation:skull-imprint .65s linear forwards}
+    @keyframes lb-flash{0%{opacity:0}8%{opacity:.95}30%{opacity:.9}55%{opacity:.35}100%{opacity:0}}
+    @keyframes skull-imprint{0%,12%{opacity:0}16%,28%{opacity:1}34%{opacity:.55}55%{opacity:.25}100%{opacity:0}}
     @media (prefers-reduced-motion: reduce){.lightning-flash{display:none!important}}
   </style>
 </head>
@@ -671,7 +672,7 @@
       fl.className = 'lightning-flash';
       fl.innerHTML = '<img class="imprint" src="assets/skull-imprint.png" alt="" aria-hidden="true">';
       layer.appendChild(fl);
-      setTimeout(function(){ fl.remove(); }, 1200);
+      setTimeout(function(){ fl.remove(); }, 700);
     }
     window.addEventListener('scroll', function(){
       if (raf) return; raf = true;
