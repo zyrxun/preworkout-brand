@@ -18,8 +18,8 @@
          two-hue palette is fully removed
        • cyber-sigilism is the dominant language: AI-generated sigil
          imagery (Pollinations, dark-processed PNGs in assets/): crown,
-         dividers, corner frame, background watermarks, edge spines,
-         node marks — blended via mix-blend-mode:lighten, plus spiky
+         dividers, background watermarks, edge spines, node marks — with
+         the original hand-drawn corner spikes — blended via mix-blend-mode:lighten, plus spiky
          chamfered clip-paths
        • display type: Metal Mania (serrated sigil lettering)
        • v1 (previous neon palette) preserved at index-v1-neon.html
@@ -136,8 +136,15 @@
       text-align:center;
       overflow:hidden;
     }
-    /* spiked corner treatments overlap the frame border */
-    .sigil--corner{position:absolute;width:clamp(44px,8vw,76px);height:auto;--op:.8}
+    /* spiked corner treatments overlap the frame border (original hand-drawn design) */
+    .sigil{display:block;color:rgba(232,228,216,.5)}
+    .sigil .sg-core{fill:var(--blood-hi);stroke:none}
+    .sigil--corner{position:absolute;width:clamp(44px,8vw,76px);height:auto;color:rgba(232,228,216,.55)}
+    .sigil--corner .sg-core{opacity:.9}
+    .corner--tl{top:-1px;left:-1px}
+    .corner--tr{top:-1px;right:-1px;transform:scaleX(-1)}
+    .corner--bl{bottom:-1px;left:-1px;transform:scaleY(-1)}
+    .corner--br{bottom:-1px;right:-1px;transform:scale(-1,-1)}
     .corner--tl{top:-1px;left:-1px}
     .corner--tr{top:-1px;right:-1px;transform:scaleX(-1)}
     .corner--bl{bottom:-1px;left:-1px;transform:scaleY(-1)}
@@ -211,34 +218,6 @@
     .sec-head{margin-bottom:38px;max-width:640px}
     .sec-head h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,7vw,2.9rem);margin:0 0 10px;line-height:1.12}
     .sec-head p{color:var(--ash);margin:0}
-
-    /* ================= exhume — candies rise from the dirt ================= */
-    .graveyard{position:relative;height:440px;overflow:hidden}
-    .ground{position:absolute;left:0;right:0;bottom:0;height:62px;background:linear-gradient(180deg,rgba(217,4,41,.16),rgba(5,5,5,.92) 45%,#000);border-top:1px solid rgba(217,4,41,.45)}
-    .ground::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:16px;background:#050505;clip-path:polygon(0 100%,3% 20%,6% 100%,9% 45%,12% 100%,15% 10%,18% 100%,21% 40%,24% 100%,27% 0,30% 100%,33% 35%,36% 100%,39% 15%,42% 100%,45% 50%,48% 100%,51% 5%,54% 100%,57% 30%,60% 100%,63% 55%,66% 100%,69% 12%,72% 100%,75% 42%,78% 100%,81% 22%,84% 100%,87% 60%,90% 100%,93% 35%,96% 100%,100% 80%,100% 100%)}
-    .hand{position:absolute;bottom:-8px;width:180px;mix-blend-mode:lighten;opacity:0;transform:translateY(85%)}
-    .hand--l{left:5%;transform:translateY(85%) rotate(-8deg)}
-    .hand--r{right:7%;transform:translateY(92%) rotate(6deg)}
-    .hand.seen, .graveyard.seen .hand{opacity:.95;transform:translateY(8%);transition:opacity .9s ease,transform 1.4s cubic-bezier(.22,1,.36,1);animation:handsway 6s ease-in-out 2.2s infinite}
-    .graveyard.seen .hand--l{transform:translateY(8%) rotate(-8deg)}
-    .graveyard.seen .hand--r{transform:translateY(12%) rotate(6deg)}
-    @keyframes handsway{0%,100%{transform:translateY(8%) rotate(0deg)}50%{transform:translateY(11%) rotate(1.5deg)}}
-    .candy-pop{position:absolute;bottom:68px;width:160px;margin-left:-80px;text-align:center;opacity:0;transform:translateY(170px) scale(.85)}
-    .candy-pop .c-img{width:112px;height:112px;mix-blend-mode:lighten;filter:drop-shadow(0 0 14px rgba(217,4,41,.45))}
-    .candy-pop .c-lbl{display:block;margin-top:4px;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blood-hi)}
-    .c1{left:24%}.c2{left:50%}.c3{left:76%}
-    @media (max-width: 640px){
-      .graveyard{height:340px}
-      .hand{width:120px;bottom:-4px}
-      .candy-pop{width:110px;margin-left:-55px;bottom:62px}
-      .candy-pop .c-img{width:82px;height:82px}
-      .c1{left:16%}.c2{left:50%}.c3{left:82%}
-    }
-    .graveyard.seen .candy-pop.sprung{opacity:1;transform:translateY(0) scale(1);transition:transform .85s cubic-bezier(.34,1.56,.64,1),opacity .5s ease}
-    .graveyard.seen .c1.sprung{transition-delay:.15s}.graveyard.seen .c2.sprung{transition-delay:.45s}.graveyard.seen .c3.sprung{transition-delay:.75s}
-    /* m-anim: Motion owns transform (no CSS transition to intercept spring frames); CSS keeps opacity only */
-    .graveyard.seen .candy-pop.sprung.m-anim{transition:opacity .5s ease}
-    .graveyard.seen .c1.sprung.m-anim,.graveyard.seen .c2.sprung.m-anim,.graveyard.seen .c3.sprung.m-anim{transition-delay:0s}
 
     /* ================= formula strip ================= */
     .formula{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
@@ -326,16 +305,17 @@
         100%{text-shadow:none;transform:translate(0)}
       }
 
-      /* 1. sigil draw-on — imagery settles in (AI ornaments carry no strokes) */
+      /* 1. sigil draw-on — SVG corners stroke on; AI imagery fades in */
       .sigil-img.draw{--op:1;opacity:0;transition:opacity 1.4s cubic-bezier(.45,0,.2,1)}
       .sigil-img.draw.seen{opacity:var(--op)}
       .hero .sigil-img.draw{transition-duration:1.1s}
+      .sigil.draw{stroke-dasharray:420 420;stroke-dashoffset:420;transition:stroke-dashoffset 1.4s cubic-bezier(.45,0,.2,1)}
+      .sigil.draw.seen{stroke-dashoffset:0}
+      .hero .sigil.draw{transition-duration:1.1s}
 
       /* 3. scroll reveal — staggered by JS-set transition-delay */
       .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
       .reveal.seen{opacity:1;transform:translateY(0)}
-
-      /* graveyard pops + hands (see exhume block) */
 
       /* 6. marquee ticker */
       .ticker{border-top:1px solid rgba(217,4,41,.4);border-bottom:1px solid rgba(217,4,41,.4);background:#080809;overflow:hidden}
@@ -387,9 +367,6 @@
       .gburst{animation:none}
       .btn,.cta{transition:none}
       .sigil-img{opacity:var(--op,1)!important}
-      .candy-pop,.hand{opacity:1!important;transform:none!important}
-      .hand--l{transform:rotate(-8deg)!important}
-      .hand--r{transform:rotate(6deg)!important}
     }
 
     /* ==== FLASH FX (scroll-down white flash) — remove this whole block to disable ==== */
@@ -406,11 +383,35 @@
 
   
 
+  <!-- original hand-drawn corner spikes (restored) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="sg-corner">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 3 L62 3"/>
+          <path d="M3 3 L3 62"/>
+          <path d="M18 3 L14.5 10 M18 3 L21.5 10"/>
+          <path d="M34 3 L31 9 M34 3 L37 9"/>
+          <path d="M48 3 L45.8 7.6 M48 3 L50.2 7.6"/>
+          <path d="M3 18 L10 14.5 M3 18 L10 21.5"/>
+          <path d="M3 34 L9 31 M3 34 L9 37"/>
+          <path d="M3 48 L7.6 45.8 M3 48 L7.6 50.2"/>
+          <path d="M12 12 L34 34"/>
+          <path d="M25 25 L21 26.5 M25 25 L26.5 21"/>
+          <path d="M31 31 L28.5 34.5 M31 31 L34.5 28.5"/>
+        </g>
+        <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" d="M62 0.8 L64.2 3 L62 5.2 L59.8 3 Z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" d="M3 62 L5.2 64.2 L3 66.4 L0.8 64.2 Z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" d="M38 31.5 L40.5 34 L38 36.5 L35.5 34 Z"/>
+        <path class="sg-core" d="M3 3 L5 5.4 L3 7.8 L1 5.4 Z" transform="rotate(45 3 5.4)"/>
+      </g>
+    </defs>
+  </svg>
+
   <header class="wrap top">
     <a class="wordmark" href="#top"><img class="mark sigil-img" src="assets/sigil-node.png" alt="" aria-hidden="true" loading="lazy">BRANDNAME</a>
     <nav aria-label="Page">
       <a href="#formula">Formula</a>
-      <a href="#drop">The drop</a>
       <a class="cta" href="#waitlist">Join waitlist</a>
     </nav>
   </header>
@@ -419,10 +420,10 @@
     <!-- ============ 1. HERO ============ -->
     <section class="hero" aria-label="Intro">
       <div class="hero-frame">
-        <img class="sigil-img sigil--corner draw corner--tl" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
-        <img class="sigil-img sigil--corner draw corner--tr" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
-        <img class="sigil-img sigil--corner draw corner--bl" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
-        <img class="sigil-img sigil--corner draw corner--br" src="assets/sigil-corner.png" alt="" aria-hidden="true" loading="lazy">
+        <svg class="sigil sigil--corner draw corner--tl" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
+        <svg class="sigil sigil--corner draw corner--tr" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
+        <svg class="sigil sigil--corner draw corner--bl" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
+        <svg class="sigil sigil--corner draw corner--br" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
         <div class="wm-p" data-parallax="-0.06" data-base="translate(-50%,-50%)" aria-hidden="true"><img class="sigil-img" src="assets/sigil-mandala.png" alt="" loading="lazy"></div>
         <div class="hero-inner">
           <img class="sigil-img sigil--spine draw sigil--spine-l" src="assets/sigil-spine.png" alt="" aria-hidden="true" loading="lazy">
@@ -480,35 +481,12 @@
     </div>
 
     <!-- ============ 2. HOW IT WORKS ============ -->
-    <!-- ============ 2. EXHUMATION — candies rise from the dirt ============ -->
-    <section class="sec exhume" id="drop">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker">[ 01 // EXHUMATION ]</p>
-          <h2>Summoned from the dirt.</h2>
-          <p>Three pieces crawl out of the dark. Chew all three. Go lift something heavy.</p>
-        </div>
-      </div>
-      <div class="graveyard">
-        <img class="hand hand--l" src="assets/hand-1.png" alt="" aria-hidden="true" loading="lazy">
-        <img class="hand hand--r" src="assets/hand-2.png" alt="" aria-hidden="true" loading="lazy">
-        <div class="candy-pop c1"><img class="c-img" src="assets/icon-shell.png" alt="" loading="lazy"><span class="c-lbl">Sour shell</span></div>
-        <div class="candy-pop c2"><img class="c-img" src="assets/icon-burst.png" alt="" loading="lazy"><span class="c-lbl">Burst core</span></div>
-        <div class="candy-pop c3"><img class="c-img" src="assets/icon-tingle.png" alt="" loading="lazy"><span class="c-lbl">Tingle</span></div>
-        <div class="ground" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <div class="divider" aria-hidden="true">
-      <img class="sigil-img draw" src="assets/sigil-divider.png" alt="" aria-hidden="true" loading="lazy">
-    </div>
-
     <!-- ============ 3. FORMULA STRIP ============ -->
     <section class="formula sec" id="formula">
       <div class="wm-p wm-p--f" data-parallax="0.05" data-base="translateY(-50%)" aria-hidden="true"><img class="sigil-img" src="assets/sigil-mandala.png" alt="" loading="lazy"></div>
       <div class="wrap" data-stagger>
         <div class="sec-head reveal">
-          <p class="kicker">[ 02 // SPEC SHEET ]</p>
+          <p class="kicker">[ 01 // SPEC SHEET ]</p>
           <h2>The formula</h2>
           <p>Caffeine for drive, L-theanine to keep it clean, beta-alanine for the endurance burn.</p>
         </div>
@@ -592,18 +570,9 @@
           if (!en.isIntersecting) return;
           en.target.classList.add('seen');
           io.unobserve(en.target);
-          if (en.target.classList.contains('graveyard')) {
-            /* the Motion module owns the candy pop; this timer is the no-CDN fallback */
-            setTimeout(function () {
-              if (!en.target.classList.contains('sprung')) {
-                en.target.classList.add('sprung');
-                en.target.querySelectorAll('.candy-pop').forEach(function (p) { p.classList.add('sprung'); });
-              }
-            }, 1200);
-          }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-      document.querySelectorAll('.reveal, .draw, .graveyard').forEach(function (el) {
+      }, { threshold: 0.15, rootMargin: '100% 0px -6% 0px' });
+      document.querySelectorAll('.reveal, .draw').forEach(function (el) {
         io.observe(el);
       });
 
@@ -710,33 +679,6 @@
       });
     }, {passive:true});
   })();
-  /* Motion springs (motion.dev via CDN — no build step). Candy pop uses real spring physics; falls back to the CSS transition if CDN/reduced-motion blocks it. */
-</script>
-<script type="module">
-  (async () => {
-    try {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const { animate } = await import('https://cdn.jsdelivr.net/npm/motion@14.9.0/+esm');
-      const pops = document.querySelectorAll('.candy-pop');
-      const delays = [150, 450, 750];
-      const gy = document.querySelector('.graveyard');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((en) => {
-          if (!en.isIntersecting) return;
-          io.unobserve(en.target);
-          en.target.classList.add('seen', 'sprung');
-          pops.forEach((p, i) => {
-            p.classList.add('sprung', 'm-anim');
-            /* NOTE: Motion v14.9.0 springs silently never start when the `delay` option is set — stagger via timeout instead */
-            setTimeout(() => {
-              animate(p, { translateY: [175, 0], scale: [0.85, 1] }, { type: 'spring', stiffness: 300, damping: 13 }).finished.catch(() => {});
-            }, delays[i] || 0);
-          });
-        });
-      }, { threshold: 0.3 });
-      if (gy) io.observe(gy);
-    } catch (err) { /* CDN unavailable — the main script's CSS .seen transition carries the pop */ }
-  })();
-</script>
+  </script>
 </body>
 </html>
