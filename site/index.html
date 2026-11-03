@@ -236,6 +236,9 @@
     }
     .graveyard.seen .candy-pop.sprung{opacity:1;transform:translateY(0) scale(1);transition:transform .85s cubic-bezier(.34,1.56,.64,1),opacity .5s ease}
     .graveyard.seen .c1.sprung{transition-delay:.15s}.graveyard.seen .c2.sprung{transition-delay:.45s}.graveyard.seen .c3.sprung{transition-delay:.75s}
+    /* m-anim: Motion owns transform (no CSS transition to intercept spring frames); CSS keeps opacity only */
+    .graveyard.seen .candy-pop.sprung.m-anim{transition:opacity .5s ease}
+    .graveyard.seen .c1.sprung.m-anim,.graveyard.seen .c2.sprung.m-anim,.graveyard.seen .c3.sprung.m-anim{transition-delay:0s}
 
     /* ================= formula strip ================= */
     .formula{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
@@ -724,7 +727,10 @@
           en.target.classList.add('seen', 'sprung');
           pops.forEach((p, i) => {
             p.classList.add('sprung', 'm-anim');
-            animate(p, { transform: ['translateY(175px) scale(0.85)', 'translateY(0px) scale(1)'] }, { type: 'spring', stiffness: 300, damping: 13, delay: delays[i] || 0 });
+            /* NOTE: Motion v14.9.0 springs silently never start when the `delay` option is set — stagger via timeout instead */
+            setTimeout(() => {
+              animate(p, { translateY: [175, 0], scale: [0.85, 1] }, { type: 'spring', stiffness: 300, damping: 13 }).finished.catch(() => {});
+            }, delays[i] || 0);
           });
         });
       }, { threshold: 0.3 });
