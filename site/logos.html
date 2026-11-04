@@ -41,6 +41,10 @@
   <h1>Twelve marks, one crown.</h1>
   <p class="sub">First-pass emblem directions — all AI-drafted in the brand palette (black / bone / blood). Pick a direction; the winner gets refined at high res with favicon + OG-image variants.</p>
   <div class="grid" id="grid"></div>
+  <p class="kicker" style="margin-top:44px">[ V2 — TROJAN CAPTAINS ]</p>
+  <h1>Helmets with a grin.</h1>
+  <p class="sub">Elaborations on The Pierced Profile — Trojan / Odyssey black-helmet captains, skeletal teeth forward, gothic cut.</p>
+  <div class="grid" id="grid2"></div>
   <p class="fineprint">Concept sheet v1 · AI-drafted (Pollinations) · R&amp;D only — final mark gets vectorized + trademark-screened</p>
 </div>
 <script>
@@ -58,12 +62,31 @@
     ["11-candy-mask.png","The Sinister Piece","The candy itself as a devilish mask character — mascot potential."],
     ["12-serpent-bolt.png","The Serpent","Thorned serpent coiled on a bolt — intricate, lore-heavy, tattoo-coded."]
   ];
+  var CONCEPTS2 = [
+    ["13-trojan-skull.png","The Trojan Skull","Trojan helmet, red horsehair crest, skeletal teeth under the visor."],
+    ["14-spartan-profile.png","The Spartan Profile","Side-profile spartan helm, bone jaw showing through the guard."],
+    ["15-black-captain.png","The Black Captain","Blackened captain helm front-on — dark slits, bone-teeth grin."],
+    ["16-plume-skull.png","The Plume King","Warrior skull in a crested helm, red plume, full grin."],
+    ["17-helmet-bones.png","Helmet & Bones","Corinthian helm over crossed bones — regimental crest feel."],
+    ["18-odysseus-grin.png","The Odysseus","Laurel-crowned captain helm with a grin beneath the brim."],
+    ["19-visor-grin.png","The Visor Grin","Visor sculpted as a grinning skull — teeth as the face guard."],
+    ["20-cheek-bolt.png","The Bolt Cheek","Skull in captain helm with the lightning bolt on its cheek plate."],
+    ["21-duel-helmets.png","The Duel","Two grinning helms face off — Troy vs Greece, duel emblem."],
+    ["22-minimal-helm.png","The Minimal Helm","Thin-line Corinthian silhouette, teeth as negative space — tiny-size king."]
+  ];
   var g = document.getElementById('grid');
   CONCEPTS.forEach(function (c) {
     var d = document.createElement('div');
     d.className = 'card';
     d.innerHTML = '<span class="n">' + c[0].slice(0, 2) + ' / 12</span><img src="logos/' + c[0] + '" alt="' + c[1] + ' logo concept" loading="lazy"><h2>' + c[1] + '</h2><p>' + c[2] + '</p>';
     g.appendChild(d);
+  });
+  var g2 = document.getElementById('grid2');
+  CONCEPTS2.forEach(function (c) {
+    var d = document.createElement('div');
+    d.className = 'card';
+    d.innerHTML = '<span class="n">V2 · ' + c[0].slice(0, 2) + ' / 22</span><img src="logos/' + c[0] + '" alt="' + c[1] + ' logo concept" loading="lazy"><h2>' + c[1] + '</h2><p>' + c[2] + '</p>';
+    g2.appendChild(d);
   });
 </script>
 </body>
