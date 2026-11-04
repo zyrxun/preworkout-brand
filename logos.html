@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo Concepts — BRANDNAME</title>
+<meta name="description" content="12 logo concepts for BRANDNAME — pick a direction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{--void:#050505;--bone:#e8e4d8;--ash:#98948a;--faint:#5b5852;--blood:#d90429;--blood-hi:#e5383b;--line:rgba(232,228,216,.12);--font-display:'Metal Mania',cursive;--font-mono:'Share Tech Mono',monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--void);color:var(--bone);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background-image:linear-gradient(rgba(232,228,216,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(232,228,216,.025) 1px,transparent 1px);background-size:44px 44px}
+  a{color:var(--blood-hi);text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:34px 20px 60px}
+  header{display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:8px;flex-wrap:wrap}
+  .wordmark{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.05em}
+  header nav{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase}
+  .kicker{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.3em;color:var(--blood-hi);text-transform:uppercase;margin:34px 0 6px}
+  h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,6vw,3.2rem);margin:0 0 10px;line-height:1.05}
+  .sub{color:var(--ash);margin:0 0 30px;max-width:640px;font-size:.95rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  .card{border:1px solid var(--line);background:#0a0a0b;padding:14px;position:relative;transition:transform .25s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-4px);border-color:rgba(217,4,41,.55)}
+  .card img{width:100%;aspect-ratio:1;display:block;image-rendering:auto}
+  .card .n{position:absolute;top:10px;left:12px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.25em;color:var(--faint)}
+  .card h2{font-family:var(--font-display);font-weight:400;font-size:1.15rem;margin:12px 0 4px;letter-spacing:.03em}
+  .card p{margin:0;color:var(--ash);font-size:.82rem;line-height:1.45}
+  .fineprint{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin-top:36px;border-top:1px solid var(--line);padding-top:16px}
+  @media (max-width:560px){.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="wordmark">BRANDNAME</div>
+    <nav><a href="./">← Back to the site</a></nav>
+  </header>
+  <p class="kicker">[ LOGO GRAVEYARD ]</p>
+  <h1>Twelve marks, one crown.</h1>
+  <p class="sub">First-pass emblem directions — all AI-drafted in the brand palette (black / bone / blood). Pick a direction; the winner gets refined at high res with favicon + OG-image variants.</p>
+  <div class="grid" id="grid"></div>
+  <p class="fineprint">Concept sheet v1 · AI-drafted (Pollinations) · R&amp;D only — final mark gets vectorized + trademark-screened</p>
+</div>
+<script>
+  var CONCEPTS = [
+    ["01-skull-crown.png","The Dead King","Regal skull wearing the blade crown — matches the hero emblem. Premium, menacing, brand-father."],
+    ["02-bolt-crest.png","The Bolt Crest","Heraldic shield holding a jagged bolt. Team-sport energy, jersey-friendly."],
+    ["03-thorn-diamond.png","The Thorn Mark","Minimal thorned diamond — the quiet-luxury option. Tiny sizes, app-icon ready."],
+    ["04-skull-burst.png","The Shatter","Skull exploding in spiked shards — literally the candy burst. Most aggressive."],
+    ["05-lettermark-b.png","The Letter B","Blackletter B wrapped in thorns — classic streetwear monogram play."],
+    ["06-candy-core.png","The Core Section","Candy cut away to reveal the glowing core + bolt. Explains the product in one mark."],
+    ["07-bat-crest.png","The Bat Wing","Gothic wings behind a spiked diamond. Heavy metal energy, crest symmetry."],
+    ["08-skull-profile.png","The Pierced Profile","Side skull pierced by a bolt — cleanest at small sizes after #3."],
+    ["09-seal-ring.png","The Seal","Circular wax-seal badge — works as a stamp on packaging and merch."],
+    ["10-bolt-diamond.png","The Bolt Diamond","Angular bolt-diamond monogram — the most modern/sporty direction."],
+    ["11-candy-mask.png","The Sinister Piece","The candy itself as a devilish mask character — mascot potential."],
+    ["12-serpent-bolt.png","The Serpent","Thorned serpent coiled on a bolt — intricate, lore-heavy, tattoo-coded."]
+  ];
+  var g = document.getElementById('grid');
+  CONCEPTS.forEach(function (c) {
+    var d = document.createElement('div');
+    d.className = 'card';
+    d.innerHTML = '<span class="n">' + c[0].slice(0, 2) + ' / 12</span><img src="logos/' + c[0] + '" alt="' + c[1] + ' logo concept" loading="lazy"><h2>' + c[1] + '</h2><p>' + c[2] + '</p>';
+    g.appendChild(d);
+  });
+</script>
+</body>
+</html>
