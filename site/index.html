@@ -204,6 +204,8 @@
     /* success state: `hidden` attribute is the single source of truth.
        display:flex only applies when NOT hidden — so a leftover
        display rule can never override the hidden attribute again. */
+    .wl-error{display:none;margin-top:10px;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.05em;color:var(--blood-hi)}
+    .wl-error:not([hidden]){display:block}
     .success{
       margin:0;padding:16px 18px;
       border:1px solid rgba(229,56,59,.55);background:rgba(217,4,41,.07);color:var(--blood-hi);
@@ -454,19 +456,10 @@
             <div id="waitlist-live">
               <p class="waitlist-label">Join the waitlist — be first when we drop.</p>
               <!-- ============================================================
-                   WAITLIST FORM — placeholder action. Not connected yet (no
-                   signup is possible at this stage). To hook it up later:
-
-                   • Formspree: create a form, then set
-                       action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-                     Field names below ("name", "email") work as-is, then delete
-                     the placeholder <script> at the bottom of this file.
-
-                   • Tally: build the form in Tally and either embed it here
-                     (iframe) or point this form's action at your Tally endpoint.
-
-                   The success state below is FAKE (client-side only) — replace it
-                   with the provider's real redirect/thank-you page.
+                   WAITLIST FORM — wired to Resend via a Cloudflare Worker.
+                   Site posts JSON to WAITLIST_ENDPOINT (top of the main script).
+                   While the endpoint is empty the form runs in demo mode
+                   (success box shows, nothing is sent). Setup: docs/18-waitlist-resend.md
                    ============================================================ -->
               <form id="waitlist-form" class="waitlist-form" action="#" method="POST">
                 <div>
@@ -477,8 +470,10 @@
                   <label class="sr-only" for="wl-email">Email</label>
                   <input id="wl-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
                 </div>
+                <input id="wl-website" name="website" type="text" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button class="btn" type="submit">Get early access</button>
               </form>
+              <p class="wl-error" id="waitlist-error" hidden role="alert"></p>
               <p class="fineprint">18+ only. Keep out of reach of children. One launch email — no spam.</p>
             </div>
             <p class="success" id="waitlist-success" hidden role="status">You're on the list — watch your inbox for the drop.</p>
@@ -554,17 +549,53 @@
       var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
       function reduced() { return reduceMQ.matches; }
 
-      /* ---- waitlist form (fake success) ---- */
+      /* ---- waitlist form -> Resend via Cloudflare Worker ---- */
+      /* Paste your deployed Worker URL here (docs/18-waitlist-resend.md).
+         While it's empty the form runs in DEMO MODE: success shows, nothing is sent. */
+      var WAITLIST_ENDPOINT = "";
       var form = document.getElementById('waitlist-form');
       var live = document.getElementById('waitlist-live');
       var done = document.getElementById('waitlist-success');
-      if (form && live && done) {
+      var errBox = document.getElementById('waitlist-error');
+      if (form && live && done && errBox) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           if (!form.reportValidity()) return;
-          live.hidden = true;
-          done.hidden = false;
-          burstAt(done, 9);
+          var btn = form.querySelector('.btn');
+          var name = document.getElementById('wl-name').value.trim();
+          var email = document.getElementById('wl-email').value.trim();
+          done.hidden = true;
+          errBox.hidden = true;
+          if (!WAITLIST_ENDPOINT) {
+            console.info('waitlist: demo mode — set WAITLIST_ENDPOINT (docs/18) to go live');
+            live.hidden = true;
+            done.hidden = false;
+            burstAt(done, 9);
+            return;
+          }
+          if (btn) { btn.disabled = true; btn.textContent = 'Summoning\u2026'; }
+          fetch(WAITLIST_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, email: email, website: document.getElementById('wl-website').value })
+          }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; }); })
+            .then(function (res) {
+              if (res.status === 200 && res.body.ok) {
+                live.hidden = true;
+                done.hidden = false;
+                burstAt(done, 9);
+              } else {
+                errBox.textContent = (res.body && res.body.error) || 'Something snapped in the crypt. Try again.';
+                errBox.hidden = false;
+              }
+            })
+            .catch(function () {
+              errBox.textContent = 'Connection to the crypt failed. Try again.';
+              errBox.hidden = false;
+            })
+            .finally(function () {
+              if (btn) { btn.disabled = false; btn.textContent = 'Get early access'; }
+            });
         });
       }
 
