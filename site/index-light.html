@@ -15,8 +15,14 @@
   :root{
     --cream:#FAFAFA; --panel:#FFFFFF; --ink:#1A1A1A; --muted:#666666; --faint:#9A9A9A;
     --rose:#C9184A; --rose-soft:#F8EEEE; --line:#E6E6E6;
-    --font-display:'Quicksand','Nunito',system-ui,sans-serif; --font-body:'Nunito',system-ui,-apple-system,sans-serif; --font-mono:'Share Tech Mono',monospace;
+    --font-display:'Quicksand','Nunito',system-ui,sans-serif; --font-body:'Nunito',system-ui,-apple-system,sans-serif;    --font-mono:'Share Tech Mono',monospace;
     --radius:16px;
+    /* compound color system — pastel fill + deep tone of the same hue */
+    --caf-bg:#FFE4DA; --caf-tx:#A03E2C;
+    --the-bg:#EBE3FA; --the-tx:#5B3FB8;
+    --ba-bg:#DEF1E6;  --ba-tx:#177052;
+    --cit-bg:#DFF0FA; --cit-tx:#1F6390;
+    --sug-bg:#FFF3D6; --sug-tx:#7D5E0F;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -48,8 +54,13 @@
   h1 .soft{color:var(--rose)}
   .hero .sub{color:var(--muted);margin:0 0 26px;max-width:480px;font-size:1.02rem}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;padding:0;list-style:none}
-  .chips li{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:8px 13px;color:var(--muted)}
-  .chips li b{color:var(--ink);font-weight:400}
+  .chips li{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid transparent;border-radius:999px;padding:8px 13px}
+  .chips li b{color:inherit;font-weight:400}
+  .chips li.chip-caf{background:var(--caf-bg);color:var(--caf-tx)}
+  .chips li.chip-the{background:var(--the-bg);color:var(--the-tx)}
+  .chips li.chip-ba{background:var(--ba-bg);color:var(--ba-tx)}
+  .chips li.chip-cit{background:var(--cit-bg);color:var(--cit-tx)}
+  .chips li.chip-sug{background:var(--sug-bg);color:var(--sug-tx)}
 
   /* waitlist card */
   .wl-card{background:var(--panel);border:1px solid var(--line);border-radius:calc(var(--radius) + 4px);padding:26px;box-shadow:0 10px 34px rgba(33,29,25,.07)}
@@ -84,6 +95,16 @@
   .formula{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;list-style:none;margin:0;padding:0;max-width:860px;margin-left:auto;margin-right:auto}
   .facts li{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .facts li.f-caf{background:var(--caf-bg);border-color:transparent}
+  .facts li.f-caf .val,.facts li.f-caf .lbl{color:var(--caf-tx)}
+  .facts li.f-the{background:var(--the-bg);border-color:transparent}
+  .facts li.f-the .val,.facts li.f-the .lbl{color:var(--the-tx)}
+  .facts li.f-ba{background:var(--ba-bg);border-color:transparent}
+  .facts li.f-ba .val,.facts li.f-ba .lbl{color:var(--ba-tx)}
+  .facts li.f-cit{background:var(--cit-bg);border-color:transparent}
+  .facts li.f-cit .val,.facts li.f-cit .lbl{color:var(--cit-tx)}
+  .facts li.f-sug{background:var(--sug-bg);border-color:transparent}
+  .facts li.f-sug .val,.facts li.f-sug .lbl{color:var(--sug-tx)}
   .facts .val{display:block;font-family:var(--font-display);font-weight:600;font-size:1.7rem;color:var(--ink)}
   .facts .lbl{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:6px}
   .footnote{font-size:.8rem;color:var(--faint);max-width:640px;margin:20px auto 0;text-align:center}
@@ -139,11 +160,11 @@
         <h1>Sour shell. <span class="soft">Calm focus.</span><br>No shaker bottle.</h1>
         <p class="sub">A burst candy with the same exact doses as a full pre-workout — minus the chalk, the scoops, and the 300mg heart-race. Bite in, feel the tingle, and go at your pace.</p>
         <ul class="chips">
-          <li><b>200mg</b> caffeine</li>
-          <li><b>200mg</b> L-theanine</li>
-          <li><b>3g</b> beta-alanine</li>
-          <li><b>1.75g</b> citrulline malate</li>
-          <li><b>0g*</b> sugar</li>
+          <li class="chip-caf"><b>200mg</b> caffeine</li>
+          <li class="chip-the"><b>200mg</b> L-theanine</li>
+          <li class="chip-ba"><b>3g</b> beta-alanine</li>
+          <li class="chip-cit"><b>1.75g</b> citrulline malate</li>
+          <li class="chip-sug"><b>0g*</b> sugar</li>
         </ul>
         <p class="fineprint" style="margin:0 0 8px">Every dose on the label. No proprietary blends — ever.</p>
         <p class="fineprint" style="margin:0">Prefer the dark stuff? <a href="index.html">Try the original edition →</a></p>
@@ -204,11 +225,11 @@
         <p>Per serving &middot; 5 pieces. Exact doses, nothing hidden behind "proprietary blend."</p>
       </div>
       <ul class="facts" data-stagger>
-        <li class="reveal"><span class="val">200mg</span><span class="lbl">Caffeine</span></li>
-        <li class="reveal"><span class="val">200mg</span><span class="lbl">L-Theanine</span></li>
-        <li class="reveal"><span class="val">3g</span><span class="lbl">Beta-Alanine</span></li>
-        <li class="reveal"><span class="val">1.75g</span><span class="lbl">Citrulline Malate</span></li>
-        <li class="reveal"><span class="val">0g*</span><span class="lbl">Sugar</span></li>
+        <li class="reveal f-caf"><span class="val">200mg</span><span class="lbl">Caffeine</span></li>
+        <li class="reveal f-the"><span class="val">200mg</span><span class="lbl">L-Theanine</span></li>
+        <li class="reveal f-ba"><span class="val">3g</span><span class="lbl">Beta-Alanine</span></li>
+        <li class="reveal f-cit"><span class="val">1.75g</span><span class="lbl">Citrulline Malate</span></li>
+        <li class="reveal f-sug"><span class="val">0g*</span><span class="lbl">Sugar</span></li>
       </ul>
       <p class="footnote reveal">*Sugar-free formula planned for launch — final supplement facts will be printed on the jar. Citrulline malate is a pump-support dose, not a clinical one — we label it honestly.</p>
     </div>
