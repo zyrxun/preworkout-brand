@@ -45,6 +45,10 @@
   <h1>Helmets with a grin.</h1>
   <p class="sub">Elaborations on The Pierced Profile — Trojan / Odyssey black-helmet captains, skeletal teeth forward, gothic cut.</p>
   <div class="grid" id="grid2"></div>
+  <p class="kicker" style="margin-top:44px">[ V3 — GRAPHIC MARKS ]</p>
+  <h1>Flat. Sharp. Vector.</h1>
+  <p class="sub">Hand-built vector marks — pure geometry, zero raster, crisp at any size. The Trojan captain line, locked to the palette.</p>
+  <div class="grid" id="grid3"></div>
   <p class="fineprint">Concept sheet v1 · AI-drafted (Pollinations) · R&amp;D only — final mark gets vectorized + trademark-screened</p>
 </div>
 <script>
@@ -74,6 +78,18 @@
     ["21-duel-helmets.png","The Duel","Two grinning helms face off — Troy vs Greece, duel emblem."],
     ["22-minimal-helm.png","The Minimal Helm","Thin-line Corinthian silhouette, teeth as negative space — tiny-size king."]
   ];
+  var CONCEPTS3 = [
+    ["23-centurion.svg","The Centurion","Solid red crest cap over the bone helm — the flagship captain."],
+    ["24-grin.svg","The Grin","Blood badge, bone teeth — the boldest minimal mark."],
+    ["25-warlord.svg","The Warlord","Angular side-profile helm, red eye-slit, teeth under."],
+    ["26-duel.svg","The Duel","Bone vs blood captains charging, bolt crackling between."],
+    ["27-line.svg","The Line Centurion","Stroke-only helm — the tattoo/fine-line option."],
+    ["28-plume.svg","The Plume Lord","Red mohawk slab over the helm — punk captain."],
+    ["29-bolt-cheek.svg","The Bolt Scar","Helm scarred by the bolt on its cheek plate."],
+    ["30-war-horse.svg","The War Horse","Trojan horse nod — ears, mane, teeth on the jaw."],
+    ["31-laurel.svg","The Laurel Captain","Victory wreath framing the helm — Odysseus energy."],
+    ["32-monogram.svg","The Monogram","Diamond shield, bolt, teeth — the modern lockup."]
+  ];
   var g = document.getElementById('grid');
   CONCEPTS.forEach(function (c) {
     var d = document.createElement('div');
@@ -87,6 +103,13 @@
     d.className = 'card';
     d.innerHTML = '<span class="n">V2 · ' + c[0].slice(0, 2) + ' / 22</span><img src="logos/' + c[0] + '" alt="' + c[1] + ' logo concept" loading="lazy"><h2>' + c[1] + '</h2><p>' + c[2] + '</p>';
     g2.appendChild(d);
+  });
+  var g3 = document.getElementById('grid3');
+  CONCEPTS3.forEach(function (c) {
+    var d = document.createElement('div');
+    d.className = 'card';
+    d.innerHTML = '<span class="n">V3 · ' + c[0].slice(0, 2) + ' / 32</span><img src="logos-svg/' + c[0] + '" alt="' + c[1] + ' logo mark" loading="lazy"><h2>' + c[1] + '</h2><p>' + c[2] + '</p>';
+    g3.appendChild(d);
   });
 </script>
 </body>
