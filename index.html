@@ -407,6 +407,44 @@
       .hero .sigil--spine-r{right:-35px}
       .hero .wm-p{width:min(760px,92vw)}
     }
+
+    /* ==== CAPTAIN SEQUENCE — remove this whole block to disable ====
+       3-stage scroll-driven hero cinematic. Gates: >=1200px x >=720px viewport,
+       motion allowed, hero content fits the viewport (no body.no-stack).
+       A) scrollY=0: the frame fills the viewport (14px margins -> corner spikes at
+          the actual screen corners); the header floats over it.
+       B) scroll scrubs the frame BOX HEIGHT down to its natural content height
+          (top margin pinned at 14px, content stays centered, no scaleY squish).
+       C) a skeleton hand descends over the top edge, grips the h1 banner, does a
+          creaky finger wiggle, pushes the banner down while the ticker+formula
+          block (.over) rolls down from the top edge, then withdraws. The scrub
+          is deterministic rAF + scrollY mapping (JS kill-switch: CAPTAIN_SEQ,
+          end of body). Below the gates / reduced-motion: today's behavior. */
+    .captain-hand{position:fixed;top:0;left:50%;z-index:3;width:clamp(190px,21vw,300px);pointer-events:none;display:none;will-change:transform}
+    body.captain-live .captain-hand{display:block}
+    body.captain-done .captain-hand{display:none}
+    .captain-hand svg{display:block;width:100%;height:auto}
+    .captain-spacer{height:0}
+    @media (prefers-reduced-motion: reduce){
+      .captain-hand{display:none!important}
+    }
+    @media (min-width:1200px) and (min-height:720px){
+      /* stage A geometry: hero flush with the screen top, frame filling it */
+      body:not(.no-stack) .hero{padding:0;justify-content:flex-start}
+      body:not(.no-stack) .hero .hero-frame{
+        min-height:calc(100vh - 28px);
+        min-height:calc(100svh - 28px);
+        margin:14px;
+        display:flex;flex-direction:column;justify-content:center;
+      }
+      body:not(.no-stack) .hero .hero-inner{width:100%}
+      /* the header floats above the filled frame; chips keep it legible over the corner spikes */
+      body:not(.no-stack) .top{position:absolute;top:0;left:0;right:0;z-index:10}
+      body:not(.no-stack) .top .wordmark,
+      body:not(.no-stack) .top nav a:not(.cta){background:rgba(5,5,5,.82);padding-left:10px;padding-right:10px}
+      /* while the JS sequence is engaged it owns the frame box height (inline height) */
+      body.captain-live .hero .hero-frame{min-height:0}
+    }
   </style>
 </head>
 <body>
@@ -497,6 +535,94 @@
         </div>
       </div>
     </section>
+
+    <!-- ==== CAPTAIN SEQUENCE — scroll spacer + skeleton hand — remove this whole block to disable ==== -->
+    <div class="captain-spacer" id="captain-spacer" aria-hidden="true"></div>
+    <div class="captain-hand" id="captain-hand" aria-hidden="true" focusable="false">
+      <!-- hand-built flat vector: bone #E8E4D8 silhouettes -> #050505 void cuts -> bone detail,
+           one blood #E5383B joint accent (middle finger) — V3 house style.
+           Palm + 4 fingers + thumb are SEPARATE groups (data-finger) so each can creak on its own
+           pivot (data-cx/data-cy); data-distal sub-groups wiggle at the middle joint.
+           SVG rotate(a cx cy) attribute transforms — no CSS transform-origin pitfalls. -->
+      <svg viewBox="0 0 300 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <g fill="#E8E4D8">
+          <rect x="110" y="0" width="26" height="150" rx="12"/>
+          <rect x="144" y="0" width="18" height="142" rx="9"/>
+          <circle cx="121" cy="162" r="10"/>
+          <circle cx="141" cy="166" r="9"/>
+          <circle cx="159" cy="160" r="8"/>
+          <path d="M100,176 L168,176 L206,248 Q209,261 196,263 L106,266 Q93,263 96,250 Z"/>
+          <circle cx="114" cy="256" r="8"/>
+          <circle cx="142" cy="258" r="8.5"/>
+          <circle cx="170" cy="255" r="8"/>
+          <circle cx="198" cy="250" r="7"/>
+        </g>
+        <g fill="#050505">
+          <rect x="110" y="44" width="26" height="4"/>
+          <rect x="110" y="90" width="26" height="4"/>
+          <rect x="144" y="50" width="18" height="4"/>
+          <rect x="144" y="96" width="18" height="4"/>
+          <circle cx="121" cy="162" r="2.5"/>
+          <circle cx="141" cy="166" r="2.2"/>
+          <circle cx="159" cy="160" r="2"/>
+          <path d="M132,182 L137,182 L147,254 L142,254 Z"/>
+          <path d="M158,182 L163,182 L176,252 L171,252 Z"/>
+          <path d="M182,180 L186,180 L196,248 L192,248 Z"/>
+        </g>
+        <!-- thumb (splays outward on grip) -->
+        <g data-finger data-cx="107" data-cy="205" data-curl="-14" data-amp="5">
+          <g transform="rotate(28 107 205)">
+            <rect x="98.5" y="198" width="17" height="50" rx="8" fill="#E8E4D8"/>
+            <circle cx="107" cy="249" r="7.5" fill="#E8E4D8"/>
+            <circle cx="107" cy="249" r="2.2" fill="#050505"/>
+            <g transform="rotate(16 107 249)">
+              <rect x="100.5" y="249" width="13" height="36" rx="6.5" fill="#E8E4D8"/>
+              <rect x="104.5" y="276" width="2.5" height="8" fill="#050505"/>
+            </g>
+          </g>
+        </g>
+        <!-- index -->
+        <g data-finger data-cx="114" data-cy="256" data-curl="-6" data-amp="7">
+          <rect x="106.5" y="256" width="15" height="52" rx="7" fill="#E8E4D8"/>
+          <circle cx="114" cy="311" r="7" fill="#E8E4D8"/>
+          <circle cx="114" cy="311" r="2.2" fill="#050505"/>
+          <g data-distal data-cx="114" data-cy="311">
+            <rect x="108" y="311" width="12" height="42" rx="6" fill="#E8E4D8"/>
+            <rect x="111.5" y="344" width="3" height="9" fill="#050505"/>
+          </g>
+        </g>
+        <!-- middle — blood burst joint accent -->
+        <g data-finger data-cx="142" data-cy="258" data-curl="-3" data-amp="8">
+          <rect x="134.5" y="258" width="15" height="58" rx="7" fill="#E8E4D8"/>
+          <circle cx="142" cy="319" r="10.5" fill="#050505"/>
+          <circle cx="142" cy="319" r="7.5" fill="#E5383B"/>
+          <g data-distal data-cx="142" data-cy="319">
+            <rect x="136" y="319" width="12" height="46" rx="6" fill="#E8E4D8"/>
+            <rect x="139.5" y="349" width="3" height="9" fill="#050505"/>
+          </g>
+        </g>
+        <!-- ring -->
+        <g data-finger data-cx="170" data-cy="255" data-curl="4" data-amp="7">
+          <rect x="163" y="255" width="14" height="54" rx="7" fill="#E8E4D8"/>
+          <circle cx="170" cy="312" r="6.5" fill="#E8E4D8"/>
+          <circle cx="170" cy="312" r="2" fill="#050505"/>
+          <g data-distal data-cx="170" data-cy="312">
+            <rect x="164.5" y="312" width="11" height="42" rx="5.5" fill="#E8E4D8"/>
+            <rect x="168" y="341" width="3" height="8" fill="#050505"/>
+          </g>
+        </g>
+        <!-- pinky -->
+        <g data-finger data-cx="198" data-cy="250" data-curl="8" data-amp="6">
+          <rect x="191.5" y="250" width="13" height="44" rx="6.5" fill="#E8E4D8"/>
+          <circle cx="198" cy="297" r="6" fill="#E8E4D8"/>
+          <circle cx="198" cy="297" r="2" fill="#050505"/>
+          <g data-distal data-cx="198" data-cy="297">
+            <rect x="193" y="297" width="10" height="32" rx="5" fill="#E8E4D8"/>
+            <rect x="196.5" y="318" width="2.5" height="7" fill="#050505"/>
+          </g>
+        </g>
+      </svg>
+    </div>
 
     <!-- ============ marquee ticker ============ -->
     <div class="over">
@@ -752,6 +878,191 @@
         lastY = y; raf = false;
       });
     }, {passive:true});
+  })();
+  /* ==== CAPTAIN SEQUENCE (sandboxed) — set CAPTAIN_SEQ=false or delete this block to remove ====
+     Scroll-scrubbed choreography, rAF + scrollY mapping (deterministic + reversible).
+     p = scrollY / L, where L = 1.4 * viewport height:
+       0.00-0.45  hero frame compresses: viewport-height -> natural content height,
+                  top margin pinned at 14px, content centered inside the frame (no scaleY)
+       0.45-0.55  skeleton hand enters over the top edge and grips the h1 banner
+       0.55-0.75  creaky finger wiggle; banner sinks; .over (ticker+formula) rolls down
+                  from the top edge (position:fixed + translateY scrub)
+       0.75-1.00  hand releases and withdraws; at p>=1 the flow hands back to the normal
+                  layout: .over released to flow with its top exactly at the viewport top,
+                  spacer trimmed so nothing jumps (both scroll directions).
+     A scroll spacer keeps the document height constant while .over is out of flow, so
+     scrubbing never clamps. Everything below the gates is untouched. */
+  (function () {
+    var CAPTAIN_SEQ = true;
+    if (!CAPTAIN_SEQ) return;
+    var hero = document.querySelector('.hero');
+    var frame = hero && hero.querySelector('.hero-frame');
+    var over = document.querySelector('.over');
+    var spacer = document.getElementById('captain-spacer');
+    var hand = document.getElementById('captain-hand');
+    var h1 = document.querySelector('.hero h1');
+    var banner = h1 && h1.querySelector('.gburst');
+    if (!hero || !frame || !over || !spacer || !hand || !h1 || !banner) return;
+    var fingers = Array.prototype.slice.call(hand.querySelectorAll('[data-finger]'));
+    var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var engaged = false, done = false, ticking = false, overMode = '';
+    var M = { vh: 0, L: 0, hmax: 0, hmin: 0, handH: 1, overH: 0, rangeOK: false };
+
+    function gate() {
+      return window.innerWidth >= 1200 && window.innerHeight >= 720 &&
+        !document.body.classList.contains('no-stack') && !reduceMQ.matches;
+    }
+
+    function measure() {
+      M.vh = window.innerHeight;
+      M.L = Math.round(M.vh * 1.4);
+      M.hmax = Math.max(320, M.vh - 28);
+      frame.style.minHeight = '0';          // neutralize the fill min-height to read the natural box
+      frame.style.height = 'auto';
+      M.hmin = frame.offsetHeight;
+      frame.style.height = '';
+      frame.style.minHeight = '';
+      M.handH = hand.offsetHeight || 1;
+      var wasParked = over.style.display === 'none';
+      if (wasParked) over.style.display = '';
+      M.overH = over.offsetHeight;
+      if (wasParked) over.style.display = 'none';
+      M.rangeOK = (M.hmax - M.hmin) >= 80;  // need real compression room
+      done = false;                          // re-evaluate handoff against the new geometry
+    }
+
+    function clamp01(t) { return t < 0 ? 0 : t > 1 ? 1 : t; }
+    function ease(t) { t = clamp01(t); return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+    function outBack(t) { t = clamp01(t); var c = 1.4; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); }
+
+    function handoff() {
+      if (done) return;
+      done = true;
+      document.body.classList.add('captain-done');
+      over.style.cssText = '';               // released to normal flow: top lands exactly at viewport top
+      overMode = '';
+      spacer.style.height = Math.max(0, M.L - hero.offsetHeight) + 'px';
+    }
+    function undoHandoff() {
+      if (!done) return;
+      done = false;
+      document.body.classList.remove('captain-done');
+    }
+
+    function resetAll() {
+      engaged = false; done = false; overMode = '';
+      document.body.classList.remove('captain-live', 'captain-done');
+      frame.style.height = '';
+      spacer.style.height = '';
+      banner.style.transform = '';
+      banner.style.opacity = '';
+      hand.style.transform = '';
+      over.style.cssText = '';
+      fingers.forEach(function (f) {
+        f.removeAttribute('transform');
+        var d = f.querySelector('[data-distal]');
+        if (d) d.removeAttribute('transform');
+      });
+    }
+
+    function drive(p, now) {
+      /* B — compression: frame BOX height scrubs down, content stays centered, no scaleY */
+      var pe = ease(p / 0.45);
+      var fh = Math.round(M.hmax - pe * (M.hmax - M.hmin));
+      if (frame.style.height !== fh + 'px') {
+        frame.style.height = fh + 'px';
+        /* hero keeps min-height:100vh, so the doc height stays vh+L while .over is out of flow */
+        spacer.style.height = Math.round(M.vh + M.L - hero.offsetHeight) + 'px';
+      }
+
+      /* C — hand: enter (0.45-0.55, outBack snap), hold grip (0.55-0.75), withdraw (0.75-0.95) */
+      var parkY = -(M.handH + 60);
+      /* h1 rect (not the span): the span carries the sink transform we drive below */
+      var gripY = h1.getBoundingClientRect().top + 64 - M.handH * 0.85;
+      var hy, hrot;
+      if (p < 0.45) { hy = parkY; hrot = -7; }
+      else if (p < 0.55) {
+        hy = parkY + (gripY - parkY) * outBack((p - 0.45) / 0.10);
+        hrot = -7 + 7 * clamp01((p - 0.45) / 0.10);
+      } else if (p < 0.75) { hy = gripY; hrot = 0; }
+      else {
+        hy = gripY + (parkY - gripY) * ease((p - 0.75) / 0.20);
+        hrot = 4 * clamp01((p - 0.80) / 0.15);
+      }
+      /* creaky tension: quantized whole-hand shake + per-finger wiggle, only while gripping */
+      var amp = 0;
+      if (p >= 0.55 && p < 0.78) amp = Math.min(1, (p - 0.55) / 0.05) * Math.min(1, (0.78 - p) / 0.04);
+      var shake = amp > 0 ? Math.round(Math.sin(now * 0.011) * 1.3 / 0.6) * 0.6 : 0;
+      hand.style.transform = 'translate(-50%,' + hy.toFixed(1) + 'px) rotate(' + (hrot + shake).toFixed(2) + 'deg)';
+      var grip = ease((p - 0.48) / 0.10) * (1 - ease((p - 0.76) / 0.06));
+      for (var i = 0; i < fingers.length; i++) {
+        var f = fingers[i];
+        var cx = +f.getAttribute('data-cx'), cy = +f.getAttribute('data-cy');
+        var curl = parseFloat(f.getAttribute('data-curl')) || 0;
+        var a = parseFloat(f.getAttribute('data-amp'));
+        var wob = amp * Math.sin(now * 0.007 + i * 1.9) * (a ? a : 7);
+        wob = Math.round(wob / 2.2) * 2.2;              // stepped rotation = creaky
+        f.setAttribute('transform', 'rotate(' + (curl * grip + wob).toFixed(2) + ' ' + cx + ' ' + cy + ')');
+        var d = f.querySelector('[data-distal]');
+        if (d) {
+          var wob2 = amp * Math.sin(now * 0.0093 + i * 2.6 + 1) * 5;
+          wob2 = Math.round(wob2 / 2) * 2;
+          d.setAttribute('transform', 'rotate(' + (curl * 0.6 * grip + wob2).toFixed(2) + ' ' + d.getAttribute('data-cx') + ' ' + d.getAttribute('data-cy') + ')');
+        }
+      }
+
+      /* banner sink (0.60-0.74) — transform lives on the .gburst span: the h1's `rise`
+         entrance animation keeps fill-mode:forwards ownership of the h1 element itself,
+         so inline transforms there would never apply (frozen-at-start trap) */
+      var bs = ease((p - 0.60) / 0.14);
+      banner.style.transform = 'translateY(' + (bs * 150).toFixed(1) + 'px)';
+      banner.style.opacity = (1 - bs).toFixed(3);
+
+      /* .over: parked out of flow until 0.55 (display:none keeps reveal/curtain timing honest,
+         since geometry-based observers would pre-fire on a translated-but-visible box),
+         then fixed above the screen rolling down over the hero (0.55-0.75) */
+      if (p < 0.55) {
+        if (overMode !== 'park') { overMode = 'park'; over.style.cssText = 'display:none'; }
+      } else {
+        if (overMode !== 'roll') { overMode = 'roll'; over.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:2;will-change:transform'; }
+        var rp = ease((p - 0.55) / 0.20);
+        over.style.transform = 'translateY(' + (-(M.overH + 80) * (1 - rp)).toFixed(1) + 'px)';
+      }
+    }
+
+    function tick() {
+      ticking = false;
+      if (!gate()) {
+        if (engaged) resetAll();
+        return;
+      }
+      if (!engaged) {
+        document.body.classList.add('captain-live');  // before measure: the hand needs a box
+        measure();
+        if (!M.rangeOK) { resetAll(); return; }
+        engaged = true;
+      } else if (!M.rangeOK) {          // a resize can eat the compression room mid-sequence
+        resetAll();
+        return;
+      }
+      var p = (window.scrollY || 0) / M.L;
+      if (p >= 1) { handoff(); }
+      else { undoHandoff(); drive(p, performance.now()); }
+    }
+    function requestTick() {
+      if (!ticking) { ticking = true; requestAnimationFrame(tick); }
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', function () { if (engaged) measure(); requestTick(); }, { passive: true });
+    window.addEventListener('load', function () { if (engaged) measure(); requestTick(); });
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { if (engaged) measure(); requestTick(); });
+    }
+    if (reduceMQ.addEventListener) {
+      reduceMQ.addEventListener('change', function () { if (engaged) resetAll(); requestTick(); });
+    }
+    requestTick();
   })();
   </script>
 </body>
