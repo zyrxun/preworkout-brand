@@ -24,11 +24,12 @@ Brief requirement: **beta-alanine + L-theanine minimum, plus caffeine.**
 
 | Attribute | Spec |
 |---|---|
-| Serving | 3 pieces = **200mg caffeine** + **200mg L-theanine** (1:1) + **1.5g beta-alanine** (tingle ritual) |
-| Beta-alanine | 500mg/piece (350 core + 150 shell-loaded) × 3 = **1.5g/serving** — nearly half the 3.2g powder standard, well past the ~800mg tingle trigger; the full clinical dose still does NOT fit — label honestly + disclose tingling |
+| Serving | 5 pieces = **200mg caffeine** + **200mg L-theanine** (1:1) + **3.0g beta-alanine** (tingle ritual) + **1.75g citrulline malate** (pump support) |
+| Beta-alanine | 600mg/piece (350 core + 250 shell-loaded) × 5 = **3.0g/serving** — right at the ~3.2g clinical standard the bros cite; tingle guaranteed — label honestly + disclose tingling |
+| L-citrulline malate | 350mg/piece (shell suspension) × 5 = **1.75g/serving** — pump support dose, below the 6–8g clinical standard — label as support, never a clinical claim |
 | Texture | **Soft-ish shell (Gusher-soft)** — gives under teeth, core oozes out; NOT hard-crack (isomalt hard shell = optional variant only) |
 | Citrulline | OFF the label for v1 (open decision): max candy-realistic suspension ≈ 1g/serving vs 6–8g clinical pump dose — sub-clinical = fairy-dusting risk |
-| Per-piece cap | ~67mg caffeine keeps a single stray piece low-risk (still: child-resistant packaging, docs/05) |
+| Per-piece cap | 40mg caffeine keeps a single stray piece low-risk (still: child-resistant packaging, docs/05) |
 | Signature sensory | **Warheads-level sour shell** → sweet core. Brand mechanic idea: "sour levels" like heat levels (Level 1 → Nuclear) |
 | Shell | Soft-ish gelatin/pectin gummy engineered to **ooze** (target: Gusher-soft); core: glycerin/water solution with caffeine + theanine + flavor |
 | Sugar | **v1.1: isomalt/maltitol + stevia (not allulose** — allulose is a reducing sugar and browns faster than glucose near amino acids; see docs/13). Shell v1 practice batches can still use sugar + corn syrup — actives sit in the core, separated |

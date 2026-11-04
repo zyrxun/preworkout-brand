@@ -6,14 +6,15 @@ Phase B4/C3 deliverables — hand docs/17 to liquid-center manufacturers as-is. 
 
 **Working title:** BRANDNAME — chewable burst-candy energy (pre-workout positioning)
 
-**Format:** two-component candy piece. **Soft-ish gummy shell (Gusher-soft — gives under teeth, core oozes on bite)** + sealed liquid center (~35–40% of piece weight). Beta-alanine split-loaded into core AND shell (150mg suspended in shell matrix).
+**Format:** two-component candy piece. **Soft-ish gummy shell (Gusher-soft — gives under teeth, core oozes on bite)** + sealed liquid center (~35–40% of piece weight). Beta-alanine + L-citrulline malate split-loaded into core AND shell (250mg BA + 350mg citrulline malate suspended in the shell matrix).
 
-**Target piece weight:** 4.0 g (shell ~2.5 g + liquid core ~1.5 g) · **Serving:** 3 pieces (12 g)
+**Target piece weight:** 4.0 g (shell ~2.5 g + liquid core ~1.5 g) · **Serving:** 5 pieces (20 g)
 
-**Label claims per serving (3 pieces):**
-- Caffeine anhydrous 200 mg (~67 mg/piece)
+**Label claims per serving (5 pieces):**
+- Caffeine anhydrous 200 mg (~40 mg/piece)
 - L-theanine 200 mg (1:1 with caffeine)
-- Beta-alanine ~1,500 mg (500 mg/piece: 350 core + 150 shell-loaded)
+- Beta-alanine ~3,000 mg (600 mg/piece: 350 core + 250 shell-loaded)
+- L-citrulline malate ~1,750 mg (350 mg/piece, shell suspension — pump-support positioning)
 - Sugar 0 g* (sugar-free target)
 
 **Core (liquid fill):** glycerin/water system, target water activity **aw < 0.65**, pH **3.0–3.5** (do not go below 3.0 — theanine stability), caffeine + theanine + beta-alanine dissolved, natural flavor. Preservative: potassium sorbate 0.05–0.1%.

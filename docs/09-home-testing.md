@@ -7,10 +7,10 @@
 - ✅ At home you can validate: shell texture, burst mechanics, flavor system, sour level, tingle feel, dose feel, and film all the TikTok content.
 - ❌ At home you can never get: shelf-stable leak-proof seals, guaranteed dose uniformity, GMP/compliance, or legal sellability (cottage-food laws don't cover caffeinated supplements). Home batches are R&D + content, never product.
 
-## V1 recipe — "sour shell, energy core" gummy (24 pieces = 8 servings)
+## V1 recipe — "sour shell, energy core" gummy (30 pieces = 6 servings)
 
-Per piece: ~2.5g shell + ~1.5g liquid core = **~67mg caffeine / ~67mg L-theanine / 500mg beta-alanine** (350mg core + 150mg shell-loaded).
-Per serving (3 pieces): **200mg caffeine / 200mg theanine / 1.5g beta-alanine.** *(v1.3 — serving 4→3 pieces; BA shell-loading; texture target = soft-ooze shell.)*
+Per piece: ~2.5g shell + ~1.5g liquid core = **40mg caffeine / 40mg L-theanine / 600mg beta-alanine (350mg core + 250mg shell-loaded) / 350mg L-citrulline malate (shell).**
+Per serving (5 pieces): **200mg caffeine / 200mg theanine / 3.0g beta-alanine / 1.75g citrulline malate.** *(v1.4 — serving 3→5 pieces; caffeine 40mg/piece; BA shell-load 250mg; citrulline malate in. Texture target = soft-ooze shell.)*
 
 ### Equipment
 
@@ -20,13 +20,13 @@ Per serving (3 pieces): **200mg caffeine / 200mg theanine / 1.5g beta-alanine.**
 
 ### Core master syrup (makes 24 cores, 36g total)
 
-1. Caffeine source: **8 × 200mg pills** (1600mg) — capsules: open them and dump the powder into **17.8g hot water** (tablets work too, just drop in). Stir until fully dissolved; binders/flow agents may leave sediment — **strain through a coffee filter** and keep the clear liquid. Dosing is accounted by capsule count, so no powder weighing needed. Never dose loose powder directly or dry the extract back into powder (bitterness + hazard) — the caffeine lives in the liquid core, where it's masked. Open capsules over the pot and wipe spills immediately (keep powder away from kids/pets).
-2. Stir in **1600mg L-theanine** and **8400mg beta-alanine** until dissolved (v1.2 doses — warm helps; slight haze OK).
+1. Caffeine source: **6 × 200mg pills** (1200mg) — capsules: open them and dump the powder into **22.2g hot water** (tablets work too, just drop in). Stir until fully dissolved; binders/flow agents may leave sediment — **strain through a coffee filter** and keep the clear liquid. Dosing is accounted by capsule count, so no powder weighing needed. Never dose loose powder directly or dry the extract back into powder (bitterness + hazard) — the caffeine lives in the liquid core, where it's masked. Open capsules over the pot and wipe spills immediately (keep powder away from kids/pets).
+2. Stir in **1200mg L-theanine** and **10500mg beta-alanine** until dissolved (v1.2 doses — warm helps; slight haze OK).
 3. Add **16g vegetable glycerin**, **0.6g malic acid** (v1.1 — was 1.5g: keep core pH ≥3.0, theanine hydrolyzes ~2x faster below pH 3; the sour punch lives in the coating), **~½ tsp LorAnn flavor** (green apple first).
 4. Total ≈ 36g. Keep warm (~50°C) — beta-alanine can recrystallize as it cools.
-5. **Dose check:** 36g ÷ 24 = 1.5g/piece → 1.5 × (1600/36) = **66.7mg caffeine ✓** (beta-alanine: 8400/36 × 1.5 = **350mg ✓**). Weigh every deposit on the 0.01g scale; log it.
+5. **Dose check:** 45g ÷ 30 = 1.5g/piece → 1.5 × (1200/45) = **40mg caffeine ✓** (beta-alanine: 10500/45 × 1.5 = **350mg ✓**). Weigh every deposit on the 0.01g scale; log it.
 
-### Shell base (gelatin gummy, covers 24 pieces)
+### Shell base (gelatin gummy, covers 30 pieces)
 
 1. Bloom **10g gelatin** (2.5 Knox packets) in **30g cold water**, 5 min.
 2. Cook **50g sugar + 50g corn syrup** to ~115–120°C, remove heat.
@@ -53,7 +53,7 @@ Melt isomalt (~150°C, burns are serious — gloves, no kids/pets around), cast 
 
 - **Pills/tablets only, never bulk caffeine powder** (FDA explicitly warns consumers off it).
 - Count ALL caffeine sources that day (coffee, energy drinks). **Cap: 400mg/day total.**
-- Day 1: 1 piece (~67mg). Day 3: 2 pieces (~133mg). Day 5+: **3 pieces (~200mg — a full serving)** ~20 min pre-workout.
+- Day 1: 1 piece (~40mg). Day 3: 2 pieces (~80mg). Day 5: 3 pieces (~120mg). Day 7+: **5 pieces (~200mg — a full serving)** ~20 min pre-workout.
 - Expect: theanine smoothing the edge; beta-alanine face/hands tingle at 10–20 min (harmless).
 - Stop and don't retry if: palpitations, anxiety spiral, insomnia. Don't test if under 18, pregnant, heart conditions, or on stimulant meds. One test serving/day, never re-dose.
 - Dental: rinse water after; don't brush for 30 min (acid softens enamel).

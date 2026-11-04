@@ -66,7 +66,7 @@ Prices are October 2026 search-time estimates — verify at checkout. Quantities
 
 ## Minimum first-cart (you already have caffeine pills)
 
-Exact quantities: one **batch = 24 pieces (6 servings)**; the 4-weekend R&D plan needs **~6 batches (~150 pieces)**.
+Exact quantities: one **batch = 30 pieces (6 servings × 5 pieces)**; the 4-weekend R&D plan needs **~6 batches (~180 pieces)**.
 
 | Item | Per batch | Full plan (6 batches) | Smallest sensible buy |
 |---|---|---|---|
