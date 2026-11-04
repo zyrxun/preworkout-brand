@@ -377,7 +377,7 @@
     /* ==== FULLSCREEN TRANSITIONS (sticky hero handoff + curtain lifts) — remove this whole block to disable ==== */
     /* patterns: Awwwards sticky-panel handoff (hero pins full-viewport, page slides over) + Motion-style curtain wipe (black crypt door with blood-edge lifts on section entry) */
     @media (min-width:700px) and (min-height:720px){
-      body:not(.no-stack) .hero{position:sticky;top:0;z-index:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+      body:not(.no-stack) .hero{position:sticky;top:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
       .over{position:relative;z-index:2;background:#050505}
       .formula{min-height:88svh;display:flex;align-items:center}
     }
@@ -420,7 +420,9 @@
           block (.over) rolls down from the top edge, then withdraws. The scrub
           is deterministic rAF + scrollY mapping (JS kill-switch: CAPTAIN_SEQ,
           end of body). Below the gates / reduced-motion: today's behavior. */
-    .captain-hand{position:fixed;top:0;left:50%;z-index:3;width:clamp(190px,21vw,300px);pointer-events:none;display:none;will-change:transform}
+    .captain-hand{position:fixed;top:0;left:50%;width:clamp(250px,27vw,360px);pointer-events:none;display:none;will-change:transform}
+    .captain-hand--back{z-index:2}
+    .captain-hand--front{z-index:4}
     body.captain-live .captain-hand{display:block}
     body.captain-done .captain-hand{display:none}
     .captain-hand svg{display:block;width:100%;height:auto}
@@ -438,6 +440,7 @@
         display:flex;flex-direction:column;justify-content:center;
       }
       body:not(.no-stack) .hero .hero-inner{width:100%}
+      body:not(.no-stack) .hero .hero-frame h1{position:relative;z-index:3;font-size:clamp(2.9rem,6.4vw,4.7rem);letter-spacing:.01em}
       /* the header floats above the filled frame; chips keep it legible over the corner spikes */
       body:not(.no-stack) .top{position:absolute;top:0;left:0;right:0;z-index:10}
       body:not(.no-stack) .top .wordmark,
@@ -491,6 +494,50 @@
   <main id="top">
     <!-- ============ 1. HERO ============ -->
     <section class="hero" aria-label="Intro">
+    <div class="captain-hand captain-hand--back" id="captain-hand-back" aria-hidden="true" focusable="false">
+      <svg viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <g fill="#E8E4D8">
+        <!-- forearm: radius + ulna -->
+        <rect x="141" y="0" width="14" height="150" rx="7"/>
+        <rect x="160" y="0" width="14" height="146" rx="7"/>
+        <circle cx="148" cy="156" r="10"/>
+        <circle cx="170" cy="152" r="8"/>
+        <!-- palm slab -->
+        <rect x="110" y="160" width="116" height="102" rx="28"/>
+        <!-- void knuckle cuts -->
+        <rect x="121" y="242" width="16" height="10" fill="#050505"/>
+        <rect x="145" y="242" width="16" height="10" fill="#050505"/>
+        <rect x="169" y="242" width="16" height="10" fill="#050505"/>
+        <rect x="193" y="242" width="16" height="10" fill="#050505"/>
+        <!-- finger proximal + middle bones -->
+        <rect x="121" y="248" width="11" height="40" rx="5" data-finger data-cx="126.5" data-cy="250" data-curl="9" data-amp="6"/>
+        <rect x="121" y="286" width="10" height="30" rx="5" data-finger data-cx="126" data-cy="288" data-curl="7" data-amp="5"/>
+        <rect x="147" y="248" width="12" height="44" rx="6" data-finger data-cx="153" data-cy="250" data-curl="12" data-amp="8"/>
+        <rect x="147.5" y="290" width="11" height="32" rx="5" data-finger data-cx="153" data-cy="292" data-curl="9" data-amp="6"/>
+        <rect x="171" y="248" width="11" height="40" rx="5" data-finger data-cx="176.5" data-cy="250" data-curl="10" data-amp="6"/>
+        <rect x="171.5" y="286" width="10" height="28" rx="5" data-finger data-cx="176.5" data-cy="288" data-curl="8" data-amp="5"/>
+        <rect x="194" y="248" width="10" height="34" rx="5" data-finger data-cx="199" data-cy="250" data-curl="7" data-amp="5"/>
+        <rect x="194.5" y="280" width="9" height="22" rx="4" data-finger data-cx="199" data-cy="282" data-curl="6" data-amp="4"/>
+        <!-- thumb: two bones angled -->
+        <rect x="212" y="190" width="52" height="13" rx="6" transform="rotate(-30 212 196)" data-finger data-cx="214" data-cy="196" data-curl="18" data-amp="7"/>
+        <rect x="252" y="212" width="30" height="11" rx="5" transform="rotate(-32 252 217)" data-finger data-cx="254" data-cy="218" data-curl="14" data-amp="6"/>
+        <!-- blood joint accent -->
+        <circle cx="153" cy="292" r="5.5" fill="#E5383B"/>
+        </g>
+      </svg>
+    </div>
+    <div class="captain-hand captain-hand--front" id="captain-hand-front" aria-hidden="true" focusable="false">
+      <svg viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <!-- distal tips: hang over the banner's top edge, pressed on its face -->
+        <g fill="#E8E4D8">
+          <rect x="121" y="314" width="10" height="24" rx="5" data-tip data-cx="126" data-cy="316"/>
+          <rect x="147.5" y="320" width="11" height="27" rx="5" data-tip data-cx="153" data-cy="322"/>
+          <rect x="171.5" y="312" width="10" height="25" rx="5" data-tip data-cx="176.5" data-cy="314"/>
+          <rect x="194.5" y="300" width="9" height="21" rx="4" data-tip data-cx="199" data-cy="302"/>
+        </g>
+        <rect x="276" y="214" width="22" height="10" rx="5" fill="#E8E4D8" transform="rotate(-32 276 219)" data-tip data-cx="278" data-cy="219"/>
+      </svg>
+    </div>
       <div class="hero-frame">
         <svg class="sigil sigil--corner draw corner--tl" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
         <svg class="sigil sigil--corner draw corner--tr" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
@@ -538,92 +585,6 @@
 
     <!-- ==== CAPTAIN SEQUENCE — scroll spacer + skeleton hand — remove this whole block to disable ==== -->
     <div class="captain-spacer" id="captain-spacer" aria-hidden="true"></div>
-    <div class="captain-hand" id="captain-hand" aria-hidden="true" focusable="false">
-      <!-- hand-built flat vector: bone #E8E4D8 silhouettes -> #050505 void cuts -> bone detail,
-           one blood #E5383B joint accent (middle finger) — V3 house style.
-           Palm + 4 fingers + thumb are SEPARATE groups (data-finger) so each can creak on its own
-           pivot (data-cx/data-cy); data-distal sub-groups wiggle at the middle joint.
-           SVG rotate(a cx cy) attribute transforms — no CSS transform-origin pitfalls. -->
-      <svg viewBox="0 0 300 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <g fill="#E8E4D8">
-          <rect x="110" y="0" width="26" height="150" rx="12"/>
-          <rect x="144" y="0" width="18" height="142" rx="9"/>
-          <circle cx="121" cy="162" r="10"/>
-          <circle cx="141" cy="166" r="9"/>
-          <circle cx="159" cy="160" r="8"/>
-          <path d="M100,176 L168,176 L206,248 Q209,261 196,263 L106,266 Q93,263 96,250 Z"/>
-          <circle cx="114" cy="256" r="8"/>
-          <circle cx="142" cy="258" r="8.5"/>
-          <circle cx="170" cy="255" r="8"/>
-          <circle cx="198" cy="250" r="7"/>
-        </g>
-        <g fill="#050505">
-          <rect x="110" y="44" width="26" height="4"/>
-          <rect x="110" y="90" width="26" height="4"/>
-          <rect x="144" y="50" width="18" height="4"/>
-          <rect x="144" y="96" width="18" height="4"/>
-          <circle cx="121" cy="162" r="2.5"/>
-          <circle cx="141" cy="166" r="2.2"/>
-          <circle cx="159" cy="160" r="2"/>
-          <path d="M132,182 L137,182 L147,254 L142,254 Z"/>
-          <path d="M158,182 L163,182 L176,252 L171,252 Z"/>
-          <path d="M182,180 L186,180 L196,248 L192,248 Z"/>
-        </g>
-        <!-- thumb (splays outward on grip) -->
-        <g data-finger data-cx="107" data-cy="205" data-curl="-14" data-amp="5">
-          <g transform="rotate(28 107 205)">
-            <rect x="98.5" y="198" width="17" height="50" rx="8" fill="#E8E4D8"/>
-            <circle cx="107" cy="249" r="7.5" fill="#E8E4D8"/>
-            <circle cx="107" cy="249" r="2.2" fill="#050505"/>
-            <g transform="rotate(16 107 249)">
-              <rect x="100.5" y="249" width="13" height="36" rx="6.5" fill="#E8E4D8"/>
-              <rect x="104.5" y="276" width="2.5" height="8" fill="#050505"/>
-            </g>
-          </g>
-        </g>
-        <!-- index -->
-        <g data-finger data-cx="114" data-cy="256" data-curl="-6" data-amp="7">
-          <rect x="106.5" y="256" width="15" height="52" rx="7" fill="#E8E4D8"/>
-          <circle cx="114" cy="311" r="7" fill="#E8E4D8"/>
-          <circle cx="114" cy="311" r="2.2" fill="#050505"/>
-          <g data-distal data-cx="114" data-cy="311">
-            <rect x="108" y="311" width="12" height="42" rx="6" fill="#E8E4D8"/>
-            <rect x="111.5" y="344" width="3" height="9" fill="#050505"/>
-          </g>
-        </g>
-        <!-- middle — blood burst joint accent -->
-        <g data-finger data-cx="142" data-cy="258" data-curl="-3" data-amp="8">
-          <rect x="134.5" y="258" width="15" height="58" rx="7" fill="#E8E4D8"/>
-          <circle cx="142" cy="319" r="10.5" fill="#050505"/>
-          <circle cx="142" cy="319" r="7.5" fill="#E5383B"/>
-          <g data-distal data-cx="142" data-cy="319">
-            <rect x="136" y="319" width="12" height="46" rx="6" fill="#E8E4D8"/>
-            <rect x="139.5" y="349" width="3" height="9" fill="#050505"/>
-          </g>
-        </g>
-        <!-- ring -->
-        <g data-finger data-cx="170" data-cy="255" data-curl="4" data-amp="7">
-          <rect x="163" y="255" width="14" height="54" rx="7" fill="#E8E4D8"/>
-          <circle cx="170" cy="312" r="6.5" fill="#E8E4D8"/>
-          <circle cx="170" cy="312" r="2" fill="#050505"/>
-          <g data-distal data-cx="170" data-cy="312">
-            <rect x="164.5" y="312" width="11" height="42" rx="5.5" fill="#E8E4D8"/>
-            <rect x="168" y="341" width="3" height="8" fill="#050505"/>
-          </g>
-        </g>
-        <!-- pinky -->
-        <g data-finger data-cx="198" data-cy="250" data-curl="8" data-amp="6">
-          <rect x="191.5" y="250" width="13" height="44" rx="6.5" fill="#E8E4D8"/>
-          <circle cx="198" cy="297" r="6" fill="#E8E4D8"/>
-          <circle cx="198" cy="297" r="2" fill="#050505"/>
-          <g data-distal data-cx="198" data-cy="297">
-            <rect x="193" y="297" width="10" height="32" rx="5" fill="#E8E4D8"/>
-            <rect x="196.5" y="318" width="2.5" height="7" fill="#050505"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-
     <!-- ============ marquee ticker ============ -->
     <div class="over">
     <div class="ticker" aria-hidden="true">
@@ -899,11 +860,13 @@
     var frame = hero && hero.querySelector('.hero-frame');
     var over = document.querySelector('.over');
     var spacer = document.getElementById('captain-spacer');
-    var hand = document.getElementById('captain-hand');
+    var handB = document.getElementById('captain-hand-back');
+    var handF = document.getElementById('captain-hand-front');
     var h1 = document.querySelector('.hero h1');
     var banner = h1 && h1.querySelector('.gburst');
     if (!hero || !frame || !over || !spacer || !hand || !h1 || !banner) return;
-    var fingers = Array.prototype.slice.call(hand.querySelectorAll('[data-finger]'));
+    var fingers = Array.prototype.slice.call(handB.querySelectorAll('[data-finger]'));
+    var tips = Array.prototype.slice.call(handF.querySelectorAll('[data-tip]'));
     var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
     var engaged = false, done = false, ticking = false, overMode = '';
     var M = { vh: 0, L: 0, hmax: 0, hmin: 0, handH: 1, overH: 0, rangeOK: false };
@@ -915,7 +878,8 @@
 
     function measure() {
       M.vh = window.innerHeight;
-      M.L = Math.round(M.vh * 1.4);
+      M.vw = window.innerWidth;
+      M.L = Math.round(M.vh * 1.5);
       M.hmax = Math.max(320, M.vh - 28);
       frame.style.minHeight = '0';          // neutralize the fill min-height to read the natural box
       frame.style.height = 'auto';
@@ -956,76 +920,94 @@
       spacer.style.height = '';
       banner.style.transform = '';
       banner.style.opacity = '';
-      hand.style.transform = '';
+      handB.style.transform = '';
+      handF.style.transform = '';
       over.style.cssText = '';
-      fingers.forEach(function (f) {
-        f.removeAttribute('transform');
-        var d = f.querySelector('[data-distal]');
-        if (d) d.removeAttribute('transform');
-      });
+      fingers.forEach(function (f) { f.removeAttribute('transform'); });
+      tips.forEach(function (t) { t.removeAttribute('transform'); });
+    }
+
+    function bez(t, x0, y0, x1, y1, x2, y2) {
+      var u = 1 - t;
+      return { x: u * u * x0 + 2 * u * t * x1 + t * t * x2, y: u * u * y0 + 2 * u * t * y1 + t * t * y2 };
     }
 
     function drive(p, now) {
-      /* B — compression: frame BOX height scrubs down, content stays centered, no scaleY */
-      var pe = ease(p / 0.45);
+      /* B — compression (0-0.38): frame BOX height scrubs down, content centered, no scaleY */
+      var pe = ease(p / 0.38);
       var fh = Math.round(M.hmax - pe * (M.hmax - M.hmin));
       if (frame.style.height !== fh + 'px') {
         frame.style.height = fh + 'px';
-        /* hero keeps min-height:100vh, so the doc height stays vh+L while .over is out of flow */
         spacer.style.height = Math.round(M.vh + M.L - hero.offsetHeight) + 'px';
       }
 
-      /* C — hand: enter (0.45-0.55, outBack snap), hold grip (0.55-0.75), withdraw (0.75-0.95) */
-      var parkY = -(M.handH + 60);
-      /* h1 rect (not the span): the span carries the sink transform we drive below */
-      var gripY = h1.getBoundingClientRect().top + 64 - M.handH * 0.85;
-      var hy, hrot;
-      if (p < 0.45) { hy = parkY; hrot = -7; }
-      else if (p < 0.55) {
-        hy = parkY + (gripY - parkY) * outBack((p - 0.45) / 0.10);
-        hrot = -7 + 7 * clamp01((p - 0.45) / 0.10);
-      } else if (p < 0.75) { hy = gripY; hrot = 0; }
+      /* C — hand: curved approach from the right (0.38-0.58, bezier up-and-over),
+         drop + finger curl (0.58-0.66, palm slides BEHIND the h1 banner via z-sandwich:
+         palm layer z2 < banner z3 < fingertip layer z4), creaky grip (0.66-0.80),
+         banner push + .over rolls down from the top (0.68-0.86),
+         release up along the reverse arc (0.86-1) */
+      var hr = h1.getBoundingClientRect();
+      var handH = M.handH;
+      var gripX = hr.left + hr.width / 2 - M.vw / 2;
+      var gripY = hr.top - handH * 0.60;
+      var startX = gripX + M.vw * 0.64, startY = gripY - 300;
+      var apexY = gripY - 170;
+      var bx, by, rot;
+      if (p < 0.38) { bx = startX; by = startY - 260; rot = -26; }
+      else if (p < 0.58) {
+        var t = ease((p - 0.38) / 0.20);
+        var pt = bez(t, startX, startY, gripX + M.vw * 0.30, apexY - 140, gripX, gripY - 150);
+        bx = pt.x; by = pt.y; rot = -26 + 26 * t;
+      } else if (p < 0.66) {
+        var d = ease((p - 0.58) / 0.08);
+        bx = gripX + (M.vw * 0.02) * (1 - d);
+        by = (gripY - 150) + 150 * d;
+        rot = 0;
+      } else if (p < 0.86) { bx = gripX; by = gripY; rot = 0; }
       else {
-        hy = gripY + (parkY - gripY) * ease((p - 0.75) / 0.20);
-        hrot = 4 * clamp01((p - 0.80) / 0.15);
+        var u2 = ease((p - 0.86) / 0.14);
+        bx = gripX - u2 * 140;
+        by = gripY - u2 * 320;
+        rot = -10 * u2;
       }
-      /* creaky tension: quantized whole-hand shake + per-finger wiggle, only while gripping */
+      /* creaky tension: quantized whole-hand shake + per-finger wiggle while gripping */
       var amp = 0;
-      if (p >= 0.55 && p < 0.78) amp = Math.min(1, (p - 0.55) / 0.05) * Math.min(1, (0.78 - p) / 0.04);
+      if (p >= 0.62 && p < 0.82) amp = Math.min(1, (p - 0.62) / 0.05) * Math.min(1, (0.82 - p) / 0.04);
       var shake = amp > 0 ? Math.round(Math.sin(now * 0.011) * 1.3 / 0.6) * 0.6 : 0;
-      hand.style.transform = 'translate(-50%,' + hy.toFixed(1) + 'px) rotate(' + (hrot + shake).toFixed(2) + 'deg)';
-      var grip = ease((p - 0.48) / 0.10) * (1 - ease((p - 0.76) / 0.06));
+      var tf = 'translate(calc(-50% + ' + bx.toFixed(1) + 'px), ' + by.toFixed(1) + 'px) rotate(' + (rot + shake).toFixed(2) + 'deg) scale(0.8)';
+      handB.style.transform = tf;
+      handF.style.transform = tf;
+
+      /* finger curl over the banner edge + creaky per-finger wiggle (tips follow) */
+      var grip = ease((p - 0.56) / 0.10) * (1 - ease((p - 0.84) / 0.08));
       for (var i = 0; i < fingers.length; i++) {
         var f = fingers[i];
         var cx = +f.getAttribute('data-cx'), cy = +f.getAttribute('data-cy');
         var curl = parseFloat(f.getAttribute('data-curl')) || 0;
         var a = parseFloat(f.getAttribute('data-amp'));
         var wob = amp * Math.sin(now * 0.007 + i * 1.9) * (a ? a : 7);
-        wob = Math.round(wob / 2.2) * 2.2;              // stepped rotation = creaky
-        f.setAttribute('transform', 'rotate(' + (curl * grip + wob).toFixed(2) + ' ' + cx + ' ' + cy + ')');
-        var d = f.querySelector('[data-distal]');
-        if (d) {
-          var wob2 = amp * Math.sin(now * 0.0093 + i * 2.6 + 1) * 5;
-          wob2 = Math.round(wob2 / 2) * 2;
-          d.setAttribute('transform', 'rotate(' + (curl * 0.6 * grip + wob2).toFixed(2) + ' ' + d.getAttribute('data-cx') + ' ' + d.getAttribute('data-cy') + ')');
+        wob = Math.round(wob / 2.2) * 2.2;
+        var ang = (curl * grip + wob).toFixed(2);
+        f.setAttribute('transform', 'rotate(' + ang + ' ' + cx + ' ' + cy + ')');
+        var tp = tips[i];
+        if (tp) {
+          var tcx = +tp.getAttribute('data-cx'), tcy = +tp.getAttribute('data-cy');
+          tp.setAttribute('transform', 'rotate(' + ang + ' ' + tcx + ' ' + tcy + ')');
         }
       }
 
-      /* banner sink (0.60-0.74) — transform lives on the .gburst span: the h1's `rise`
-         entrance animation keeps fill-mode:forwards ownership of the h1 element itself,
-         so inline transforms there would never apply (frozen-at-start trap) */
-      var bs = ease((p - 0.60) / 0.14);
-      banner.style.transform = 'translateY(' + (bs * 150).toFixed(1) + 'px)';
-      banner.style.opacity = (1 - bs).toFixed(3);
+      /* banner push (0.68-0.84) — transform lives on the .gburst span (h1's rise
+         animation owns the h1 element itself: fill-forwards frozen-start trap) */
+      var bs = ease((p - 0.68) / 0.16);
+      banner.style.transform = 'translateY(' + (bs * 170).toFixed(1) + 'px)';
+      banner.style.opacity = (1 - bs * 0.9).toFixed(3);
 
-      /* .over: parked out of flow until 0.55 (display:none keeps reveal/curtain timing honest,
-         since geometry-based observers would pre-fire on a translated-but-visible box),
-         then fixed above the screen rolling down over the hero (0.55-0.75) */
-      if (p < 0.55) {
+      /* .over rolls down from the top edge (0.58-0.86) */
+      if (p < 0.58) {
         if (overMode !== 'park') { overMode = 'park'; over.style.cssText = 'display:none'; }
       } else {
         if (overMode !== 'roll') { overMode = 'roll'; over.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:2;will-change:transform'; }
-        var rp = ease((p - 0.55) / 0.20);
+        var rp = ease((p - 0.58) / 0.28);
         over.style.transform = 'translateY(' + (-(M.overH + 80) * (1 - rp)).toFixed(1) + 'px)';
       }
     }
