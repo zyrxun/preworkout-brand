@@ -376,7 +376,7 @@
 
     /* ==== FULLSCREEN TRANSITIONS (sticky hero handoff + curtain lifts) — remove this whole block to disable ==== */
     /* patterns: Awwwards sticky-panel handoff (hero pins full-viewport, page slides over) + Motion-style curtain wipe (black crypt door with blood-edge lifts on section entry) */
-    @media (min-width:700px) and (min-height:720px){
+    @media (min-width:700px) and (min-height:560px){
       body:not(.no-stack) .hero{position:sticky;top:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
       .over{position:relative;z-index:2;background:#050505}
       .formula{min-height:88svh;display:flex;align-items:center}
@@ -430,23 +430,30 @@
     @media (prefers-reduced-motion: reduce){
       .captain-hand{display:none!important}
     }
-    @media (min-width:1200px) and (min-height:720px){
+    @media (min-width:1200px) and (min-height:560px){
       /* stage A geometry: hero flush with the screen top, frame filling it */
       body:not(.no-stack) .hero{padding:0;justify-content:flex-start}
+      /* compact-hero: scaled/short screens still get the full frame without clipping */
       body:not(.no-stack) .hero .hero-frame{
         min-height:calc(100vh - 28px);
         min-height:calc(100svh - 28px);
         margin:14px;
         display:flex;flex-direction:column;justify-content:center;
       }
+      body:not(.no-stack) .hero .hero-frame h1{position:relative;z-index:3;letter-spacing:.01em}
       body:not(.no-stack) .hero .hero-inner{width:100%}
-      body:not(.no-stack) .hero .hero-frame h1{position:relative;z-index:3;font-size:clamp(2.9rem,6.4vw,4.7rem);letter-spacing:.01em}
       /* the header floats above the filled frame; chips keep it legible over the corner spikes */
       body:not(.no-stack) .top{position:absolute;top:0;left:0;right:0;z-index:10}
       body:not(.no-stack) .top .wordmark,
       body:not(.no-stack) .top nav a:not(.cta){background:rgba(5,5,5,.82);padding-left:10px;padding-right:10px}
       /* while the JS sequence is engaged it owns the frame box height (inline height) */
       body.captain-live .hero .hero-frame{min-height:0}
+    }
+    /* compact-hero: scaled/short screens shrink the frame content so it still fits */
+    @media (min-width:1200px) and (max-height:780px){
+      body:not(.no-stack) .hero .hero-frame{padding:24px 26px 30px}
+      body:not(.no-stack) .hero .hero-frame h1{font-size:clamp(2.4rem,4.6vw,3.8rem)}
+      body:not(.no-stack) .hero .waitlist input{padding:10px 14px}
     }
   </style>
 </head>
@@ -872,7 +879,7 @@
     var M = { vh: 0, L: 0, hmax: 0, hmin: 0, handH: 1, overH: 0, rangeOK: false };
 
     function gate() {
-      return window.innerWidth >= 1200 && window.innerHeight >= 720 &&
+      return window.innerWidth >= 900 && window.innerHeight >= 560 &&
         !document.body.classList.contains('no-stack') && !reduceMQ.matches;
     }
 
@@ -1012,10 +1019,15 @@
       }
     }
 
+    var captainDiag = false;
     function tick() {
       ticking = false;
       if (!gate()) {
         if (engaged) resetAll();
+        if (!captainDiag) {
+          captainDiag = true;
+          console.info('[captain] sequence idle — needs ≥900px width, ≥560px height, motion allowed, and hero content that fits the viewport');
+        }
         return;
       }
       if (!engaged) {
