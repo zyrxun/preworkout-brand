@@ -394,6 +394,19 @@
     @keyframes lb-flash{0%{opacity:0}8%{opacity:.6}30%{opacity:.55}55%{opacity:.22}100%{opacity:0}}
     @keyframes skull-imprint{0%,12%{opacity:0}16%,28%{opacity:1}34%{opacity:.55}55%{opacity:.25}100%{opacity:0}}
     @media (prefers-reduced-motion: reduce){.lightning-flash{display:none!important}}
+
+    /* ==== WIDE HERO FRAME — remove this whole block to disable ==== */
+    /* >=1200px: hero frame spans the viewport edge-to-edge with a ~14px breathing margin —
+       corner spikes land at the actual screen corners and the thorned spines hug the frame sides.
+       Spine offset math: gap 14px − frame border 1px − frame padding-x 48px (padding is capped
+       at 48px for every width >=1200px, so the offset is constant) = -35px. Watermark scales up
+       to fill the wider frame. Below 1200px NOTHING changes. */
+    @media (min-width:1200px){
+      .hero .hero-frame{margin:0 14px}
+      .hero .sigil--spine-l{left:-35px}
+      .hero .sigil--spine-r{right:-35px}
+      .hero .wm-p{width:min(760px,92vw)}
+    }
   </style>
 </head>
 <body>
