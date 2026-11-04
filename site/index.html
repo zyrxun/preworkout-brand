@@ -369,6 +369,19 @@
       .sigil-img{opacity:var(--op,1)!important}
     }
 
+    /* ==== FULLSCREEN TRANSITIONS (sticky hero handoff + curtain lifts) — remove this whole block to disable ==== */
+    /* patterns: Awwwards sticky-panel handoff (hero pins full-viewport, page slides over) + Motion-style curtain wipe (black crypt door with blood-edge lifts on section entry) */
+    @media (min-width:700px) and (min-height:720px){
+      body:not(.no-stack) .hero{position:sticky;top:0;z-index:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+      .over{position:relative;z-index:2;background:#050505}
+      .formula{min-height:88svh;display:flex;align-items:center}
+    }
+    body.no-stack .hero{position:static!important;min-height:0!important;display:block}
+    .curtain{position:relative}
+    .curtain::after{content:"";position:absolute;inset:-1px 0;background:#050505;border-bottom:1px solid rgba(217,4,41,.55);transform:scaleY(1);transform-origin:top;pointer-events:none;z-index:6;transition:transform .75s cubic-bezier(.76,0,.24,1)}
+    .curtain.seen::after{transform:scaleY(0)}
+    @media (prefers-reduced-motion: reduce){.curtain::after{display:none}}
+
     /* ==== FLASH FX (scroll-down white flash + subliminal skull cut) — remove this whole block to disable ==== */
     /* technique: film-standard subliminal frame — skull HARD-CUTS at full opacity against the white peak, then burns away */
     .lightning-flash{position:fixed;inset:0;z-index:96;background:#fff;pointer-events:none;animation:lb-flash .65s ease-out forwards}
@@ -475,6 +488,7 @@
     </section>
 
     <!-- ============ marquee ticker ============ -->
+    <div class="over">
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track"><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.5g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span><span class="tk">Sour shell<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Burst core<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>Tingle<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg caffeine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>200mg L-theanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>~1.5g beta-alanine<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b>0g sugar<b><svg class="tk-b" viewBox="0 0 10 16" aria-hidden="true" focusable="false"><path d="M6.2 0 L0.8 9.2 H4.4 L3 16 L9.2 6.4 H5.2 Z"/></svg></b></span></div>
     </div>
@@ -483,9 +497,8 @@
       <img class="sigil-img draw" src="assets/sigil-divider.png" alt="" aria-hidden="true" loading="lazy">
     </div>
 
-    <!-- ============ 2. HOW IT WORKS ============ -->
     <!-- ============ 3. FORMULA STRIP ============ -->
-    <section class="formula sec" id="formula">
+    <section class="formula sec curtain" id="formula">
       <div class="wm-p wm-p--f" data-parallax="0.05" data-base="translateY(-50%)" aria-hidden="true"><img class="sigil-img" src="assets/sigil-mandala.png" alt="" loading="lazy"></div>
       <div class="wrap" data-stagger>
         <div class="sec-head reveal">
@@ -504,6 +517,7 @@
       </div>
     </section>
 
+  </div>
   </main>
 
   <!-- ============ 5. FOOTER ============ -->
@@ -575,9 +589,16 @@
           io.unobserve(en.target);
         });
       }, { threshold: 0.15, rootMargin: '100% 0px -6% 0px' });
-      document.querySelectorAll('.reveal, .draw').forEach(function (el) {
+      document.querySelectorAll('.reveal, .draw, .curtain').forEach(function (el) {
         io.observe(el);
       });
+      /* fullscreen handoff guard: hero content taller than the viewport would get clipped while pinned — fall back to normal flow */
+      var heroEl = document.querySelector('.hero');
+      function stackGuard(){ if (heroEl && heroEl.scrollHeight > window.innerHeight + 40) { document.body.classList.add('no-stack'); } }
+      stackGuard();
+      window.addEventListener('resize', stackGuard, {passive:true});
+      window.addEventListener('load', stackGuard);
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(stackGuard); }
 
       /* ---- 3. stagger: siblings of [data-stagger] get incremental delays ---- */
       document.querySelectorAll('[data-stagger]').forEach(function (g) {
