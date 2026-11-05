@@ -409,8 +409,8 @@
     }
 
     /* ==== CAPTAIN SEQUENCE — remove this whole block to disable ====
-       3-stage scroll-driven hero cinematic. Gates: >=1200px x >=720px viewport,
-       motion allowed, hero content fits the viewport (no body.no-stack).
+       3-stage scroll-driven hero cinematic. Gates: >=900px x >=560px viewport,
+       motion allowed.
        A) scrollY=0: the frame fills the viewport (14px margins -> corner spikes at
           the actual screen corners); the header floats over it.
        B) scroll scrubs the frame BOX HEIGHT down to its natural content height
@@ -871,7 +871,7 @@
     var handF = document.getElementById('captain-hand-front');
     var h1 = document.querySelector('.hero h1');
     var banner = h1 && h1.querySelector('.gburst');
-    if (!hero || !frame || !over || !spacer || !hand || !h1 || !banner) return;
+    if (!hero || !frame || !over || !spacer || !handB || !handF || !h1 || !banner) return;
     var fingers = Array.prototype.slice.call(handB.querySelectorAll('[data-finger]'));
     var tips = Array.prototype.slice.call(handF.querySelectorAll('[data-tip]'));
     var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -880,7 +880,7 @@
 
     function gate() {
       return window.innerWidth >= 900 && window.innerHeight >= 560 &&
-        !document.body.classList.contains('no-stack') && !reduceMQ.matches;
+        !reduceMQ.matches;
     }
 
     function measure() {
@@ -891,6 +891,7 @@
       frame.style.minHeight = '0';          // neutralize the fill min-height to read the natural box
       frame.style.height = 'auto';
       M.hmin = frame.offsetHeight;
+      M.hmin = Math.min(M.hmin, M.hmax);     // never grow past the fill height
       frame.style.height = '';
       frame.style.minHeight = '';
       M.handH = hand.offsetHeight || 1;
@@ -898,7 +899,7 @@
       if (wasParked) over.style.display = '';
       M.overH = over.offsetHeight;
       if (wasParked) over.style.display = 'none';
-      M.rangeOK = (M.hmax - M.hmin) >= 80;  // need real compression room
+      M.rangeOK = true;                      // compression shrinks as far as it fits; hand plays regardless
       done = false;                          // re-evaluate handoff against the new geometry
     }
 
@@ -1026,7 +1027,7 @@
         if (engaged) resetAll();
         if (!captainDiag) {
           captainDiag = true;
-          console.info('[captain] sequence idle — needs ≥900px width, ≥560px height, motion allowed, and hero content that fits the viewport');
+          console.info('[captain] sequence idle — needs ≥900px width, ≥560px height, and motion allowed (OS reduce-motion off)');
         }
         return;
       }
