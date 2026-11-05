@@ -1,4 +1,4 @@
-# 15 — Recipe Card v1.3 + Flavor Lab (follow-along)
+# 15 — Recipe Card v1.4 + Flavor Lab (follow-along)
 
 One batch = **30 pieces = 6 servings** (5 pieces per serving). Per piece: 40mg caffeine / 40mg L-theanine / **600mg beta-alanine (350mg core + 250mg shell-loaded)** / 350mg L-citrulline malate (shell).
 Per serving (5 pieces): **200mg caffeine / 200mg L-theanine / 3.0g beta-alanine / 1.75g L-citrulline malate.**
@@ -16,12 +16,12 @@ Version notes: v1.4 — serving 3→5 pieces (batch 24→30), caffeine 40mg/piec
 | Ingredient | Amount | Where it goes |
 |---|---|---|
 | Caffeine pills 200mg | 6 (1200mg) | core |
-| Water (hot) | 17.8g | core |
-| L-theanine | 1.6g | core |
-| Beta-alanine | 8.4g | core |
+| Water (hot) | ~22g — top up to 45g total | core |
+| L-theanine | 1.2g | core |
+| Beta-alanine | 10.5g | core |
 | Beta-alanine (shell-load) | 7.5g | shell (v1.4) |
 | L-citrulline malate (shell-load) | 10.5g | shell (v1.4) |
-| Vegetable glycerin | 16g | core |
+| Vegetable glycerin | 10g | core |
 | Malic acid | 0.6g | core (sour base) |
 | LorAnn flavor | ~½ tsp total (50 drops), split ⅔ core / ⅓ shell | both |
 | Gelatin (Knox) | 12.5g (~3 packets) | shell |
@@ -31,14 +31,14 @@ Version notes: v1.4 — serving 3→5 pieces (batch 24→30), caffeine 40mg/piec
 | Citric acid | 2.5g | shell |
 | Food color (optional) | 1 drop gel | shell |
 
-Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 24.
+Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 30.
 
 ## Part A — Core master syrup (~15 min)
 
-1. Open **6 caffeine pills** over the pot, dump powder into **22.2g hot water**. Stir till clear; strain through the coffee filter (catches binders). Wipe spills immediately.
-2. Off heat, stir in **1.2g theanine** + **10.5g beta-alanine** until dissolved (warm helps; slight haze OK — dissolve fully before the glycerin goes in).
-3. Stir in **20g glycerin**, **0.75g malic acid**, and **~30 drops** of your flavor (split flavors AFTER step 5 in the Flavor Lab variant).
-4. Total should read **≈45g** on the pocket scale — top up with water if short.
+1. Open **6 caffeine pills** over the pot, dump powder into **~20g hot water**. Stir till clear; strain through the coffee filter (catches binders). Wipe spills immediately.
+2. Off heat, stir in **1.2g theanine** + **10.5g beta-alanine** until dissolved — keep warm (~50°C), slight haze OK, dissolve fully before the glycerin goes in.
+3. Stir in **10g glycerin**, **0.75g malic acid**, and **~30 drops** of your flavor (split flavors AFTER step 5 in the Flavor Lab variant).
+4. Weigh the pot: total must read **45.0g** — top up with hot water until the scale says 45g. (This is the dose anchor: every active is dosed against 45g.)
 5. Keep warm (~50°C, not hot). **Do not boil** (theanine + flavor degrade). Beta-alanine may haze as it cools — re-warm gently.
 6. **Dose check:** 45g ÷ 30 = 1.5g/piece → 1.5 × (1200/45) = **40mg caffeine ✓** (BA: 10500/45 × 1.5 = **350mg ✓**)
 
@@ -54,7 +54,7 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 24.
 1. **First pour:** fill cavities ~40% with shell liquid. Fridge 3–5 min until a skin sets firm enough to hold a puddle.
 2. **Cores:** pipette **1.5g warm core** into each center — aim middle, don't smear the walls.
 3. **Cap** with remaining shell liquid to the top. Fridge 20–30 min. Demold.
-4. **Batch QC:** weigh mold before cores and after — (after − before) ÷ 24 should be **1.5g ± 10%**. Log it.
+4. **Batch QC:** weigh mold before cores and after — (after − before) ÷ 30 should be **1.5g ± 10%**. Log it.
 5. Store airtight, fridge, **≤14 days**. Discard any weeper/leaker.
 
 ## Part D — Sour coat (day of eating)
