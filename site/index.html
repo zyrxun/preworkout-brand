@@ -374,27 +374,12 @@
       .sigil-img{opacity:var(--op,1)!important}
     }
 
-    /* ==== FULLSCREEN TRANSITIONS (sticky hero handoff + curtain lifts) — remove this whole block to disable ==== */
-    /* patterns: Awwwards sticky-panel handoff (hero pins full-viewport, page slides over) + Motion-style curtain wipe (black crypt door with blood-edge lifts on section entry) */
-    @media (min-width:700px) and (min-height:560px){
-      body:not(.no-stack) .hero{position:sticky;top:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
-      .over{position:relative;z-index:2;background:#050505}
-      .formula{min-height:88svh;display:flex;align-items:center}
-    }
-    body.no-stack .hero{position:static!important;min-height:0!important;display:block}
-    .curtain{position:relative}
-    .curtain::after{content:"";position:absolute;inset:-1px 0;background:#050505;border-bottom:1px solid rgba(217,4,41,.55);transform:scaleY(1);transform-origin:top;pointer-events:none;z-index:6;transition:transform .75s cubic-bezier(.76,0,.24,1)}
-    .curtain.seen::after{transform:scaleY(0)}
-    @media (prefers-reduced-motion: reduce){.curtain::after{display:none}}
-
-    /* ==== FLASH FX (scroll-down white flash + subliminal skull cut) — remove this whole block to disable ==== */
-    /* technique: film-standard subliminal frame — skull HARD-CUTS at full opacity against the white peak, then burns away */
-    .lightning-flash{position:fixed;inset:0;z-index:96;background:#fff;pointer-events:none;animation:lb-flash .65s ease-out forwards}
-    .lightning-flash .imprint{position:absolute;left:50%;top:50%;width:min(36vh,320px);height:auto;transform:translate(-50%,-50%);mix-blend-mode:multiply;filter:blur(1px);opacity:0;animation:skull-imprint .65s linear forwards}
-    @keyframes lb-flash{0%{opacity:0}8%{opacity:.6}30%{opacity:.55}55%{opacity:.22}100%{opacity:0}}
-    @keyframes skull-imprint{0%,12%{opacity:0}16%,28%{opacity:1}34%{opacity:.55}55%{opacity:.25}100%{opacity:0}}
-    @media (prefers-reduced-motion: reduce){.lightning-flash{display:none!important}}
-
+    /* ==== STATIC FULLSCREEN HERO — hero fills the viewport at rest, normal scrolling ==== */
+    .over{position:relative;background:#050505}
+    .hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:0}
+    .hero-frame{min-height:calc(100vh - 28px);min-height:calc(100svh - 28px);margin:14px;display:flex;flex-direction:column;justify-content:center}
+    .top{position:absolute;top:0;left:0;right:0;z-index:10}
+    .top .wordmark,.top nav a:not(.cta){background:rgba(5,5,5,.82);padding-left:10px;padding-right:10px}
     /* ==== WIDE HERO FRAME — remove this whole block to disable ==== */
     /* >=1200px: hero frame spans the viewport edge-to-edge with a ~14px breathing margin —
        corner spikes land at the actual screen corners and the thorned spines hug the frame sides.
@@ -408,53 +393,6 @@
       .hero .wm-p{width:min(760px,92vw)}
     }
 
-    /* ==== CAPTAIN SEQUENCE — remove this whole block to disable ====
-       3-stage scroll-driven hero cinematic. Gates: >=900px x >=560px viewport,
-       motion allowed.
-       A) scrollY=0: the frame fills the viewport (14px margins -> corner spikes at
-          the actual screen corners); the header floats over it.
-       B) scroll scrubs the frame BOX HEIGHT down to its natural content height
-          (top margin pinned at 14px, content stays centered, no scaleY squish).
-       C) a skeleton hand descends over the top edge, grips the h1 banner, does a
-          creaky finger wiggle, pushes the banner down while the ticker+formula
-          block (.over) rolls down from the top edge, then withdraws. The scrub
-          is deterministic rAF + scrollY mapping (JS kill-switch: CAPTAIN_SEQ,
-          end of body). Below the gates / reduced-motion: today's behavior. */
-    .captain-hand{position:fixed;top:0;left:50%;width:clamp(250px,27vw,360px);pointer-events:none;display:none;will-change:transform}
-    .captain-hand--back{z-index:2}
-    .captain-hand--front{z-index:4}
-    body.captain-live .captain-hand{display:block}
-    body.captain-done .captain-hand{display:none}
-    .captain-hand svg{display:block;width:100%;height:auto}
-    .captain-spacer{height:0}
-    @media (prefers-reduced-motion: reduce){
-      .captain-hand{display:none!important}
-    }
-    @media (min-width:1200px) and (min-height:560px){
-      /* stage A geometry: hero flush with the screen top, frame filling it */
-      body:not(.no-stack) .hero{padding:0;justify-content:flex-start}
-      /* compact-hero: scaled/short screens still get the full frame without clipping */
-      body:not(.no-stack) .hero .hero-frame{
-        min-height:calc(100vh - 28px);
-        min-height:calc(100svh - 28px);
-        margin:14px;
-        display:flex;flex-direction:column;justify-content:center;
-      }
-      body:not(.no-stack) .hero .hero-frame h1{position:relative;z-index:3;letter-spacing:.01em}
-      body:not(.no-stack) .hero .hero-inner{width:100%}
-      /* the header floats above the filled frame; chips keep it legible over the corner spikes */
-      body:not(.no-stack) .top{position:absolute;top:0;left:0;right:0;z-index:10}
-      body:not(.no-stack) .top .wordmark,
-      body:not(.no-stack) .top nav a:not(.cta){background:rgba(5,5,5,.82);padding-left:10px;padding-right:10px}
-      /* while the JS sequence is engaged it owns the frame box height (inline height) */
-      body.captain-live .hero .hero-frame{min-height:0}
-    }
-    /* compact-hero: scaled/short screens shrink the frame content so it still fits */
-    @media (min-width:1200px) and (max-height:780px){
-      body:not(.no-stack) .hero .hero-frame{padding:24px 26px 30px}
-      body:not(.no-stack) .hero .hero-frame h1{font-size:clamp(2.4rem,4.6vw,3.8rem)}
-      body:not(.no-stack) .hero .waitlist input{padding:10px 14px}
-    }
   </style>
 </head>
 <body>
@@ -501,50 +439,6 @@
   <main id="top">
     <!-- ============ 1. HERO ============ -->
     <section class="hero" aria-label="Intro">
-    <div class="captain-hand captain-hand--back" id="captain-hand-back" aria-hidden="true" focusable="false">
-      <svg viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <g fill="#E8E4D8">
-        <!-- forearm: radius + ulna -->
-        <rect x="141" y="0" width="14" height="150" rx="7"/>
-        <rect x="160" y="0" width="14" height="146" rx="7"/>
-        <circle cx="148" cy="156" r="10"/>
-        <circle cx="170" cy="152" r="8"/>
-        <!-- palm slab -->
-        <rect x="110" y="160" width="116" height="102" rx="28"/>
-        <!-- void knuckle cuts -->
-        <rect x="121" y="242" width="16" height="10" fill="#050505"/>
-        <rect x="145" y="242" width="16" height="10" fill="#050505"/>
-        <rect x="169" y="242" width="16" height="10" fill="#050505"/>
-        <rect x="193" y="242" width="16" height="10" fill="#050505"/>
-        <!-- finger proximal + middle bones -->
-        <rect x="121" y="248" width="11" height="40" rx="5" data-finger data-cx="126.5" data-cy="250" data-curl="9" data-amp="6"/>
-        <rect x="121" y="286" width="10" height="30" rx="5" data-finger data-cx="126" data-cy="288" data-curl="7" data-amp="5"/>
-        <rect x="147" y="248" width="12" height="44" rx="6" data-finger data-cx="153" data-cy="250" data-curl="12" data-amp="8"/>
-        <rect x="147.5" y="290" width="11" height="32" rx="5" data-finger data-cx="153" data-cy="292" data-curl="9" data-amp="6"/>
-        <rect x="171" y="248" width="11" height="40" rx="5" data-finger data-cx="176.5" data-cy="250" data-curl="10" data-amp="6"/>
-        <rect x="171.5" y="286" width="10" height="28" rx="5" data-finger data-cx="176.5" data-cy="288" data-curl="8" data-amp="5"/>
-        <rect x="194" y="248" width="10" height="34" rx="5" data-finger data-cx="199" data-cy="250" data-curl="7" data-amp="5"/>
-        <rect x="194.5" y="280" width="9" height="22" rx="4" data-finger data-cx="199" data-cy="282" data-curl="6" data-amp="4"/>
-        <!-- thumb: two bones angled -->
-        <rect x="212" y="190" width="52" height="13" rx="6" transform="rotate(-30 212 196)" data-finger data-cx="214" data-cy="196" data-curl="18" data-amp="7"/>
-        <rect x="252" y="212" width="30" height="11" rx="5" transform="rotate(-32 252 217)" data-finger data-cx="254" data-cy="218" data-curl="14" data-amp="6"/>
-        <!-- blood joint accent -->
-        <circle cx="153" cy="292" r="5.5" fill="#E5383B"/>
-        </g>
-      </svg>
-    </div>
-    <div class="captain-hand captain-hand--front" id="captain-hand-front" aria-hidden="true" focusable="false">
-      <svg viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <!-- distal tips: hang over the banner's top edge, pressed on its face -->
-        <g fill="#E8E4D8">
-          <rect x="121" y="314" width="10" height="24" rx="5" data-tip data-cx="126" data-cy="316"/>
-          <rect x="147.5" y="320" width="11" height="27" rx="5" data-tip data-cx="153" data-cy="322"/>
-          <rect x="171.5" y="312" width="10" height="25" rx="5" data-tip data-cx="176.5" data-cy="314"/>
-          <rect x="194.5" y="300" width="9" height="21" rx="4" data-tip data-cx="199" data-cy="302"/>
-        </g>
-        <rect x="276" y="214" width="22" height="10" rx="5" fill="#E8E4D8" transform="rotate(-32 276 219)" data-tip data-cx="278" data-cy="219"/>
-      </svg>
-    </div>
       <div class="hero-frame">
         <svg class="sigil sigil--corner draw corner--tl" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
         <svg class="sigil sigil--corner draw corner--tr" viewBox="0 0 68 68" aria-hidden="true" focusable="false"><use href="#sg-corner"/></svg>
@@ -590,8 +484,6 @@
       </div>
     </section>
 
-    <!-- ==== CAPTAIN SEQUENCE — scroll spacer + skeleton hand — remove this whole block to disable ==== -->
-    <div class="captain-spacer" id="captain-spacer" aria-hidden="true"></div>
     <!-- ============ marquee ticker ============ -->
     <div class="over">
     <div class="ticker" aria-hidden="true">
@@ -603,7 +495,7 @@
     </div>
 
     <!-- ============ 3. FORMULA STRIP ============ -->
-    <section class="formula sec curtain" id="formula">
+    <section class="formula sec" id="formula">
       <div class="wm-p wm-p--f" data-parallax="0.05" data-base="translateY(-50%)" aria-hidden="true"><img class="sigil-img" src="assets/sigil-mandala.png" alt="" loading="lazy"></div>
       <div class="wrap" data-stagger>
         <div class="sec-head reveal">
@@ -732,7 +624,7 @@
           io.unobserve(en.target);
         });
       }, { threshold: 0.15, rootMargin: '100% 0px -6% 0px' });
-      document.querySelectorAll('.reveal, .draw, .curtain').forEach(function (el) {
+      document.querySelectorAll('.reveal, .draw').forEach(function (el) {
         io.observe(el);
       });
       /* fullscreen handoff guard: hero content taller than the viewport would get clipped while pinned — fall back to normal flow */
@@ -847,218 +739,7 @@
       });
     }, {passive:true});
   })();
-  /* ==== CAPTAIN SEQUENCE (sandboxed) — set CAPTAIN_SEQ=false or delete this block to remove ====
-     Scroll-scrubbed choreography, rAF + scrollY mapping (deterministic + reversible).
-     p = scrollY / L, where L = 1.4 * viewport height:
-       0.00-0.45  hero frame compresses: viewport-height -> natural content height,
-                  top margin pinned at 14px, content centered inside the frame (no scaleY)
-       0.45-0.55  skeleton hand enters over the top edge and grips the h1 banner
-       0.55-0.75  creaky finger wiggle; banner sinks; .over (ticker+formula) rolls down
-                  from the top edge (position:fixed + translateY scrub)
-       0.75-1.00  hand releases and withdraws; at p>=1 the flow hands back to the normal
-                  layout: .over released to flow with its top exactly at the viewport top,
-                  spacer trimmed so nothing jumps (both scroll directions).
-     A scroll spacer keeps the document height constant while .over is out of flow, so
-     scrubbing never clamps. Everything below the gates is untouched. */
-  (function () {
-    var CAPTAIN_SEQ = true;
-    if (!CAPTAIN_SEQ) return;
-    var hero = document.querySelector('.hero');
-    var frame = hero && hero.querySelector('.hero-frame');
-    var over = document.querySelector('.over');
-    var spacer = document.getElementById('captain-spacer');
-    var handB = document.getElementById('captain-hand-back');
-    var handF = document.getElementById('captain-hand-front');
-    var h1 = document.querySelector('.hero h1');
-    var banner = h1 && h1.querySelector('.gburst');
-    if (!hero || !frame || !over || !spacer || !handB || !handF || !h1 || !banner) return;
-    var fingers = Array.prototype.slice.call(handB.querySelectorAll('[data-finger]'));
-    var tips = Array.prototype.slice.call(handF.querySelectorAll('[data-tip]'));
-    var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
-    var engaged = false, done = false, ticking = false, overMode = '';
-    var M = { vh: 0, L: 0, hmax: 0, hmin: 0, handH: 1, overH: 0, rangeOK: false };
 
-    function gate() {
-      return window.innerWidth >= 900 && window.innerHeight >= 560 &&
-        !reduceMQ.matches;
-    }
-
-    function measure() {
-      M.vh = window.innerHeight;
-      M.vw = window.innerWidth;
-      M.L = Math.round(M.vh * 1.5);
-      M.hmax = Math.max(320, M.vh - 28);
-      frame.style.minHeight = '0';          // neutralize the fill min-height to read the natural box
-      frame.style.height = 'auto';
-      M.hmin = frame.offsetHeight;
-      M.hmin = Math.min(M.hmin, M.hmax);     // never grow past the fill height
-      frame.style.height = '';
-      frame.style.minHeight = '';
-      M.handH = hand.offsetHeight || 1;
-      var wasParked = over.style.display === 'none';
-      if (wasParked) over.style.display = '';
-      M.overH = over.offsetHeight;
-      if (wasParked) over.style.display = 'none';
-      M.rangeOK = true;                      // compression shrinks as far as it fits; hand plays regardless
-      done = false;                          // re-evaluate handoff against the new geometry
-    }
-
-    function clamp01(t) { return t < 0 ? 0 : t > 1 ? 1 : t; }
-    function ease(t) { t = clamp01(t); return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
-    function outBack(t) { t = clamp01(t); var c = 1.4; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); }
-
-    function handoff() {
-      if (done) return;
-      done = true;
-      document.body.classList.add('captain-done');
-      over.style.cssText = '';               // released to normal flow: top lands exactly at viewport top
-      overMode = '';
-      spacer.style.height = Math.max(0, M.L - hero.offsetHeight) + 'px';
-    }
-    function undoHandoff() {
-      if (!done) return;
-      done = false;
-      document.body.classList.remove('captain-done');
-    }
-
-    function resetAll() {
-      engaged = false; done = false; overMode = '';
-      document.body.classList.remove('captain-live', 'captain-done');
-      frame.style.height = '';
-      spacer.style.height = '';
-      banner.style.transform = '';
-      banner.style.opacity = '';
-      handB.style.transform = '';
-      handF.style.transform = '';
-      over.style.cssText = '';
-      fingers.forEach(function (f) { f.removeAttribute('transform'); });
-      tips.forEach(function (t) { t.removeAttribute('transform'); });
-    }
-
-    function bez(t, x0, y0, x1, y1, x2, y2) {
-      var u = 1 - t;
-      return { x: u * u * x0 + 2 * u * t * x1 + t * t * x2, y: u * u * y0 + 2 * u * t * y1 + t * t * y2 };
-    }
-
-    function drive(p, now) {
-      /* B — compression (0-0.38): frame BOX height scrubs down, content centered, no scaleY */
-      var pe = ease(p / 0.38);
-      var fh = Math.round(M.hmax - pe * (M.hmax - M.hmin));
-      if (frame.style.height !== fh + 'px') {
-        frame.style.height = fh + 'px';
-        spacer.style.height = Math.round(M.vh + M.L - hero.offsetHeight) + 'px';
-      }
-
-      /* C — hand: curved approach from the right (0.38-0.58, bezier up-and-over),
-         drop + finger curl (0.58-0.66, palm slides BEHIND the h1 banner via z-sandwich:
-         palm layer z2 < banner z3 < fingertip layer z4), creaky grip (0.66-0.80),
-         banner push + .over rolls down from the top (0.68-0.86),
-         release up along the reverse arc (0.86-1) */
-      var hr = h1.getBoundingClientRect();
-      var handH = M.handH;
-      var gripX = hr.left + hr.width / 2 - M.vw / 2;
-      var gripY = hr.top - handH * 0.60;
-      var startX = gripX + M.vw * 0.64, startY = gripY - 300;
-      var apexY = gripY - 170;
-      var bx, by, rot;
-      if (p < 0.38) { bx = startX; by = startY - 260; rot = -26; }
-      else if (p < 0.58) {
-        var t = ease((p - 0.38) / 0.20);
-        var pt = bez(t, startX, startY, gripX + M.vw * 0.30, apexY - 140, gripX, gripY - 150);
-        bx = pt.x; by = pt.y; rot = -26 + 26 * t;
-      } else if (p < 0.66) {
-        var d = ease((p - 0.58) / 0.08);
-        bx = gripX + (M.vw * 0.02) * (1 - d);
-        by = (gripY - 150) + 150 * d;
-        rot = 0;
-      } else if (p < 0.86) { bx = gripX; by = gripY; rot = 0; }
-      else {
-        var u2 = ease((p - 0.86) / 0.14);
-        bx = gripX - u2 * 140;
-        by = gripY - u2 * 320;
-        rot = -10 * u2;
-      }
-      /* creaky tension: quantized whole-hand shake + per-finger wiggle while gripping */
-      var amp = 0;
-      if (p >= 0.62 && p < 0.82) amp = Math.min(1, (p - 0.62) / 0.05) * Math.min(1, (0.82 - p) / 0.04);
-      var shake = amp > 0 ? Math.round(Math.sin(now * 0.011) * 1.3 / 0.6) * 0.6 : 0;
-      var tf = 'translate(calc(-50% + ' + bx.toFixed(1) + 'px), ' + by.toFixed(1) + 'px) rotate(' + (rot + shake).toFixed(2) + 'deg) scale(0.8)';
-      handB.style.transform = tf;
-      handF.style.transform = tf;
-
-      /* finger curl over the banner edge + creaky per-finger wiggle (tips follow) */
-      var grip = ease((p - 0.56) / 0.10) * (1 - ease((p - 0.84) / 0.08));
-      for (var i = 0; i < fingers.length; i++) {
-        var f = fingers[i];
-        var cx = +f.getAttribute('data-cx'), cy = +f.getAttribute('data-cy');
-        var curl = parseFloat(f.getAttribute('data-curl')) || 0;
-        var a = parseFloat(f.getAttribute('data-amp'));
-        var wob = amp * Math.sin(now * 0.007 + i * 1.9) * (a ? a : 7);
-        wob = Math.round(wob / 2.2) * 2.2;
-        var ang = (curl * grip + wob).toFixed(2);
-        f.setAttribute('transform', 'rotate(' + ang + ' ' + cx + ' ' + cy + ')');
-        var tp = tips[i];
-        if (tp) {
-          var tcx = +tp.getAttribute('data-cx'), tcy = +tp.getAttribute('data-cy');
-          tp.setAttribute('transform', 'rotate(' + ang + ' ' + tcx + ' ' + tcy + ')');
-        }
-      }
-
-      /* banner push (0.68-0.84) — transform lives on the .gburst span (h1's rise
-         animation owns the h1 element itself: fill-forwards frozen-start trap) */
-      var bs = ease((p - 0.68) / 0.16);
-      banner.style.transform = 'translateY(' + (bs * 170).toFixed(1) + 'px)';
-      banner.style.opacity = (1 - bs * 0.9).toFixed(3);
-
-      /* .over rolls down from the top edge (0.58-0.86) */
-      if (p < 0.58) {
-        if (overMode !== 'park') { overMode = 'park'; over.style.cssText = 'display:none'; }
-      } else {
-        if (overMode !== 'roll') { overMode = 'roll'; over.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:2;will-change:transform'; }
-        var rp = ease((p - 0.58) / 0.28);
-        over.style.transform = 'translateY(' + (-(M.overH + 80) * (1 - rp)).toFixed(1) + 'px)';
-      }
-    }
-
-    var captainDiag = false;
-    function tick() {
-      ticking = false;
-      if (!gate()) {
-        if (engaged) resetAll();
-        if (!captainDiag) {
-          captainDiag = true;
-          console.info('[captain] sequence idle — needs ≥900px width, ≥560px height, and motion allowed (OS reduce-motion off)');
-        }
-        return;
-      }
-      if (!engaged) {
-        document.body.classList.add('captain-live');  // before measure: the hand needs a box
-        measure();
-        if (!M.rangeOK) { resetAll(); return; }
-        engaged = true;
-      } else if (!M.rangeOK) {          // a resize can eat the compression room mid-sequence
-        resetAll();
-        return;
-      }
-      var p = (window.scrollY || 0) / M.L;
-      if (p >= 1) { handoff(); }
-      else { undoHandoff(); drive(p, performance.now()); }
-    }
-    function requestTick() {
-      if (!ticking) { ticking = true; requestAnimationFrame(tick); }
-    }
-
-    window.addEventListener('scroll', requestTick, { passive: true });
-    window.addEventListener('resize', function () { if (engaged) measure(); requestTick(); }, { passive: true });
-    window.addEventListener('load', function () { if (engaged) measure(); requestTick(); });
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(function () { if (engaged) measure(); requestTick(); });
-    }
-    if (reduceMQ.addEventListener) {
-      reduceMQ.addEventListener('change', function () { if (engaged) resetAll(); requestTick(); });
-    }
-    requestTick();
-  })();
   </script>
 </body>
 </html>
