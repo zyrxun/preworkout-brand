@@ -84,6 +84,14 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 30.
 - Winner's drop count = baseline; next batch shift the whole ladder from that number (flavor is oil-soluble — drops never change the active dose math)
 - Too-low flavor is recoverable (+5 drops next batch); too-high = oil leak / soft gummy, unrecoverable
 
+## HALF BATCH — first-timer size (15 pieces = 3 servings)
+
+Everything scales linearly; the dose anchor moves 45g → **22.5g total** (22.5 ÷ 15 = 1.5g/piece — per-piece doses identical, math verified):
+- Core: 3 caffeine pills (600mg) · theanine 0.6g · BA 5.25g · glycerin 5g · malic 0.3g · hot water to **22.5g total**
+- Shell: bloom 6.25g gelatin in 18.75g water · cook 31.25g sugar + 31.25g corn syrup · stir in 1.25g citric + 3.75g BA + 5.25g citrulline malate
+- Assembly/QC identical; QC ÷ 15 = 1.5g ± 10%. Flavor ladder: core 3 × 7.5g cups → 6 / 10 / 14 drops; shell 3 pans → 2 / 3 / 4 drops.
+- Don't go smaller than half: tiny sugar batches scorch before the thermometer reads, and sub-0.5g weighs drown in scale error.
+
 ## Safety rails (non-negotiable)
 
 - Caffeine by capsule count only — never loose powder, never re-dried extract
