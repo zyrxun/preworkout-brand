@@ -87,8 +87,9 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 30.
 ## HALF BATCH — first-timer size (15 pieces = 3 servings)
 
 Everything scales linearly; the dose anchor moves 45g → **22.5g total** (22.5 ÷ 15 = 1.5g/piece — per-piece doses identical, math verified):
-- Core: 3 caffeine pills (600mg) · theanine 0.6g · BA 5.25g · glycerin 5g · malic 0.3g · hot water to **22.5g total**
-- Shell: bloom 6.25g gelatin in 18.75g water · cook 31.25g sugar + 31.25g corn syrup · stir in 1.25g citric + 3.75g BA + 5.25g citrulline malate
+- Core: 3 caffeine pills (600mg) in **20g hot water** (anchor absorbs evaporation) · theanine 0.6g · BA 5.25g · glycerin 5g · malic 0.3g · hot water to **22.5g total** · hold ~122°F, never on the flame after dissolving
+- Shell — **FULL-SYRUP COOK (batch-1b fix, prevents small-batch scorching):** cook the whole **62.5g sugar + 62.5g corn syrup + 15g water (wet-start)** to 239–248°F, thermometer tip IN THE LIQUID not the foam; then **split the hot syrup in half by weight** — gelatin 6.25g (bloomed in 18.75g) + 1.25g malic (or citric) + 3.75g BA + 5.25g citrulline go into ONE half; reserve the other half (plain syrup) in a jar for the next attempt. Citrulline: plain L-citrulline swaps 1:1 for citrulline malate. Citric → malic 1:1.
+- Bain-marie: boil the outer water → OFF heat → nest the pot; re-warm only when the shell drops below ~150°F. Never a rolling boil under gelatin+acid.
 - Assembly/QC identical; QC ÷ 15 = 1.5g ± 10%. Flavor ladder: core 3 × 7.5g cups → 6 / 10 / 14 drops; shell 3 pans → 2 / 3 / 4 drops.
 - Don't go smaller than half: tiny sugar batches scorch before the thermometer reads, and sub-0.5g weighs drown in scale error.
 
