@@ -36,11 +36,11 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 30.
 
 ## Part A — Shell base (~20 min; holds pourable ~30 min in a warm bath)
 
-1. **Bloom now:** sprinkle **12.5g gelatin** over **37.5g cold water**. Wait 5 min — it turns into a solid brick. Correct.
-2. In the second pot: cook **62.5g sugar + 62.5g corn syrup** to **115–120°C (240–248°F)**. No stirring once boiling; swirl only. *(Molten sugar = bad burns. No kids/pets in the kitchen.)*
-3. Off heat → cool to **~90°C** (2–3 min), stir in the bloomed gelatin until fully melted. Skim foam.
-4. Cool to **~80°C**, stir in **2.5g citric acid** + **7.5g beta-alanine** + **10.5g L-citrulline malate** (stir ~90s until fully dispersed; powders ≈12% of shell weight is the gritty ceiling — if it pastes, cut citrulline to 7.5g) + **shell flavor drops** + color.
-5. **Park the pot in the hot-water bath** — stays pourable ~30 min while you make the core. Never boil after the gelatin is in (acid + boil = weak set).
+1. **Bloom now:** sprinkle **12.5g gelatin** over **37.5g cold water**. Wait 5 min — it turns into a solid brick. Correct. (1:3 ratio — looks too dry, isn't.)
+2. **Wet-start the cook:** **62.5g sugar + 62.5g corn syrup + 15g water**, stir until fully dissolved *before* it boils. Then boil to **239–248°F (240–248°F)** — thermometer tip IN the liquid, not the foam (foam under-reads → overshoot → burn); lively simmer, not volcano; swirl constantly. No probe? Cold-water test: drip into cold water → **firm ball that holds shape but squishes = pull NOW**.
+3. Off heat → cool to **~194°F (90°C)**, stir in the bloomed gelatin until fully melted. Skim foam.
+4. Cool to **~176°F (80°C)**, stir in **2.5g citric acid** (malic 1:1 works) + **7.5g beta-alanine** + **10.5g L-citrulline** (plain citrulline swaps 1:1 for citrulline malate) (~90s, fully dispersed; powders ≈12% of shell weight is the gritty ceiling — if it pastes, cut citrulline by a third) + **shell flavor drops** + color.
+5. **Working window: 158–176°F (70–80°C).** Hold the pot in a bain-marie — outer water boiled then **heat OFF**, nest the pot; re-warm the bath when the shell drops below ~150°F (tilt test: syrup should cross the pot bottom in ~2 seconds). Never a rolling boil under gelatin + acid (weak set). Pour/dispense in ONE fast pass; drizzle with a spoon pre-warmed in the bath, or a squeeze bottle that LIVES in the bath. Tilt + tap the mold so blobs level; below ~140°F the shell sets on contact.
 
 ## Part B — Core master syrup (~15 min; keep warm ~50°C)
 
@@ -52,11 +52,13 @@ Coat (day-of): 2 tbsp sugar + 1 tbsp malic acid + ½ tsp citric acid for all 30.
 
 ## Part C — Assembly, two-pour (~30 min + 20–30 min fridge)
 
-1. **First pour:** fill cavities ~40% with shell liquid (matched to your Flavor Lab columns if running the split). Fridge 3–5 min until a firm skin holds a puddle.
+1. **First pour:** fill cavities ~40% with shell liquid — fast pass, tilt + tap the mold so it levels (mold on a warm surface helps). Fridge 3–5 min until a firm skin holds a puddle.
 2. **Cores:** pipette **1.5g warm core** into each center — aim middle, don't smear the walls.
-3. **Cap** with remaining shell liquid to the top. Fridge 20–30 min. Demold.
-4. **Batch QC:** weigh mold before cores and after — (after − before) ÷ 30 should be **1.5g ± 10%**. Log it.
-5. Store airtight, fridge, **≤14 days**. Discard any weeper/leaker.
+3. **Cap** with remaining shell liquid to the top. Fridge 20–30 min → **then rest the mold at room temp 10–15 min** (cold-demold = condensation = sticky).
+4. Demold: push from the back of each cavity, don't yank.
+5. **Cure: uncovered on a rack, 12–24h** (flip once halfway) — the surface skins over and stops sticking. This step is not optional.
+6. **Batch QC:** weigh mold before cores and after — (after − before) ÷ 30 should be **1.5g ± 10%**. Log it.
+7. Store airtight, fridge, **≤14 days**. Discard any weeper/leaker.
 
 ## Part D — Sour coat (day of eating)
 
@@ -92,6 +94,18 @@ Everything scales linearly; the dose anchor moves 45g → **22.5g total** (22.5 
 - Bain-marie: boil the outer water → OFF heat → nest the pot; re-warm only when the shell drops below ~150°F. Never a rolling boil under gelatin+acid.
 - Assembly/QC identical; QC ÷ 15 = 1.5g ± 10%. Flavor ladder: core 3 × 7.5g cups → 6 / 10 / 14 drops; shell 3 pans → 2 / 3 / 4 drops.
 - Don't go smaller than half: tiny sugar batches scorch before the thermometer reads, and sub-0.5g weighs drown in scale error.
+
+## Kitchen learnings (batch 1a/1b — read before cooking)
+
+- **Core water can be microwaved** (45–60s, steaming = done; tap cup before reaching in if no bubbles). ⚠️ NEVER re-microwave/reheat the core after the 22.5g (or 45g) anchor weigh — evaporation concentrates the dose. Re-warm = sit it in the bath only.
+- **Overshot the anchor?** Don't dump it: new deposit = 1.5 × (actual total ÷ target total). At 27g → deposit 1.8g/piece → dose exact. QC catches it.
+- **Core = water-thin is CORRECT.** No gelatin in it; it's a liquid burst center. Slightly thicker than water from glycerin, that's all.
+- **Undercooked syrup** (pulled below 239–248°F) = wet, sticky, pours badly. Overcooked = hard gummy. The knob is the pull moment: firm-ball, immediately.
+- **Hard gummies?** Drop gelatin: 12.5g → 10g (full) / 6.25g → 5g (half) = softer, Gusher-ooze target.
+- **Small-batch scorch fix:** cook the FULL 62.5+62.5 syrup even for a half batch, split by weight (tare working pot → pour → read), reserve the other half in a jar.
+- **Reserve syrup rules:** plain syrup only, jarred. It hardens glassy — hot-water soak 10–15 min (or open jar, microwave 10–15s bursts) returns it to pourable. **Per 10g of reserve syrup: 1g gelatin · 0.2g malic · 0.6g BA · 0.8g citrulline.**
+- **Bain-marie:** outer water boiled → heat OFF → nest; re-warm bath below ~150°F. Rolling boil under gelatin+acid = weak set.
+- **Foam under-reads probes** — tip in the liquid. Dial thermometers lag 10–20°F; digital instant-read or the cold-water test.
 
 ## Safety rails (non-negotiable)
 
